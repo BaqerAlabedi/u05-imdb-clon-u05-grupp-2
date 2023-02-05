@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 
 Route::view('/login', 'login');
+
+Route::view('/login/reset', 'forgotpass');
