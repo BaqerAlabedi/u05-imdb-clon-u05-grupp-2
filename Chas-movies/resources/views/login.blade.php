@@ -90,7 +90,7 @@
                     src="https://chasacademy.se/wp-content/uploads/2020/12/ca-emblem.svg"
                     alt="logo"
                   />
-                  <h4 class="text-xl font-semibold mt-1 mb-12 pb-1">Chas movies</h4>
+                  <h4 class="text-xl font-semibold mt-1 mb-12 pb-1">Chas Movies</h4>
                 </div>
                 <form>
                   <p class="mb-4">Please login to your account</p>
