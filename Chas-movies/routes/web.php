@@ -18,6 +18,6 @@ Route::get('/home', function () {
 });
 
 Route::get('/helpcenter', function () {
-    return view('home');
+    return view('helpcenter');
 });
 
