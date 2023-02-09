@@ -5,197 +5,90 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chas movies</title>
     @vite('resources/css/app.css')
+    <script defer src="https://unpkg.com/tailwindcss-jit-cdn"></script>
 </head>
 
-<body class="bg-gray-900">
-    <!-- Component Start -->
-    <nav class="flex items-start justify-start bg-gray-900 fixed">
-        <div class="h-screen flex flex-col items-center w-40 overflow-hidden text-gray-400 bg-gray-800">
-            <a class="flex items-center w-full px-3 mt-3" href="#">
+<body class="bg-gray-800">
+    <header class="text-gray-700 bg-gray-900 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-gray-200 mb-4 md:mb-0" href="https://mertjf.github.io/tailblocks/" target="_blank">
                 <img class="h-9" src="https://chasacademy.se/wp-content/uploads/2020/12/ca-emblem-white.svg" alt="">
-                <span class="ml-2 text-sm font-bold">Chas Movies</span>
+                <span class="ml-3 text-xl">Chas Movies</span>
             </a>
-            <div class="w-full px-2">
-                <div class="flex flex-col items-center w-full mt-3 border-t border-gray-700">
-                    <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="#">
-                        <svg class="w-5 h-5 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
-                        <span class="ml-2 text-sm font-medium">Search</span>
-                    </a>
-                    <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="#">
-                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
-                            <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0v6h8V1H4zm8 8H4v6h8V9zM1 1v2h2V1H1zm2 3H1v2h2V4zM1 7v2h2V7H1zm2 3H1v2h2v-2zm-2 3v2h2v-2H1zM15 1h-2v2h2V1zm-2 3v2h2V4h-2zm2 3h-2v2h2V7zm-2 3v2h2v-2h-2zm2 3h-2v2h2v-2z" fill="white"></path>
-                        </svg>
-                        <span class="ml-2 text-sm font-medium">Movie</span>
-                    </a>
-
-                    <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="#">
-                        <svg class="w-5 h-5" style="color: white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
-                            <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0v6h8V1H4zm8 8H4v6h8V9zM1 1v2h2V1H1zm2 3H1v2h2V4zM1 7v2h2V7H1zm2 3H1v2h2v-2zm-2 3v2h2v-2H1zM15 1h-2v2h2V1zm-2 3v2h2V4h-2zm2 3h-2v2h2V7zm-2 3v2h2v-2h-2zm2 3h-2v2h2v-2z" fill="white"></path>
-                        </svg>
-                        <span class="ml-2 text-sm font-medium">TV-show</span>
-                    </a>
-                    <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="#">
-                        <span class="text-l w-5 h-5 stroke-current">🔥</span>
-                        <span class="ml-2 text-sm font-medium">Trending</span>
-                    </a>
-                </div>
-                <div class="flex flex-col items-center w-full mt-2 border-t border-gray-700">
-                    <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="#">
-                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-                            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
-                            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
-                        </svg>
-                        <span class="ml-2 text-sm font-medium">Watchlist</span>
-                    </a>
-                    <a class="relative flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="#">
-                        <svg class="w-5 h-5 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                        </svg>
-                        <span class="ml-2 text-sm font-medium">Help Center</span>
-                    </a>
-                </div>
-            </div>
-            <a class="flex items-center justify-center w-full h-16 mt-auto bg-gray-800 hover:bg-gray-700 hover:text-gray-300" href="#">
-                <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span class="ml-2 text-sm font-medium">Login</span>
+            <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                <a class="flex items-center h-12 rounded hover:bg-gray-700 mr-5 text-gray-200 hover:text-gray-300" href="http://127.0.0.1:8000/discover">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill inline w-5 h-5" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z" />
+                    </svg>
+                    <span class="ml-2 text-l font-medium">Discover</span>
+                </a>
+                <a class="flex items-center h-12 rounded hover:bg-gray-700 mr-5 text-gray-200 hover:text-gray-300" href="http://127.0.0.1:8000/discover/trending">
+                    <span class="text-xl w-5 h-5 mb-3 mr-1 stroke-current">🔥</span>
+                    <span class="ml-1 text-l font-medium">Trending</span>
+                </a>
+            </nav>
+            <a href="http://127.0.0.1:8000/login">
+                <button class="inline-flex items-center bg-yellow-400 text-gray-900 font-bold border-0 py-1 px-3 focus:outline-none hover:bg-yellow-300 rounded text-base ml-5 mt-4 md:mt-0">Login
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                </button>
             </a>
         </div>
-
-
-    </nav>
-
-    <div class="container pl-52">
-        <div class="flex flex-wrap -mx-1 lg:-mx-4">
-
-            <!-- Column -->
-            <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
-
-                <!-- Article -->
-                <article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200">
-
-                    <a href="#">
-                        <img alt="Placeholder" class="block h-auto w-full" src="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg">
-                    </a>
-
-                    <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-                        <h1 class="text-lg">
-                            <a class="no-underline hover:underline text-gray-200" href="#">
-                                Interstellar
-                            </a>
-                        </h1>
-                    </header>
-
-                </article>
-                <!-- END Article -->
-
+    </header>
+    <section class="max-w-3xl md:max-w-5xl sm:max-w-lg lg:max-w-4xl mx-auto mt-4">
+        <div id="indicators-carousel" class="relative" data-carousel="static">
+            <!-- Carousel wrapper -->
+            <div class="relative h-56 overflow-hidden md:h-96">
+                <!-- Item 1 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                    <img src="https://hbomax-images.warnermediacdn.com/images/GYGP7pwQv_ojDXAEAAAFc/tileburnedin?size=1280x720&partner=hbomaxcom&v=bd4e8b8745a1fcccbb19d76012ae572e&host=art-gallery.api.hbo.com&language=sv-se&w=1280" class="object-scale-down absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    <div class="absolute z-20 bg-gradient-to-t from-black container h-full md:max-w-5xl sm:max-w-lg mx-auto relative h-56 overflow-hidden md:h-96"></div>
+                    <div class="absolute z-40 flex space-x-3 bottom-5 right-1/4">
+                        <h2 class="text-gray-200 text-3xl md:text-5xl sm:text-4xl">"Interstellar"</h2>
+                        <h3 class="text-gray-400 md:text-lg sm:text-md">2h 49m</h3>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item="">
+                    <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/merle-dandridge-the-last-of-us-1673260744.jpg?resize=768:*" class="object-fill absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    <div class="absolute z-20 bg-gradient-to-t from-black container h-full md:max-w-5xl sm:max-w-lg mx-auto relative h-56 overflow-hidden md:h-96"></div>
+                    <div class="absolute z-40 flex space-x-3 bottom-5 right-1/4">
+                        <h2 class="text-gray-200 text-3xl md:text-5xl sm:text-4xl">"The Last of Us"</h2>
+                        <h3 class="text-gray-400 md:text-lg sm:text-md">Show</h3>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item="">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTQ1ZmIzOTAtNDcwZi00NDVkLWE4NWItYWNhZGY1MmVlZGU0XkEyXkFqcGdeQWRvb2xpbmhk._V1_QL75_UY563_CR0,0,1000,563_.jpg" class="object-scale-down absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    <div class="absolute z-20 bg-gradient-to-t from-black container h-full md:max-w-5xl sm:max-w-lg mx-auto relative h-56 overflow-hidden md:h-96"></div>
+                    <div class="absolute z-40 flex space-x-3 bottom-5 right-1/4">
+                        <h2 class="text-gray-200 text-3xl md:text-5xl sm:text-4xl">"Inception"</h2>
+                        <h3 class="text-gray-400 md:text-lg sm:text-md">2h 28m</h3>
+                    </div>
+                </div>
+                <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-gray-900 group-hover:bg-white group-hover:bg-gray-900/60 group-focus:ring-4 group-focus:ring-white group-focus:ring-gray-900/70 group-focus:outline-none">
+                        <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                        <span class="sr-only">Previous</span>
+                    </span>
+                </button>
+                <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-gray-900 group-hover:bg-white group-hover:bg-gray-900/60 group-focus:ring-4 group-focus:ring-white group-focus:ring-gray-900/70 group-focus:outline-none">
+                        <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                        <span class="sr-only">Next</span>
+                    </span>
+                </button>
             </div>
-            <!-- END Column -->
 
-
-
-            <!-- Column -->
-            <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
-
-                <!-- Article -->
-                <article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200">
-
-                    <a href="#">
-                        <img alt="Placeholder" class="block h-auto w-full" src="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg">
-                    </a>
-
-                    <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-                        <h1 class="text-lg">
-                            <a class="no-underline hover:underline text-gray-200" href="#">
-                                Interstellar
-                            </a>
-                        </h1>
-                    </header>
-
-                </article>
-                <!-- END Article -->
-
-            </div>
-            <!-- END Column -->
-            <!-- Column -->
-            <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
-
-                <!-- Article -->
-                <article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200">
-
-                    <a href="#">
-                        <img alt="Placeholder" class="block h-auto w-full" src="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg">
-                    </a>
-
-                    <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-                        <h1 class="text-lg">
-                            <a class="no-underline hover:underline text-gray-200" href="#">
-                                Interstellar
-                            </a>
-                        </h1>
-                    </header>
-
-                </article>
-                <!-- END Article -->
-
-            </div>
-            <!-- END Column -->
-            <!-- Column -->
-            <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
-
-                <!-- Article -->
-                <article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200">
-
-                    <a href="#">
-                        <img alt="Placeholder" class="block h-auto w-full" src="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg">
-                    </a>
-
-                    <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-                        <h1 class="text-lg">
-                            <a class="no-underline hover:underline text-gray-200" href="#">
-                                Interstellar
-                            </a>
-                        </h1>
-                    </header>
-
-                </article>
-                <!-- END Article -->
-
-            </div>
-            <!-- END Column -->
-
-            <!-- Column -->
-            <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
-
-                <!-- Article -->
-                <article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200">
-
-                    <a href="#">
-                        <img alt="Placeholder" class="block h-auto w-full" src="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg">
-                    </a>
-
-                    <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-                        <h1 class="text-lg">
-                            <a class="no-underline hover:underline text-gray-200" href="#">
-                                Interstellar
-                            </a>
-                        </h1>
-                    </header>
-
-                </article>
-                <!-- END Article -->
-
-            </div>
-            <!-- END Column -->
-
-        </div>
-    </div>
-
+    </section>
+    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
 </body>
 
 </html>
