@@ -9,7 +9,7 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="bg-gray-900">
+<body class="bg-gray-900"> 
     <!-- Component Start -->
     <nav class="flex items-start justify-start bg-gray-900 fixed">
         <div class="h-screen flex flex-col items-center w-40 overflow-hidden text-gray-400 bg-gray-800">
