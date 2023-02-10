@@ -34,4 +34,6 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::view('/movie', 'film-view');
+Route::get('/film-view', function () {
+    return view('film-view');
+});
