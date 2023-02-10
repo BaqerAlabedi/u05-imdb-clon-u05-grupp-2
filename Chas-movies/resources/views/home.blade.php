@@ -92,38 +92,38 @@
         <h2 class="text-4xl font-medium text-yellow-400 py-5">Featured Today</h2>
     </div>
     <section class="flex flex-wrap justify-center">
-        <div class="w-full sm:w-1/2 md:w-1/4 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col">
                     <h2 class="text-lg font-medium text-gray-200">Card Title</h2>
                     <p class="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     <div class="flex justify-center mt-4">
-                        <a href="#" class="w-1/2 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
+                        <a href="#" class="w-1/10 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="w-full sm:w-1/2 md:w-1/4 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col">
                     <h2 class="text-lg font-medium text-gray-200">Card Title</h2>
                     <p class="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     <div class="flex justify-center mt-4">
-                        <a href="#" class="w-1/2 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
+                        <a href="#" class="w-1/10 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="w-full sm:w-1/2 md:w-1/4 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col justify-center">
                     <h2 class="text-lg font-medium text-gray-200">Card Title</h2>
                     <p class="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     <div class="flex justify-center mt-4">
-                        <a href="#" class="w-1/2 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
+                        <a href="#" class="w-1/10 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -135,38 +135,38 @@
         <h2 class="text-4xl font-medium text-yellow-400 py-5">What to watch</h2>
     </div>
     <section class="flex flex-wrap justify-center">
-        <div class="w-full sm:w-1/2 md:w-1/4 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col">
                     <h2 class="text-lg font-medium text-gray-200">Card Title</h2>
                     <p class="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     <div class="flex justify-center mt-4">
-                        <a href="#" class="w-1/2 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
+                        <a href="#" class="w-1/10 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="w-full sm:w-1/2 md:w-1/4 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col">
                     <h2 class="text-lg font-medium text-gray-200">Card Title</h2>
                     <p class="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     <div class="flex justify-center mt-4">
-                        <a href="#" class="w-1/2 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
+                        <a href="#" class="w-1/10 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="w-full sm:w-1/2 md:w-1/4 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col justify-center">
                     <h2 class="text-lg font-medium text-gray-200">Card Title</h2>
                     <p class="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     <div class="flex justify-center mt-4">
-                        <a href="#" class="w-1/2 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
+                        <a href="#" class="w-1/10 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -195,38 +195,38 @@
     </div>
 
     <section class="flex flex-wrap justify-center">
-        <div class="w-full sm:w-1/2 md:w-1/4 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col">
                     <h2 class="text-lg font-medium text-gray-200">Card Title</h2>
                     <p class="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     <div class="flex justify-center mt-4">
-                        <a href="#" class="w-1/2 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
+                        <a href="#" class="w-1/10 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="w-full sm:w-1/2 md:w-1/4 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col">
                     <h2 class="text-lg font-medium text-gray-200">Card Title</h2>
                     <p class="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     <div class="flex justify-center mt-4">
-                        <a href="#" class="w-1/2 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
+                        <a href="#" class="w-1/10 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="w-full sm:w-1/2 md:w-1/4 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col justify-center">
                     <h2 class="text-lg font-medium text-gray-200">Card Title</h2>
                     <p class="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     <div class="flex justify-center mt-4">
-                        <a href="#" class="w-1/2 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
+                        <a href="#" class="w-1/10 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
                     </div>
                 </div>
             </div>

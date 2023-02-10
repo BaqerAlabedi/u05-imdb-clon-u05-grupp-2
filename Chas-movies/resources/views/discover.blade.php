@@ -39,7 +39,7 @@
                         <span class="ml-2 text-sm font-medium">TV-show</span>
                     </a>
                     <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="#">
-                        <span class="w-0 h-0 md:w-5 sm:w-5 lg:w-5 md:h-5 sm:h-5 lg:h-5 text-l w-5 h-5 stroke-current invisible md:visible lg:visible sm:visible">🔥</span>
+                        <span class="w-0 h-0 md:w-5 sm:w-5 lg:w-5 md:h-5 sm:h-5 lg:h-5 invisible md:visible lg:visible sm:visible">🔥</span>
                         <span class="ml-2 text-sm font-medium">Trending</span>
                     </a>
                 </div>
@@ -70,11 +70,11 @@
 
     </nav>
 
-    <div class="pl-40">
+    <div class="pl-32 sm:pl-34 md:pl-40 lg:pl-40">
         <div class="flex flex-wrap -w-1/4 -md:w-1/2 md:justify-start lg:justify-evenly">
 
             <!-- Column -->
-            <div class="my-1 px-1 w-full sm:w-1/3 md:w-1/3 lg:my-4 lg:w-1/6">
+            <div class="my-1 px-1 md:w-1/2 sm:w-1/3 md:w-1/3 lg:my-4 lg:w-1/6">
 
                 <!-- Article -->
                 <article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200">
