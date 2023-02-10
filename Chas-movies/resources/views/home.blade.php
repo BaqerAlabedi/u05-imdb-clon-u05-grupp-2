@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-gray-900 group-hover:bg-white group-hover:bg-gray-900/60 group-focus:ring-4 group-focus:ring-white group-focus:ring-gray-900/70 group-focus:outline-none">
+                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-gray-900 group-hover:bg-gray-900 group-hover:bg-gray-900/60 group-focus:ring-4 group-focus:ring-white group-focus:ring-gray-900/70 group-focus:outline-none">
                         <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                         </svg>
@@ -78,7 +78,7 @@
                     </span>
                 </button>
                 <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-gray-900 group-hover:bg-white group-hover:bg-gray-900/60 group-focus:ring-4 group-focus:ring-white group-focus:ring-gray-900/70 group-focus:outline-none">
+                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-gray-900 group-hover:bg-gray-900 group-hover:bg-gray-900/60 group-focus:ring-4 group-focus:ring-white group-focus:ring-gray-900/70 group-focus:outline-none">
                         <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                         </svg>
@@ -87,6 +87,150 @@
                 </button>
             </div>
 
+    </section>
+    <div class="flex justify-center">
+        <h2 class="text-4xl font-medium text-yellow-400 py-5">Featured Today</h2>
+    </div>
+    <section class="flex flex-wrap justify-center">
+        <div class="w-full sm:w-1/2 md:w-1/4 p-4">
+            <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
+                <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
+                <div class="p-6 flex flex-col">
+                    <h2 class="text-lg font-medium text-gray-200">Card Title</h2>
+                    <p class="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="flex justify-center mt-4">
+                        <a href="#" class="w-1/2 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full sm:w-1/2 md:w-1/4 p-4">
+            <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
+                <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
+                <div class="p-6 flex flex-col">
+                    <h2 class="text-lg font-medium text-gray-200">Card Title</h2>
+                    <p class="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="flex justify-center mt-4">
+                        <a href="#" class="w-1/2 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full sm:w-1/2 md:w-1/4 p-4">
+            <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
+                <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
+                <div class="p-6 flex flex-col justify-center">
+                    <h2 class="text-lg font-medium text-gray-200">Card Title</h2>
+                    <p class="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="flex justify-center mt-4">
+                        <a href="#" class="w-1/2 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </section>
+    <div class="flex justify-center">
+        <h2 class="text-4xl font-medium text-yellow-400 py-5">What to watch</h2>
+    </div>
+    <section class="flex flex-wrap justify-center">
+        <div class="w-full sm:w-1/2 md:w-1/4 p-4">
+            <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
+                <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
+                <div class="p-6 flex flex-col">
+                    <h2 class="text-lg font-medium text-gray-200">Card Title</h2>
+                    <p class="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="flex justify-center mt-4">
+                        <a href="#" class="w-1/2 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full sm:w-1/2 md:w-1/4 p-4">
+            <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
+                <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
+                <div class="p-6 flex flex-col">
+                    <h2 class="text-lg font-medium text-gray-200">Card Title</h2>
+                    <p class="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="flex justify-center mt-4">
+                        <a href="#" class="w-1/2 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full sm:w-1/2 md:w-1/4 p-4">
+            <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
+                <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
+                <div class="p-6 flex flex-col justify-center">
+                    <h2 class="text-lg font-medium text-gray-200">Card Title</h2>
+                    <p class="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="flex justify-center mt-4">
+                        <a href="#" class="w-1/2 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </section>
+    <div class="flex justify-center">
+        <h2 class="text-4xl font-medium text-yellow-400 py-5">From your Watchlist</h2>
+    </div>
+    <div class="flex justify-center flex-col bg-gray-900 py-10">
+        <div class="flex justify-center my-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-bookmark-plus-fill inline text-gray-200  w-10 h-10" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z" />
+            </svg>
+        </div>
+        <h2 class="text-center font-bold text-xl text-gray-200">Sign in to access your Watchlist</h2>
+        <h2 class="text-center text-xl text-gray-200">Save shows and movies to keep track of what you want to watch.</h2>
+        <div class="flex justify-center mt-4">
+            <a href="http://localhost:8000/login" class="w-1/10 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 hover:bg-yellow-300">Sign in to Chas Movies</a>
+        </div>
+    </div>
+
+    <div class="flex justify-center">
+        <h2 class="text-4xl font-medium text-yellow-400 py-5">Fan favorites</h2>
+    </div>
+
+    <section class="flex flex-wrap justify-center">
+        <div class="w-full sm:w-1/2 md:w-1/4 p-4">
+            <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
+                <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
+                <div class="p-6 flex flex-col">
+                    <h2 class="text-lg font-medium text-gray-200">Card Title</h2>
+                    <p class="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="flex justify-center mt-4">
+                        <a href="#" class="w-1/2 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full sm:w-1/2 md:w-1/4 p-4">
+            <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
+                <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
+                <div class="p-6 flex flex-col">
+                    <h2 class="text-lg font-medium text-gray-200">Card Title</h2>
+                    <p class="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="flex justify-center mt-4">
+                        <a href="#" class="w-1/2 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full sm:w-1/2 md:w-1/4 p-4">
+            <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
+                <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
+                <div class="p-6 flex flex-col justify-center">
+                    <h2 class="text-lg font-medium text-gray-200">Card Title</h2>
+                    <p class="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="flex justify-center mt-4">
+                        <a href="#" class="w-1/2 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
 </body>
