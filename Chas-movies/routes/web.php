@@ -25,3 +25,11 @@ Route::get('/register', function () {
 });
 
 
+Route::get('/kategori', function () {
+    return view('kategori');
+});
+
+
+Route::get('/login', function () {
+    return view('login');
+});
