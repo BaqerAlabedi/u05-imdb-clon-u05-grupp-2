@@ -41,7 +41,7 @@
     <div class="container m-auto w-9/12">
         <div class="flex">
             <div class="overflow-hidden rounded-lg shadow-lg text-gray-200">
-            <h1 class="">Interstellar</h1>
+            <h2 class="text-gray-200 text-3xl md:text-5xl sm:text-4xl">Interstellar</h2> <!-- ändra! -->
                 <div class="md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
                     <img class="rounded-lg" src="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" alt="Placeholder">
                 </div>
