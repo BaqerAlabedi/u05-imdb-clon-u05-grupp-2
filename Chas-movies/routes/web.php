@@ -40,3 +40,9 @@ Route::get('/login', function () {
 Route::get('/film-view', function () {
     return view('film-view');
 });
+Route::get('/user', function () {
+    return view('user');
+});
+
+Route::get('/admin', function () {
+    return view('admin');
