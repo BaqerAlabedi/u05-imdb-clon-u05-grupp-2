@@ -24,6 +24,9 @@ Route::get('/register', function () {
     return view('register');
 });
 
+Route::get('/helpcenter', function () {
+    return view('helpcenter');
+});
 
 Route::get('/kategori', function () {
     return view('kategori');
