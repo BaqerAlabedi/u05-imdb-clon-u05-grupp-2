@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-//Route::get('/admin', [AdminController::class, 'function']);
+//Route::get('/admin/show-users', [AdminController::class, 'function']);
 
 Route::get('/discover', function () {
     return view('discover');
