@@ -13,13 +13,16 @@ class UserController extends Controller
 
 
     //public function register() {
-    //
+    //if username, password and email is filled in the form -> return login page
     //}
 
 
     //public function login() {
-    //if admin -> return admin-view
-    //if user -> return userview
+    //if admin and exists in database -> return admin-view
+    //if user and exists in database -> return user-view
+
+    //public function store(Request $request){
+    //
     //}
 
 
