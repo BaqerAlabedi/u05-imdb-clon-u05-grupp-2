@@ -21,6 +21,11 @@ class UserController extends Controller
     //if admin and exists in database -> return admin-view
     //if user and exists in database -> return user-view
 
+    //if(auth()->attempt(request()->only(['email', 'password']))){
+        //return redirect('/login');
+    //}
+    //}
+
     //public function store(Request $request){
     //
     //}
