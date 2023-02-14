@@ -11,7 +11,17 @@ class UserController extends Controller
     //CRUD:a sina egna kommentarer och Watchlist
     //login(), register(), deleteUser()
 
+
+    //public function register() {
+    //
+    //}
+
     //public function login() {
+    //
+    //}
+
+
+    //public function deleteUser() {
     //
     //}
 }
