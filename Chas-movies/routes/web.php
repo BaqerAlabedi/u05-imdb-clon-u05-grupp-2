@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+//Route::get('/admin', [AdminController::class, 'function']);
+
 Route::get('/discover', function () {
     return view('discover');
 });
