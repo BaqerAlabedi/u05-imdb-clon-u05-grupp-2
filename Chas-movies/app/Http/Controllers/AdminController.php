@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    //Funktioner såsom CRUD för filmer och serier: CreateMovieShows(), updateMovieShows(), deleteMovieShows() 
+    //Funktioner såsom CRUD för filmer och serier: createMovieShows(), updateMovieShows(), deleteMovieShows() 
     //CRUD:a Users. 
     //CRUD:a för kommentarer och watchlist.
 
