@@ -17,7 +17,8 @@ use App\Http\Controllers\UserController;
 
 
 //Route::get('/admin/show-users', [AdminController::class, 'readAll']);
-//Route:get('', [UserController::class, 'login'])
+//Route:get('/register', [UserController::class, 'register']);
+//Route:post('/user', [UserController::class, 'store']);
 
 Route::get('/discover', function () {
     return view('discover');

@@ -16,6 +16,10 @@ class UserController extends Controller
     //
     //}
 
+    //public function store() {
+    //
+    //}
+
     //public function login() {
     //
     //}
