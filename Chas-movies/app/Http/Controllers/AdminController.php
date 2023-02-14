@@ -11,7 +11,7 @@ class AdminController extends Controller
     //CRUD:a Users. 
     //CRUD:a för kommentarer och watchlist.
 
-    //public function readAll() {
+    //public function readAllUsers() {
        // $users = User::get();
        // return view('',['users' => $users]);
     //}

@@ -16,9 +16,6 @@ class UserController extends Controller
     //
     //}
 
-    //public function store() {
-    //
-    //}
 
     //public function login() {
     //if admin -> return admin-view
@@ -29,4 +26,6 @@ class UserController extends Controller
     //public function deleteUser() {
     //
     //}
+
+    
 }

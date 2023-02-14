@@ -91,7 +91,7 @@
                   />
                   <h4 class="text-xl font-semibold mt-1 mb-12 pb-1">Chas Movies</h4>
                 </div>
-                <form>
+                <form  methos="POST" action="{{ url('login'}}">
                   <p class="mb-4">Please login to your account</p>
                   <div class="mb-4">
                     <input
