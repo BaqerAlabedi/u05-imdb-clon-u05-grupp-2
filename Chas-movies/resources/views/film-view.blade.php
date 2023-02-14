@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chas movies</title>
     @vite('resources/css/app.css')
+    <script defer src="https://unpkg.com/tailwindcss-jit-cdn"></script>
 
     <style>
         .video {
@@ -109,8 +110,10 @@
 
             </div>
         </div>
+        <!-- <div id="close"> -->
         <div id="trailer">
-            <span class="text-white hidden" id="close" onclick="closeVideo()">&#9587;</span>
+            <!-- <span class="text-white hidden" id="close" onclick="closeVideo()">&#9587;</span> -->
+        </div>
         </div>
 
         <script>
@@ -119,19 +122,25 @@
                 let background = document.getElementById("background").style.opacity = 0.2;
                 let background1 = document.getElementById("background1").style.opacity = 0.2;
                 document.getElementById("trailer").style.opacity = 1;
-                document.getElementById("close").style.display = block;
 
+            }
 
+            function closeVideo() {
+                clearTimeout(trailer)
             }
 
             function trailer() {
                 let video = document.getElementById("trailer");
-                video.innerHTML = `<iframe id="video" class="video" width="75%" height="80%"
+                video.innerHTML = `<div class="flex">
+                                    <button class="text-white sticky float-right mt-0" onclick="closeVideo()">&#9587;</button>
+                                    <iframe id="video" class="video" width="75%" height="80%"
                                     src="https://www.youtube.com/embed/zSWdZVtXT7E" title="Interstellar - Trailer - Official Warner Bros. UK"
                                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen></iframe>`;
+                                    allowfullscreen></iframe>
+                                    </div>`;
 
                 background();
             }
+
         </script>
 </body>
