@@ -21,7 +21,8 @@ class UserController extends Controller
     //}
 
     //public function login() {
-    //
+    //if admin -> return admin-view
+    //if user -> return userview
     //}
 
 
