@@ -71,151 +71,61 @@
     // Helpcenter starts here
     
 <div class="flex justify-center">
-    <div>
         <h1 class="block rounded-lg shadow-lg max-w-sm text-center text-2xl">Chas movie Helpcenter</h1>
-        <p class="block rounded-lg shadow-lg max-w-sm text-center">Get instant answers on navigating and discovering information on Chas Movie and Chas Movie Pro as well how you can contribute to the Chas Movie database.</p>
-    </div>    
 </div>
 
     /* Cards start here
-<div class="flex justify-center h-screen">
-    <div class="flex space-x-5 ...">
-        
-        <div class="flex justify-center">
-            <div class="flex items-center">
-                <div class="block rounded-lg shadow-lg bg-white max-w-sm text-center">
-                    <div class="mr-4 ...">
-                        <div class="p-6">
-                            <h5 class="text-gray-900 text-xl font-medium mb-2">Chas movies pro</h5>
-                                <p class="text-gray-700 text-base mb-4">
-                                Learn how to use the essential resource for your career to discover opportunities, get connected, stay informed
-                                </p>
-                                <button type="button" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Dive in</button>
-                        </div>
-                    </div>
-                </div>
-            </div>    
-        </div> 
-        <div class="flex justify-center">
-            <div class="flex items-center">
-                <div class="block rounded-lg shadow-lg bg-white max-w-sm text-center">
-                    <div class="mr-4 ...">
-                        <div class="p-6">
-                            <h5 class="text-gray-900 text-xl font-medium mb-2">For entertainment fans</h5>
-                                <p class="text-gray-700 text-base mb-4">
-                                Learn how to discover what to watch, get tickets, personalized recommendations and explore other site/app features
-                                </p>
-                                <button type="button" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Dive in</button>
-                        </div>
-                    </div>
-                </div>
-            </div>    
-        </div> 
-        <div class="flex justify-center">
-            <div class="flex items-center">
-                
-                <div class="block rounded-lg shadow-lg bg-white max-w-sm text-center">
-                    <div class="mr-4 ...">
-                        <div class="p-6">
-                            <h5 class="text-gray-900 text-xl font-medium mb-2">For contributors</h5>
-                                <p class="text-gray-700 text-base mb-4">
-                                Learn about contributing facts like trivia, quotes and more, seen by millions of users worldwide
-                                </p>
-                                <button type="button" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Dive in</button>
-                        </div>
-                    </div>
-                </div>
-            </div>    
-        </div> 
+<div class="flex item-center justify-center flex-col h-screen">
+    <div class="flex space-x-3 ...">
 
-    </div>
+            <div class="flex justify-center">
+                <div class="flex items-center">
+                    <div class="block rounded-lg shadow-lg bg-white max-w-sm text-center">
+                        <div class="mr-4">
+                            <div class="p-1">
+                                <h5 class="text-gray-900 text-xl font-medium mb-2">Chas movies pro</h5>
+                                    <p class="text-gray-700 text-base mb-4">
+                                    Learn how to use the essential resource for your career to discover opportunities, get connected, stay informed
+                                    </p>
+                                    <button type="button" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Dive in</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div> 
+            <div class="flex justify-center">
+                <div class="flex items-center">
+                    <div class="block rounded-lg shadow-lg bg-white max-w-sm text-center">
+                        <div class="mr-4">
+                            <div class="p-1">
+                                <h5 class="text-gray-900 text-xl font-medium mb-2">For entertainment fans</h5>
+                                    <p class="text-gray-700 text-base mb-4">
+                                    Learn how to discover what to watch, get tickets, personalized recommendations and explore other site/app features
+                                    </p>
+                                    <button type="button" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Dive in</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div> 
+            <div class="flex justify-center">
+                <div class="flex items-center">
+                    <div class="block rounded-lg shadow-lg bg-white max-w-sm text-center">
+                        <div class="mr-4">
+                            <div class="p-1">
+                                <h5 class="text-gray-900 text-xl font-medium mb-2">For contributors</h5>
+                                    <p class="text-gray-700 text-base mb-4">
+                                    Learn about contributing facts like trivia, quotes and more, seen by millions of users worldwide and people
+                                    </p>
+                                    <button type="button" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Dive in</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div> 
+        </div>
 </div>    
-    <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md">
-        <form>
-            <div class="form-group mb-6">
-            <input type="text" class="form-control block
-                w-full
-                px-3
-                py-1.5
-                text-base
-                font-normal
-                text-gray-700
-                bg-white bg-clip-padding
-                border border-solid border-gray-300
-                rounded
-                transition
-                ease-in-out
-                m-0
-                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
-                placeholder="Name">
-            </div>
-            <div class="form-group mb-6">
-            <input type="email" class="form-control block
-                w-full
-                px-3
-                py-1.5
-                text-base
-                font-normal
-                text-gray-700
-                bg-white bg-clip-padding
-                border border-solid border-gray-300
-                rounded
-                transition
-                ease-in-out
-                m-0
-                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput8"
-                placeholder="Email address">
-            </div>
-            <div class="form-group mb-6">
-            <textarea
-            class="
-                form-control
-                block
-                w-full
-                px-3
-                py-1.5
-                text-base
-                font-normal
-                text-gray-700
-                bg-white bg-clip-padding
-                border border-solid border-gray-300
-                rounded
-                transition
-                ease-in-out
-                m-0
-                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-            "
-            id="exampleFormControlTextarea13"
-            rows="3"
-            placeholder="Message"
-            ></textarea>
-            </div>
-            <div class="form-group form-check text-center mb-6">
-            <input type="checkbox"
-                class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain mr-2 cursor-pointer"
-                id="exampleCheck87" checked>
-            <label class="form-check-label inline-block text-gray-800" for="exampleCheck87">Send me a copy of this message</label>
-            </div>
-            <button type="submit" class="
-            w-full
-            px-6
-            py-2.5
-            bg-blue-600
-            text-white
-            font-medium
-            text-xs
-            leading-tight
-            uppercase
-            rounded
-            shadow-md
-            hover:bg-blue-700 hover:shadow-lg
-            focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
-            active:bg-blue-800 active:shadow-lg
-            transition
-            duration-150
-            ease-in-out">Send</button>
-        </form>
-    </div>
+  
 </body>
 
 </html>
