@@ -16,6 +16,13 @@ use Illuminate\View\View;
 class RegisteredUserController extends Controller
 {
     /**
+     * Display all users.
+     */
+    public function readAll()
+    {
+        
+    }
+    /**
      * Display the registration view.
      */
     public function create(): View
