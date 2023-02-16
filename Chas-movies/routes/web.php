@@ -15,14 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+//Följande funktion borde ligga i RegisteredUserController.php under en readAll()-funktion kanske?
 Route::get('/dashboard', function () {
     $users = User::all();
     return view('dashboard', ["users" => $users]);
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -30,16 +30,22 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+
 Route::get('/discover', function () {
     return view('discover');
 });
+
+
 Route::get('/', function () {
     return view('home');
 });
 
+
 Route::get('/helpcenter', function () {
     return view('helpcenter');
 });
+
 
 Route::get('/kategori', function () {
     return view('kategori');
@@ -49,6 +55,7 @@ Route::get('/kategori', function () {
 Route::get('/film-view', function () {
     return view('film-view');
 });
+
 Route::get('/user', function () {
     return view('user');
 });
@@ -60,4 +67,7 @@ Route::get('/admin', function () {
 Route::get('/forgot-password', function () {
     return view('forgotpass');
 });
+
+
+
 require __DIR__ . '/auth.php';

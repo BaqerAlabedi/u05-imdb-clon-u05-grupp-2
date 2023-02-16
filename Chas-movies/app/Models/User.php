@@ -19,7 +19,7 @@ class User extends Authenticatable
      */
     public function watchlists()
     {
-        return $this->belongsToMany(Watchlist::class);
+        return $this->hasMany(Watchlist::class);
     }
 
     /**
