@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('genre');
             $table->string('director');
             $table->string('maincast');
+            $table->integer('watchlist_id');
             $table->timestamps();
         });
     }
