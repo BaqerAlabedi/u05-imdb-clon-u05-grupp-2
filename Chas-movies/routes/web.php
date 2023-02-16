@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\ProfileController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -68,6 +69,11 @@ Route::get('/forgot-password', function () {
     return view('forgotpass');
 });
 
+Route::get('/movie', function () {
+    $users = User::all();
+    return view('movie' , ["users" => $users]);
+});
 
+Route::post('movie/add-movie', [RegisteredUserController::class, 'createMovie'])->name('add.movie'); // Test route!
 
 require __DIR__ . '/auth.php';

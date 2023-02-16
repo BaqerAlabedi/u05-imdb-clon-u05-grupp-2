@@ -12,9 +12,37 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use App\Models\Show;
+use App\Models\Film;
 
 class RegisteredUserController extends Controller
 {
+
+    public function createMovie(Request $request){
+        $listing = new Film;
+        $listing->title = $request->title;
+        $listing->genre = $request->genre;
+        $listing->director = $request->director;
+        $listing->maincast = $request->maincast;
+        $listing->save();
+        return redirect()->route('dashboard')->with('status', 'New post added successfully!');
+    }
+
+
+
+
+public function createShow(Request $request){
+        $listing = new Show();
+        $listing->title = $request->title;
+        $listing->genre = $request->genre;
+        $listing->director = $request->director;
+        $listing->maincast = $request->maincast;
+        $listing->seasons = $request->seasons;
+        $listing->episodes = $request->episodes;
+        $listing->save();
+        return redirect('?')->with('status', 'New listing added successfully!');
+    }
+
     /**
      * Display all users.
      */
