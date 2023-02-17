@@ -74,6 +74,12 @@ Route::get('/movie', function () {
     return view('movie' , ["users" => $users]);
 });
 
+Route::get('/show', function () {
+    $users = User::all();
+    return view('show' , ["users" => $users]);
+});
+
 Route::post('movie/add-movie', [RegisteredUserController::class, 'createMovie'])->name('add.movie'); // Test route!
+Route::post('movie/add-show', [RegisteredUserController::class, 'createShow'])->name('add.show'); 
 
 require __DIR__ . '/auth.php';

@@ -30,7 +30,6 @@ class RegisteredUserController extends Controller
 
 
 
-
 public function createShow(Request $request){
         $listing = new Show();
         $listing->title = $request->title;
@@ -40,13 +39,22 @@ public function createShow(Request $request){
         $listing->seasons = $request->seasons;
         $listing->episodes = $request->episodes;
         $listing->save();
-        return redirect('?')->with('status', 'New listing added successfully!');
+        return redirect()->route('dashboard')->with('status', 'New post added successfully!');
     }
 
     /**
-     * Display all users.
+     * Display all Movies.
      */
-    public function readAll()
+    public function readAllMovies()
+    {
+        $filmlist = Film::all();
+        return redirect()->route('dashboard');
+    }
+
+      /**
+     * Display all Shows.
+     */
+    public function readAllShows()
     {
         
     }
