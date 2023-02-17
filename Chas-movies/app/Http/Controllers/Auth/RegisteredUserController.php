@@ -47,8 +47,8 @@ public function createShow(Request $request){
      */
     public function readAllMovies()
     {
-        $filmlist = Film::all();
-        return redirect()->route('dashboard');
+        $films = Film::get();
+        return view('movie',['movies' => $films]);
     }
 
       /**

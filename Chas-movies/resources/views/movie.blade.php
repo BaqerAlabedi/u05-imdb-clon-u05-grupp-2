@@ -70,6 +70,26 @@
 
     </nav>
 
+@foreach ($films as $film)
+<!-- Article -->
+<article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200">
+
+<a href="#">
+    <img alt="Placeholder" class="block h-auto w-full" src="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg">
+</a>
+
+<header class="flex items-center justify-between leading-tight p-2 md:p-4">
+    <h1 class="text-lg">
+        <a class="no-underline hover:underline text-gray-200" href="#">
+        {{ $film->title }}
+        </a>
+    </h1>
+</header>
+
+</article>
+<!-- END Article -->
+@endforeach
+
     <div class="pl-32 sm:pl-34 md:pl-40 lg:pl-40">
         <div class="flex flex-wrap -w-1/4 -md:w-1/2 md:justify-start lg:justify-evenly">
 

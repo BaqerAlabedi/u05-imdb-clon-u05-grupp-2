@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\ProfileController;
 use App\Models\User;
+use App\Models\Film;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -71,7 +72,8 @@ Route::get('/forgot-password', function () {
 
 Route::get('/movie', function () {
     $users = User::all();
-    return view('movie' , ["users" => $users]);
+    $films = Film::all();
+    return view('movie' , ["users" => $users, "movies" => $films]);
 });
 
 Route::get('/show', function () {
@@ -81,5 +83,6 @@ Route::get('/show', function () {
 
 Route::post('movie/add-movie', [RegisteredUserController::class, 'createMovie'])->name('add.movie'); // Test route!
 Route::post('movie/add-show', [RegisteredUserController::class, 'createShow'])->name('add.show'); 
+Route::get('/movie', [RegisteredUserController::class, 'readAllMovies']);
 
 require __DIR__ . '/auth.php';
