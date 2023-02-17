@@ -71,16 +71,15 @@
     </nav>
 
     <div class="pl-32 sm:pl-34 md:pl-40 lg:pl-40">
-        <div class="flex flex-wrap -w-1/4 -md:w-1/2 md:justify-start lg:justify-evenly">
-
+        <div class="flex flex-wrap -w-1/4 -md:w-1/2 md:justify-start lg:justify-start">
+            @foreach ($films as $film)
             <!-- Column -->
-            <div class="my-1 px-1 md:w-1/2 sm:w-1/3 md:w-1/3 lg:my-4 lg:w-1/6">
+            <div class="my-1 px-1 md:w-1/2 sm:w-1/3 md:w-1/3 lg:my-4 lg:w-1/5">
                 <!-- Article -->
-                @foreach ($films as $film)
                 <article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200">
 
                     <a href="#">
-                        <img alt="Placeholder" class="block h-auto w-full" src="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg">
+                        <img alt="Placeholder" class="block h-auto w-full" src="{{ $film->imgurl }}">
                     </a>
 
                     <header class="flex items-center justify-between leading-tight p-2 md:p-4">
@@ -92,56 +91,16 @@
                     </header>
 
                 </article>
-                @endforeach
-                <!-- END Article -->
-                <!-- Article -->
-                <article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200">
-
-                    <a href="#">
-                        <img alt="Placeholder" class="block h-auto w-full" src="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg">
-                    </a>
-
-                    <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-                        <h1 class="text-lg">
-                            <a class="no-underline hover:underline text-gray-200" href="#">
-                                Interstellar
-                            </a>
-                        </h1>
-                    </header>
-
-                </article>
                 <!-- END Article -->
 
             </div>
             <!-- END Column -->
+            @endforeach
 
 
 
             <!-- Column -->
-            <div class="my-1 px-1 w-full md:w-1/2 sm:w-1/3 md:w-1/3 lg:my-4 lg:w-1/6">
-
-                <!-- Article -->
-                <article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200">
-
-                    <a href="#">
-                        <img alt="Placeholder" class="block h-auto w-full" src="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg">
-                    </a>
-
-                    <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-                        <h1 class="text-lg">
-                            <a class="no-underline hover:underline text-gray-200" href="#">
-                                Interstellar
-                            </a>
-                        </h1>
-                    </header>
-
-                </article>
-                <!-- END Article -->
-
-            </div>
-            <!-- END Column -->
-            <!-- Column -->
-            <div class="my-1 px-1 w-full md:w-1/2 sm:w-1/3 md:w-1/3 lg:my-4 lg:w-1/6">
+            <div class="my-1 px-1 w-full md:w-1/2 sm:w-1/3 md:w-1/3 lg:my-4 lg:w-1/5">
 
                 <!-- Article -->
                 <article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200">
@@ -164,7 +123,30 @@
             </div>
             <!-- END Column -->
             <!-- Column -->
-            <div class="my-1 px-1 w-full md:w-1/2 sm:w-1/3 md:w-1/3 lg:my-4 lg:w-1/6">
+            <div class="my-1 px-1 w-full md:w-1/2 sm:w-1/3 md:w-1/3 lg:my-4 lg:w-1/5">
+
+                <!-- Article -->
+                <article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200">
+
+                    <a href="#">
+                        <img alt="Placeholder" class="block h-auto w-full" src="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg">
+                    </a>
+
+                    <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+                        <h1 class="text-lg">
+                            <a class="no-underline hover:underline text-gray-200" href="#">
+                                Interstellar
+                            </a>
+                        </h1>
+                    </header>
+
+                </article>
+                <!-- END Article -->
+
+            </div>
+            <!-- END Column -->
+            <!-- Column -->
+            <div class="my-1 px-1 w-full md:w-1/2 sm:w-1/3 md:w-1/3 lg:my-4 lg:w-1/5">
 
                 <!-- Article -->
                 <article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200">
@@ -188,7 +170,7 @@
             <!-- END Column -->
 
             <!-- Column -->
-            <div class="my-1 px-1 w-full md:w-1/2 sm:w-1/3 md:w-1/3 lg:my-4 lg:w-1/6">
+            <div class="my-1 px-1 w-full md:w-1/2 sm:w-1/3 md:w-1/3 lg:my-4 lg:w-1/5">
 
                 <!-- Article -->
                 <article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200">
@@ -220,13 +202,15 @@
         <form method="post" action="{{ route('add.movie') }}">
             @csrf
             <label>Title</label><br>
-            <input type="text" name="title" required=""><br>
+            <input type="text" name="title" required="true"><br>
             <label>Genre</label><br>
-            <input type="text" name="genre" required=""><br>
+            <input type="text" name="genre" required="true"><br>
             <label>Director</label><br>
-            <input type="text" name="director" required=""><br>
+            <input type="text" name="director" required="true"><br>
             <label>Main Cast</label><br>
-            <input type="text" name="maincast" required=""><br>
+            <input type="text" name="maincast" required="true"><br>
+            <label>Image (URL)</label><br>
+            <input type="url" name="imgurl" required="true"><br>
             <button type="submit">Submit</button>
         </form>
     </div>

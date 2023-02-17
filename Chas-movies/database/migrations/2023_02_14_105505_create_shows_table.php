@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('director');
             $table->string('maincast');
             $table->integer('watchlist_id')->unsigned()->nullable();
+            $table->string('imgurl');
             $table->timestamps();
         });
     }

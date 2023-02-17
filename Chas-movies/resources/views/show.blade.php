@@ -71,8 +71,8 @@
     </nav>
 
     <div class="pl-32 sm:pl-34 md:pl-40 lg:pl-40">
-        <div class="flex flex-wrap -w-1/4 -md:w-1/2 md:justify-start lg:justify-evenly">
-
+        <div class="flex flex-wrap -w-1/4 -md:w-1/2 md:justify-start lg:justify-start">
+            @foreach ($shows as $show)
             <!-- Column -->
             <div class="my-1 px-1 md:w-1/2 sm:w-1/3 md:w-1/3 lg:my-4 lg:w-1/6">
 
@@ -86,7 +86,7 @@
                     <header class="flex items-center justify-between leading-tight p-2 md:p-4">
                         <h1 class="text-lg">
                             <a class="no-underline hover:underline text-gray-200" href="#">
-                                Interstellar
+                                {{ $show->title }}
                             </a>
                         </h1>
                     </header>
@@ -96,7 +96,7 @@
 
             </div>
             <!-- END Column -->
-
+            @endforeach
 
 
             <!-- Column -->
@@ -197,25 +197,27 @@
     </div>
 
     @if (Auth::user()->role == 0)
-            {{ __("You're logged in as:") }}
+    {{ __("You're logged in as:") }}
     <div class="flex flex-col ml-96">
-            <form method="post" action="{{ route('add.show') }}">
-                @csrf
-                <label>Title</label><br>
-                <input type="text" name="title" required=""><br>
-                <label>Genre</label><br>
-                <input type="text" name="genre" required=""><br>
-                <label>Director</label><br>
-                <input type="text" name="director" required=""><br>
-                <label>Main Cast</label><br>
-                <input type="text" name="maincast" required=""><br>
-                <label>Seasons</label><br>
-                <input type="text" name="seasons" required=""><br>
-                <label>episodes</label><br>
-                <input type="text" name="episodes" required=""><br>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+        <form method="post" action="{{ route('add.show') }}">
+            @csrf
+            <label>Title</label><br>
+            <input type="text" name="title" required=""><br>
+            <label>Genre</label><br>
+            <input type="text" name="genre" required=""><br>
+            <label>Director</label><br>
+            <input type="text" name="director" required=""><br>
+            <label>Main Cast</label><br>
+            <input type="text" name="maincast" required=""><br>
+            <label>Seasons</label><br>
+            <input type="text" name="seasons" required=""><br>
+            <label>episodes</label><br>
+            <input type="text" name="episodes" required=""><br>
+            <label>Image (URL)</label><br>
+            <input type="url" name="imgurl" required="true"><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
     @endif
 </body>
 

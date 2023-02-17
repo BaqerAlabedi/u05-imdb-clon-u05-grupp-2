@@ -25,8 +25,9 @@ class RegisteredUserController extends Controller
         $listing->genre = $request->genre;
         $listing->director = $request->director;
         $listing->maincast = $request->maincast;
+        $listing->imgurl = $request->imgurl;
         $listing->save();
-        return redirect()->route('dashboard')->with('status', 'New post added successfully!');
+        return redirect()->route('movie')->with('status', 'New post added successfully!');
     }
 
 
@@ -40,8 +41,9 @@ class RegisteredUserController extends Controller
         $listing->maincast = $request->maincast;
         $listing->seasons = $request->seasons;
         $listing->episodes = $request->episodes;
+        $listing->imgurl = $request->imgurl;
         $listing->save();
-        return redirect()->route('dashboard')->with('status', 'New post added successfully!');
+        return redirect()->route('show')->with('status', 'New post added successfully!');
     }
 
     /**
@@ -58,6 +60,8 @@ class RegisteredUserController extends Controller
      */
     public function readAllShows()
     {
+        $shows = Show::get();
+        return view('show', ['shows' => $shows]);
     }
     /**
      * Display the registration view.
