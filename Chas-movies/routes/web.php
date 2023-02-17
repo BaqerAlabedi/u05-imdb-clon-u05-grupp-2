@@ -72,17 +72,16 @@ Route::get('/forgot-password', function () {
 
 Route::get('/movie', function () {
     $users = User::all();
-    $films = Film::all();
-    return view('movie' , ["users" => $users, "movies" => $films]);
+    return view('movie', ["users" => $users]);
 });
 
 Route::get('/show', function () {
     $users = User::all();
-    return view('show' , ["users" => $users]);
+    return view('show', ["users" => $users]);
 });
 
 Route::post('movie/add-movie', [RegisteredUserController::class, 'createMovie'])->name('add.movie'); // Test route!
-Route::post('movie/add-show', [RegisteredUserController::class, 'createShow'])->name('add.show'); 
+Route::post('movie/add-show', [RegisteredUserController::class, 'createShow'])->name('add.show');
 Route::get('/movie', [RegisteredUserController::class, 'readAllMovies']);
 
 require __DIR__ . '/auth.php';

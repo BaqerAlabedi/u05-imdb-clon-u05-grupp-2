@@ -18,7 +18,8 @@ use App\Models\Film;
 class RegisteredUserController extends Controller
 {
 
-    public function createMovie(Request $request){
+    public function createMovie(Request $request)
+    {
         $listing = new Film;
         $listing->title = $request->title;
         $listing->genre = $request->genre;
@@ -30,7 +31,8 @@ class RegisteredUserController extends Controller
 
 
 
-public function createShow(Request $request){
+    public function createShow(Request $request)
+    {
         $listing = new Show();
         $listing->title = $request->title;
         $listing->genre = $request->genre;
@@ -48,15 +50,14 @@ public function createShow(Request $request){
     public function readAllMovies()
     {
         $films = Film::get();
-        return view('movie',['movies' => $films]);
+        return view('movie', ['films' => $films]);
     }
 
-      /**
+    /**
      * Display all Shows.
      */
     public function readAllShows()
     {
-        
     }
     /**
      * Display the registration view.
@@ -75,7 +76,7 @@ public function createShow(Request $request){
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
