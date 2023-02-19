@@ -29,14 +29,7 @@
                     <span class="ml-1 text-l font-medium">Trending</span>
                 </a>
             </nav>
-            @if (Auth::user()->role == 0 || Auth::user()->role == 1)
-            <div class="flex flex-col items-center w-full mt-3 border-t border-gray-700">
-                <H2>Welcome</H2>{{ Auth::user()->name }}
-                <a href="{{ url('/user') }}"><button class="inline-flex items-center bg-yellow-400 text-gray-900 font-bold border-0 py-1 px-3 focus:outline-none hover:bg-yellow-300 rounded text-base ml-5 mt-4 md:mt-0">Profile
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg></a>
-                @else
+                
             <a href="{{ url('/login') }}">
                 <button class="inline-flex items-center bg-yellow-400 text-gray-900 font-bold border-0 py-1 px-3 focus:outline-none hover:bg-yellow-300 rounded text-base ml-5 mt-4 md:mt-0">Login
                     <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
@@ -45,7 +38,7 @@
                 </button>
             </a>
         </div>
-        @endif
+        
     </header>
     <section class="max-w-3xl md:max-w-5xl sm:max-w-lg lg:max-w-4xl mx-auto mt-4">
         <div id="indicators-carousel" class="relative" data-carousel="static">
