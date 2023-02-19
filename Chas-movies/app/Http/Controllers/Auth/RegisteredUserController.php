@@ -14,6 +14,7 @@ use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 use App\Models\Show;
 use App\Models\Film;
+use App\Models\Comment;
 
 class RegisteredUserController extends Controller
 {
@@ -62,6 +63,31 @@ class RegisteredUserController extends Controller
     {
         $shows = Show::get();
         return view('show', ['shows' => $shows]);
+    }
+
+    public function deleteMovies($id)
+    {
+        $films = Film::find($id);
+        $films->delete();
+        return view('deletemovie');
+    }
+
+    public function deleteShows($id)
+    {
+        $shows = Show::find($id);
+        $shows->delete();  
+    }
+
+    public function deleteUser($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+    }
+
+    public function deleteComment($id)
+    {
+        $comment = Comment::find($id);
+        $comment->delete();
     }
     /**
      * Display the registration view.

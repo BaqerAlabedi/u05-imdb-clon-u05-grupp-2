@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +9,6 @@
     <title>Document</title>
     @vite('resources/css/app.css')
 </head>
-@if (Auth::user()->role == 0 || Auth::user()->role == 1 || !auth())
 <body class="bg-gray-900">
     <!-- Component Start -->
     <nav class="flex items-start justify-start bg-gray-900 fixed">
@@ -53,7 +53,7 @@
                     </a>
                 </div>
             </div>
-            @endif
+        
             @if (Auth::user()->role == 0)
             <div class="flex flex-col items-center w-full mt-3 border-t border-gray-700">
                 <H2>Welcome</H2>{{ Auth::user()->name }}
@@ -111,6 +111,12 @@
                                 {{ $film->title }}
                             </a>
                         </h1>
+                        <button class="w-1/10 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 hover:bg-yellow-300" type="button">
+                    Add to Watchlist
+                </button>
+                <a href="{{ URL('movie/'.$film->id) }}" class="w-1/10 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 hover:bg-yellow-300" type="button">
+                hej
+                </a>
                     </header>
 
                 </article>
