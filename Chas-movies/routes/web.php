@@ -32,15 +32,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-
-
-Route::get('/discover', function () {
-    return view('discover');
-});
-
-
 Route::get('/', function () {
-    return view('home');
+    $users = User::all();
+    return view('home', ["users" => $users]);
 });
 
 
@@ -80,9 +74,9 @@ Route::get('/show', function () {
     return view('show', ["users" => $users])->name('show');
 });
 
-Route::post('movie/add-movie', [RegisteredUserController::class, 'createMovie'])->name('add.movie'); // Test route!
-Route::post('movie/add-show', [RegisteredUserController::class, 'createShow'])->name('add.show');
-Route::get('/movie', [RegisteredUserController::class, 'readAllMovies'])->name('movie');
-Route::get('/show', [RegisteredUserController::class, 'readAllShows'])->name('show');
+Route::post('movie/add-movie', [RegisteredUserController::class, 'createMovie'])->middleware(['auth', 'verified'])->name('add.movie'); // Test route!
+Route::post('movie/add-show', [RegisteredUserController::class, 'createShow'])->middleware(['auth', 'verified'])->name('add.show');
+Route::get('/movie', [RegisteredUserController::class, 'readAllMovies'])->middleware(['auth', 'verified'])->name('movie');
+Route::get('/show', [RegisteredUserController::class, 'readAllShows'])->middleware(['auth', 'verified'])->name('show');
 
 require __DIR__ . '/auth.php';
