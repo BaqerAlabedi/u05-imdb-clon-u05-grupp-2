@@ -14,7 +14,7 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
 
-        /**
+    /**
      * The Watchlists that belong to the user.
      */
     public function watchlists()

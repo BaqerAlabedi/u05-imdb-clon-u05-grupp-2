@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/dashboard', function () {
     $users = User::all();
     return view('dashboard', ["users" => $users]);
-})->middleware(['auth', 'verified'])->name('dashboard'); 
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 
 
@@ -75,12 +75,18 @@ Route::get('/show', function () {
     return view('show', ["users" => $users])->name('show');
 });
 
+Route::get('/watchlist', function () {
+    $users = User::all();
+    return view('watchlist', ["users" => $users])->name('watchlist');
+});;
+
 Route::post('movie/add-movie', [RegisteredUserController::class, 'createMovie'])->middleware(['auth', 'verified'])->name('add.movie'); // Test route!
 Route::post('movie/add-show', [RegisteredUserController::class, 'createShow'])->middleware(['auth', 'verified'])->name('add.show');
 Route::get('/movie', [RegisteredUserController::class, 'readAllMovies'])->middleware(['auth', 'verified'])->name('movie');
 Route::get('/show', [RegisteredUserController::class, 'readAllShows'])->middleware(['auth', 'verified'])->name('show');
-Route::delete('movie/deletemovie/{id}', [RegisteredUserController::class, "deleteMovies"]);
-Route::delete('show/{id}', [RegisteredUserController::class, "deleteShows"]);
+Route::get('/watchlist', [RegisteredUserController::class, 'watchlist'])->middleware(['auth', 'verified'])->name('watchlist');
+Route::delete('movie/deletemovie/{id}', [RegisteredUserController::class, "deleteMovies"])->name('movie.delete');;
+Route::delete('show/deleteshow/{id}', [RegisteredUserController::class, "deleteShows"])->name('show.delete');
 Route::delete('dashboard/{id}', [RegisteredUserController::class, "deleteUser"]);
 Route::delete('comments/{id}', [RegisteredUserController::class, "deleteComment"]);
 

@@ -15,6 +15,7 @@ use Illuminate\View\View;
 use App\Models\Show;
 use App\Models\Film;
 use App\Models\Comment;
+use App\Models\Watchlist;
 
 class RegisteredUserController extends Controller
 {
@@ -64,18 +65,22 @@ class RegisteredUserController extends Controller
         $shows = Show::get();
         return view('show', ['shows' => $shows]);
     }
+    /**
+     * Delete stuff.
+     */
 
     public function deleteMovies($id)
     {
         $films = Film::find($id);
         $films->delete();
-        return view('deletemovie');
+        return redirect()->route('movie')->with('status', 'Movie deleted added successfully!');
     }
 
     public function deleteShows($id)
     {
         $shows = Show::find($id);
-        $shows->delete();  
+        $shows->delete();
+        return redirect()->route('show')->with('status', 'Show deletedadded successfully!');
     }
 
     public function deleteUser($id)
@@ -89,6 +94,18 @@ class RegisteredUserController extends Controller
         $comment = Comment::find($id);
         $comment->delete();
     }
+
+    public function watchlist()
+    {
+        $films = Film::all();
+        $shows = Show::all();
+        $watchlists = Watchlist::get();
+        return view('watchlist', ['shows' => $shows, 'films' => $films, 'watchlists' => $watchlists]);
+    }
+
+    /**
+     * Delete stuff.
+     */
     /**
      * Display the registration view.
      */

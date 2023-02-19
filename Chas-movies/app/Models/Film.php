@@ -9,13 +9,11 @@ class Film extends Model
 {
     use HasFactory;
 
-     /**
+    /**
      * Get the Film that belongs to the watchlist.
      */
     public function watchlist()
     {
         return $this->belongsTo(Watchlist::class);
     }
-
-    
 }

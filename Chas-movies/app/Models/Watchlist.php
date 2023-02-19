@@ -28,7 +28,7 @@ class Watchlist extends Model
     }
 
 
-        /**
+    /**
      * Get the user that owns the watchlist.
      */
     public function user()
