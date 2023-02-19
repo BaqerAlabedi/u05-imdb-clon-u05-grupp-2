@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/dashboard', function () {
     $users = User::all();
     return view('dashboard', ["users" => $users]);
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard'); 
 
 
 
