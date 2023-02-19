@@ -8,7 +8,7 @@
     <title>Document</title>
     @vite('resources/css/app.css')
 </head>
-
+@if (Auth::user()->role == 0 || Auth::user()->role == 1 || !auth())
 <body class="bg-gray-900">
     <!-- Component Start -->
     <nav class="flex items-start justify-start bg-gray-900 fixed">
@@ -53,6 +53,7 @@
                     </a>
                 </div>
             </div>
+            @endif
             @if (Auth::user()->role == 0)
             <div class="flex flex-col items-center w-full mt-3 border-t border-gray-700">
                 <H2>Welcome</H2>{{ Auth::user()->name }}
