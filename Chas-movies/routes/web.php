@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\regUserController;
 use App\Models\User;
 use App\Models\Film;
 use Illuminate\Support\Facades\Route;
@@ -78,7 +79,8 @@ Route::post('movie/add-movie', [RegisteredUserController::class, 'createMovie'])
 Route::post('movie/add-show', [RegisteredUserController::class, 'createShow'])->middleware(['auth', 'verified'])->name('add.show');
 Route::get('/user/movie', [RegisteredUserController::class, 'readAllMovies'])->middleware(['auth', 'verified'])->name('movie');
 Route::get('/user/show', [RegisteredUserController::class, 'readAllShows'])->middleware(['auth', 'verified'])->name('show');
-Route::get('/movie', [RegisteredUserController::class, 'readAllMovies']);
+Route::get('/movie', [NoUserController::class, 'readAllMovies'])->name('show');
+
 
 
 require __DIR__ . '/auth.php';
