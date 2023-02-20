@@ -115,16 +115,6 @@ class RegisteredUserController extends Controller
         return redirect()->route('show');
     }
 
-    public function updateUser(Request $request)
-    {
-        $data = User::find($request->id);
-        $data->name = $request->name;
-        $data->email = $request->email;
-        $data->role = $request->role;
-        $data->save();
-        return redirect()->route('dashboard');
-    }
-
 
     /**
      * Delete stuff.

@@ -90,7 +90,7 @@
 
 @if (Auth::user()->role == 0)
 <h1>update show</h1>
-                    <form method="POST" action="/editshow">
+                    <form method="POST" action="/editshow" class="flex flex-col">
                         @csrf
                         <input type="hidden" name="id" value="{{ $data->id}}">
                         <input type="text" name="title" value="{{ $data->title}}">
@@ -111,4 +111,6 @@
 </div>
     </div>
 </section>
+
+<script src="https://unpkg.com/flowbite@1.6.0/dist/flowbite.min.js%22%3E</script>
         
