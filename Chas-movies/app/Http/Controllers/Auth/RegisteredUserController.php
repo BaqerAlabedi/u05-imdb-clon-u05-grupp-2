@@ -103,7 +103,7 @@ class RegisteredUserController extends Controller
 
     public function updateShow(Request $request)
     {
-        $data = User::find($request->id);
+        $data = Show::find($request->id);
         $data->title = $request->title;
         $data->genre = $request->genre;
         $data->director = $request->director;
