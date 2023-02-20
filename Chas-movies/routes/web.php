@@ -84,7 +84,7 @@ Route::post('movie/add-movie', [RegisteredUserController::class, 'createMovie'])
 Route::post('movie/add-show', [RegisteredUserController::class, 'createShow'])->middleware(['auth', 'verified'])->name('add.show');
 Route::get('/movie', [RegisteredUserController::class, 'readAllMovies'])->middleware(['auth', 'verified'])->name('movie');
 Route::get('/show', [RegisteredUserController::class, 'readAllShows'])->middleware(['auth', 'verified'])->name('show');
-Route::get('/watchlist', [RegisteredUserController::class, 'watchlist'])->middleware(['auth', 'verified'])->name('watchlist');
+Route::get('/watchlist', [RegisteredUserController::class, 'createWatchlist'])->middleware(['auth', 'verified'])->name('watchlist');
 Route::delete('movie/deletemovie/{id}', [RegisteredUserController::class, "deleteMovies"])->name('movie.delete');;
 Route::delete('show/deleteshow/{id}', [RegisteredUserController::class, "deleteShows"])->name('show.delete');
 Route::delete('dashboard/{id}', [RegisteredUserController::class, "deleteUser"]);

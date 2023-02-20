@@ -95,7 +95,7 @@ class RegisteredUserController extends Controller
         $comment->delete();
     }
 
-    public function watchlist()
+    public function createWatchlist()
     {
         $films = Film::all();
         $shows = Show::all();
