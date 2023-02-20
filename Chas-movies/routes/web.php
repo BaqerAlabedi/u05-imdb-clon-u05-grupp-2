@@ -87,12 +87,12 @@ Route::delete('show/deleteshow/{id}', [RegisteredUserController::class, "deleteS
 Route::delete('dashboard/{id}', [RegisteredUserController::class, "deleteUser"]);
 Route::delete('comments/{id}', [RegisteredUserController::class, "deleteComment"]);
 
+Route::get('film-view/{id}', [RegisteredUserController::class, "filmView"])->name('film-view'); // Route från movie
 
-Route::get('film-view/{id}', [RegisteredUserController::class, "viewWatchlist"])->name('film-view');
+Route::post('film-view/{id}/watchlist' , [RegisteredUserController::class, "watchlist"])->name('watchlist.add');
+
 // Route::post('film-view/{id}/add-watchlist', [RegisteredUserController::class, "addWatchlist"])->name('watchlist');
-
-
-Route::post('film-view/{id}/watchlist/{id}', 'App\Http\Controllers\WatchlistController@addWatchlist')->name('watchlist.add');
+// Route::post('film-view/{id}/watchlist', 'App\Http\Controllers\WatchlistController@addWatchlist')->name('watchlist.add');
 
 
 Route::put('dashboard/admin/{id}', [RegisteredUserController::class, "makeAdmin"])->name('user.admin');
