@@ -1,6 +1,6 @@
 @if (Auth::user()->role == 1)
 <script>
-    window.location = "{{ url('/user/movie') }}";
+    window.location = "{{ url('/movie') }}";
 </script>
 @endif
 <x-app-layout>
