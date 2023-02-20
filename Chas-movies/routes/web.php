@@ -85,11 +85,16 @@ Route::post('movie/add-show', [RegisteredUserController::class, 'createShow'])->
 Route::get('/movie', [RegisteredUserController::class, 'readAllMovies'])->middleware(['auth', 'verified'])->name('movie');
 Route::get('/show', [RegisteredUserController::class, 'readAllShows'])->middleware(['auth', 'verified'])->name('show');
 Route::get('/watchlist', [RegisteredUserController::class, 'createWatchlist'])->middleware(['auth', 'verified'])->name('watchlist');
-Route::delete('movie/deletemovie/{id}', [RegisteredUserController::class, "deleteMovies"])->name('movie.delete');;
+Route::delete('movie/deletemovie/{id}', [RegisteredUserController::class, "deleteMovies"])->name('movie.delete');
 Route::delete('show/deleteshow/{id}', [RegisteredUserController::class, "deleteShows"])->name('show.delete');
 Route::delete('dashboard/{id}', [RegisteredUserController::class, "deleteUser"]);
 Route::delete('comments/{id}', [RegisteredUserController::class, "deleteComment"]);
-
+Route::get('/editmovie/{id}', [RegisteredUserController::class, 'showMovie'])->middleware(['auth', 'verified'])->name('edit.movie');
+Route::get('/editshow/{id}', [RegisteredUserController::class, 'showShow'])->middleware(['auth', 'verified']);
+Route::get('/edituser/{id}', [RegisteredUserController::class, 'showUser'])->middleware(['auth', 'verified']);
+Route::post('/edituser', [RegisteredUserController::class, 'updateUser'])->middleware(['auth', 'verified']);
+Route::post('/editmovie', [RegisteredUserController::class, 'updateMovie'])->middleware(['auth', 'verified']);
+Route::post('/editshow', [RegisteredUserController::class, 'updateShow'])->middleware(['auth', 'verified']);
 
 
 require __DIR__ . '/auth.php';

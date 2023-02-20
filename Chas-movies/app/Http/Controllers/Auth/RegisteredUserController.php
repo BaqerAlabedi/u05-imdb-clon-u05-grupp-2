@@ -65,6 +65,67 @@ class RegisteredUserController extends Controller
         $shows = Show::get();
         return view('show', ['shows' => $shows]);
     }
+
+ /**
+     * Show specific one.
+     */
+    public function showMovie($id)
+    {
+        $data = Film::find($id);
+        return view('updatemovie', ['data' => $data]);
+    }
+
+    public function showShow($id)
+    {
+        $data = Show::find($id);
+        return view('updateshow', ['data' => $data]);
+    }
+
+    public function showUser($id)
+    {
+        $data = User::find($id);
+        return view('updateuser', ['data' => $data]);
+    }
+     /**
+     * Update functionality.
+     */
+    public function updateMovie(Request $request)
+    {
+        $data = Film::find($request->id);
+        $data->title = $request->title;
+        $data->genre = $request->genre;
+        $data->director = $request->director;
+        $data->maincast = $request->maincast;
+        $data->imgurl = $request->imgurl;
+        $data->save();
+        return redirect()->route('movie');
+    }
+
+    public function updateShow(Request $request)
+    {
+        $data = User::find($request->id);
+        $data->title = $request->title;
+        $data->genre = $request->genre;
+        $data->director = $request->director;
+        $data->maincast = $request->maincast;
+        $data->maincast = $request->seasons;
+        $data->maincast = $request->episodes;
+        $data->imgurl = $request->imgurl;
+        $data->save();
+        return redirect()->route('show');
+    }
+
+    public function updateUser(Request $request)
+    {
+        $data = User::find($request->id);
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->role = $request->role;
+        $data->save();
+        return redirect()->route('dashboard');
+    }
+
+
     /**
      * Delete stuff.
      */
