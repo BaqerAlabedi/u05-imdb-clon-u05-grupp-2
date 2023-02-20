@@ -109,7 +109,7 @@
                 <!-- Article -->
                 <article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200 relative">
 
-                    <a href="#">
+                    <a href="{{ route('film-view', $film->id) }}">
                         <img alt="Placeholder" class="block h-auto w-full" src="{{ $film->imgurl }}">
                     </a>
                     @if (Auth::user()->role == 1)
@@ -129,7 +129,7 @@
                     @endif
                     <header class="flex items-center justify-between leading-tight p-2 md:p-4">
                         <h1 class="text-lg">
-                            <a class="no-underline hover:underline text-gray-200" href="#">
+                            <a class="no-underline hover:underline text-gray-200" href="{{ route('film-view', $film->id) }}">
                                 {{ $film->title }}
                             </a>
                         </h1>

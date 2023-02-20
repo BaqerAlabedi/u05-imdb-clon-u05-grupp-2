@@ -5,7 +5,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\regUserController;
 use App\Models\User;
 use App\Models\Film;
+use App\Models\Watchlist;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\HttpKernel\DependencyInjection\RegisterControllerArgumentLocatorsPass;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,11 +50,6 @@ Route::get('/kategori', function () {
     return view('kategori');
 });
 
-
-Route::get('/film-view', function () {
-    return view('film-view');
-});
-
 Route::get('/user', function () {
     return view('user');
 });
@@ -84,12 +81,20 @@ Route::post('movie/add-movie', [RegisteredUserController::class, 'createMovie'])
 Route::post('movie/add-show', [RegisteredUserController::class, 'createShow'])->middleware(['auth', 'verified'])->name('add.show');
 Route::get('/movie', [RegisteredUserController::class, 'readAllMovies'])->middleware(['auth', 'verified'])->name('movie');
 Route::get('/show', [RegisteredUserController::class, 'readAllShows'])->middleware(['auth', 'verified'])->name('show');
-Route::get('/watchlist', [RegisteredUserController::class, 'createWatchlist'])->middleware(['auth', 'verified'])->name('watchlist');
+Route::get('/watchlist', [RegisteredUserController::class, 'watchlist'])->middleware(['auth', 'verified'])->name('watchlist');
 Route::delete('movie/deletemovie/{id}', [RegisteredUserController::class, "deleteMovies"])->name('movie.delete');;
 Route::delete('show/deleteshow/{id}', [RegisteredUserController::class, "deleteShows"])->name('show.delete');
 Route::delete('dashboard/{id}', [RegisteredUserController::class, "deleteUser"]);
 Route::delete('comments/{id}', [RegisteredUserController::class, "deleteComment"]);
 
 
+Route::get('film-view/{id}', [RegisteredUserController::class, "viewWatchlist"])->name('film-view');
+// Route::post('film-view/{id}/add-watchlist', [RegisteredUserController::class, "addWatchlist"])->name('watchlist');
+
+
+Route::post('film-view/{id}/watchlist/{id}', 'App\Http\Controllers\WatchlistController@addWatchlist')->name('watchlist.add');
+
+
+Route::put('dashboard/admin/{id}', [RegisteredUserController::class, "makeAdmin"])->name('user.admin');
 
 require __DIR__ . '/auth.php';
