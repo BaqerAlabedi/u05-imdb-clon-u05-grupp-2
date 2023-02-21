@@ -94,7 +94,7 @@
         <h2 class="text-4xl font-medium text-yellow-400 py-5">Featured Today</h2>
     </div>
     <section class="flex flex-wrap justify-center">
-        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col">
@@ -106,7 +106,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col">
@@ -118,7 +118,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col justify-center">
@@ -137,7 +137,7 @@
         <h2 class="text-4xl font-medium text-yellow-400 py-5">What to watch</h2>
     </div>
     <section class="flex flex-wrap justify-center">
-        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col">
@@ -149,7 +149,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col">
@@ -161,7 +161,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col justify-center">
@@ -197,7 +197,7 @@
     </div>
 
     <section class="flex flex-wrap justify-center">
-        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col">
@@ -209,7 +209,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col">
@@ -221,7 +221,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col justify-center">
