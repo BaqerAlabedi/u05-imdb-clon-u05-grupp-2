@@ -73,20 +73,22 @@ class RegisteredUserController extends Controller
     {
         $films = Film::find($id);
         $films->delete();
-        return redirect()->route('movie')->with('status', 'Movie deleted added successfully!');
+        return redirect()->route('movie')->with('status', 'Movie deleted successfully!');
     }
+
 
     public function deleteShows($id)
     {
         $shows = Show::find($id);
         $shows->delete();
-        return redirect()->route('show')->with('status', 'Show deletedadded successfully!');
+        return redirect()->route('show')->with('status', 'Show deleted successfully!');
     }
 
     public function deleteUser($id)
     {
         $user = User::find($id);
         $user->delete();
+        return redirect()->route('dashboard')->with('status', 'User deleted successfully!');
     }
 
     public function deleteComment($id)
@@ -104,8 +106,15 @@ class RegisteredUserController extends Controller
     }
 
     /**
-     * Delete stuff.
+     * update stuff.
      */
+    public function makeAdmin($id)
+    {
+        $user = User::find($id);
+        $user->role = 0;
+        $user->save();
+        return redirect()->route('dashboard')->with('status', 'User deleted successfully!');
+    }
     /**
      * Display the registration view.
      */

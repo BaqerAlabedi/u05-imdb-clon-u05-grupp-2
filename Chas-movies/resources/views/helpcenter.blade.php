@@ -59,6 +59,7 @@
                     </a>
                 </div>
             </div>
+            @if (Auth()->check() && empty(Auth::user()->role))
             @if (Auth::user()->role == 0 || Auth::user()->role == 1)
             <div class="flex flex-col items-center w-full mt-3 border-t border-gray-700">
                 <H2>Welcome</H2>{{ Auth::user()->name }}
@@ -77,6 +78,8 @@
                 <span class="ml-2 text-sm font-medium">Profile</span>
             </a>
             @endif
+            @endif
+
         </div>
 
 

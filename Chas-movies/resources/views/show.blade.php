@@ -59,6 +59,7 @@
                     </a>
                 </div>
             </div>
+            @if (Auth()->check() && empty(Auth::user()->role))
             @if (Auth::user()->role == 0 || Auth::user()->role == 1)
             <div class="flex flex-col items-center w-full mt-3 border-t border-gray-700">
                 <H2>Welcome</H2>{{ Auth::user()->name }}
@@ -75,6 +76,7 @@
                 </svg>
                 <span class="ml-2 text-sm font-medium">Profile</span>
             </a>
+            @endif
             @endif
         </div>
 
@@ -99,12 +101,14 @@
                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
                         </svg>
                     </button>
+                    @if (Auth()->check() && empty(Auth::user()->role))
                     @if (Auth::user()->role == 0)
                     <form method="POST" action="{{ route('show.delete', $show->id) }}">
                         @csrf
                         @method('DELETE')
                         <button class="w-1/10 inline-block text-sm font-medium text-gray-900 bg-gray-800 hover:bg-gray-700 absolute top-0 right-0 px-2 py-2 rounded-lg scale-200 lg:scale-90 sm:scale-60" type="submit">❌</button>
                     </form>
+                    @endif
                     @endif
 
                     <header class="flex items-center justify-between leading-tight p-2 md:p-4">
@@ -219,6 +223,7 @@
 
         </div>
     </div>
+    @if (Auth()->check() && empty(Auth::user()->role))
     @if (Auth::user()->role == 0 || Auth::user()->role == 1)
     <div id="authentication-modal-2" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
         <div class="relative w-full h-full max-w-md md:h-auto">
@@ -270,6 +275,7 @@
             </div>
         </div>
     </div>
+    @endif
     @endif
     <script src="https://unpkg.com/flowbite@1.6.0/dist/flowbite.min.js"></script>
 </body>
