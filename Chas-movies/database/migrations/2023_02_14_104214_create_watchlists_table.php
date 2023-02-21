@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('watchlists', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->BigInteger('user_id')->unsigned();
             $table->timestamps();
         });
     }

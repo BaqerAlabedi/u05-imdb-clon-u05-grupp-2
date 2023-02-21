@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('role');
+            $table->integer('role')->unsigned()->nullable();
         });
     }
 
@@ -27,7 +27,7 @@ return new class extends Migration
     {
         if (Schema::hasColumn('users', 'role'))
             Schema::table('users', function (Blueprint $table) {
-                $table->dropColumn('users');
+                $table->dropColumn('role');
             });
     }
 };
