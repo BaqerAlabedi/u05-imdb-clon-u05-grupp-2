@@ -59,8 +59,8 @@
                     </a>
                 </div>
             </div>
-            @if (Auth()->check() && empty(Auth::user()->role))
-            @if (Auth::user()->role == 0 || Auth::user()->role == 1)
+            @if (Auth()->check())
+            @if (Auth::user()->role == 0)
             <div class="flex flex-col items-center w-full mt-3 border-t border-gray-700">
                 <H2>Welcome</H2>{{ Auth::user()->name }}
                 <button data-modal-target="authentication-modal-2" data-modal-toggle="authentication-modal-2" class="w-1/10 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 hover:bg-yellow-300" type="button">
@@ -78,8 +78,24 @@
                 <span class="ml-2 text-sm font-medium">Profile</span>
             </a>
             @endif
-            @endif
 
+            @if (Auth::user()->role == 1)
+            <div class="flex flex-col items-center w-full mt-3 border-t border-gray-700">
+                <H2>Welcome</H2>{{ Auth::user()->name }}
+                <a href="{{ url('/watchlist')}}"><button class="w-1/10 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 hover:bg-yellow-300" type="button">
+                        My Watchlists
+                    </button></a>
+
+
+            </div>
+            <a class="flex items-center justify-center w-full h-16 mt-auto bg-gray-800 hover:bg-gray-700 hover:text-gray-300" href="{{ url('/user') }}">
+                <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="ml-2 text-sm font-medium">Profile</span>
+            </a>
+            @endif
+            @endif
         </div>
 
 
