@@ -60,7 +60,7 @@
                         </a>
                     </div>
                 </div>
-                @if (Auth()->check() && empty(Auth::user()->role))
+                @if (Auth()->check())
                 @if (Auth::user()->role == 0)
                 <div class="flex flex-col items-center w-full mt-3 border-t border-gray-700">
                     <H2>Welcome</H2>{{ Auth::user()->name }}
@@ -113,8 +113,8 @@
                     <a href="#">
                         <img alt="Placeholder" class="block h-auto w-full" src="{{ $film->imgurl }}">
                     </a>
-                    @if (Auth()->check() && empty(Auth::user()->role))
-                    @if (Auth::user()->role == 1)
+                    @if (Auth()->check())
+                    @if (Auth::user()->role == 1 OR Auth::user()->role == 0)
                     <button class="text-gray-900 bg-yellow-400 hover:bg-yellow-300 w-1/10 inline-block text-sm font-medium text-white-200 bg-gray-800 hover:bg-gray-700 absolute bottom-16 right-0 px-2 py-2 rounded-lg" type="button">
                         Add to <svg class="md:w-5 sm:w-5 lg:w-5 md:h-5 sm:h-5 lg:h-5 inline" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                             <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
@@ -243,7 +243,7 @@
 
         </div>
     </div>
-    @if (Auth()->check() && empty(Auth::user()->role))
+    @if (Auth()->check())
     @if (Auth::user()->role == 0)
     <div id="authentication-modal-2" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
         <div class="relative w-full h-full max-w-md md:h-auto">
@@ -297,7 +297,7 @@
     </div>
     @endif
     @endif
-    @if (Auth()->check() && empty(Auth::user()->role))
+    @if (Auth()->check())
     @if (Auth::user()->role == 1)
     <div id="authentication-modal-2" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
         <div class="relative w-full h-full max-w-md md:h-auto">
