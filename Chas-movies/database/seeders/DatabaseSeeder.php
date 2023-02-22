@@ -38,6 +38,24 @@ class DatabaseSeeder extends Seeder
         'imgurl' => 'https://m.media-amazon.com/images/M/MV5BOGI5N2FhNzktZjZlNi00MmRjLWE1MmUtNjRlNzQyOGMzYjNhXkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_FMjpg_UX1000_.jpg',
     ]);
 
+    \App\Models\Film::factory()->create([
+        'title' => 'Smile',
+       'genre' => 'Horror',
+        'director' => 'nån',
+        'maincast' => 'några',
+        'imgurl' => 'https://resizing.flixster.com/9ulMcbVWtxvAW4so_JAhh75_cQE=/206x305/v2/https://flxt.tmsimg.com/assets/p8174_p_v8_ai.jpg',
+    ]);
+
+    \App\Models\Film::factory()->create([
+        'title' => 'Jaws',
+       'genre' => 'Horror',
+        'director' => 'nån',
+        'maincast' => 'några',
+        'imgurl' => 'https://resizing.flixster.com/9ulMcbVWtxvAW4so_JAhh75_cQE=/206x305/v2/https://flxt.tmsimg.com/assets/p8174_p_v8_ai.jpg',
+    ]);
+
+
+
     \App\Models\Show::factory()->create([
         'title' => 'Scrubs',
        'genre' => 'Drama',
@@ -56,6 +74,16 @@ class DatabaseSeeder extends Seeder
         'seasons' => 2, 
         'episodes' => 32,
         'imgurl' => 'https://m.media-amazon.com/images/M/MV5BOGI5N2FhNzktZjZlNi00MmRjLWE1MmUtNjRlNzQyOGMzYjNhXkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_FMjpg_UX1000_.jpg',
+    ]);
+
+    \App\Models\Show::factory()->create([
+        'title' => 'Black mirror',
+       'genre' => 'Thriller',
+        'director' => 'nån',
+        'maincast' => 'Liam Neeson',
+        'seasons' => 4, 
+        'episodes' => 32,
+        'imgurl' => 'https://flxt.tmsimg.com/assets/p8952681_b_v13_ab.jpg',
     ]);
 
     }
