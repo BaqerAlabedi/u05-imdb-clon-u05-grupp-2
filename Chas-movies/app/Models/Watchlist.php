@@ -10,6 +10,7 @@ class Watchlist extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['film_id', 'user_id'];
 
     /**
      * The Watchlists that can have many films
@@ -24,7 +25,7 @@ class Watchlist extends Model
      */
     public function shows()
     {
-        return $this->hasMany(Film::class);
+        return $this->hasMany(Show::class);
     }
 
 
@@ -33,6 +34,6 @@ class Watchlist extends Model
      */
     public function user()
     {
-        return $this->belongsTo(user::class);
+        return $this->belongsTo(User::class);
     }
 }

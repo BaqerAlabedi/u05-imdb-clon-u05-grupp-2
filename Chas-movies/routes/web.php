@@ -7,7 +7,6 @@ use App\Models\User;
 use App\Models\Film;
 use App\Models\Watchlist;
 use Illuminate\Support\Facades\Route;
-use Symfony\Component\HttpKernel\DependencyInjection\RegisterControllerArgumentLocatorsPass;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +49,11 @@ Route::get('/kategori', function () {
     return view('kategori');
 });
 
+
+Route::get('/film-view', function () {
+    return view('film-view');
+});
+
 Route::get('/user', function () {
     return view('user');
 });
@@ -74,27 +78,23 @@ Route::get('/show', function () {
 
 Route::get('/watchlist', function () {
     $users = User::all();
-    return view('watchlist', ["users" => $users])->name('watchlist');
+    return view('watchlist', ["users" => $users])->name('readAllWatchlist');    // Ändrat från watchlist till readAllWatchlist + raderat function i RegisteredUserController
 });;
 
 Route::post('movie/add-movie', [RegisteredUserController::class, 'createMovie'])->middleware(['auth', 'verified'])->name('add.movie'); // Test route!
 Route::post('movie/add-show', [RegisteredUserController::class, 'createShow'])->middleware(['auth', 'verified'])->name('add.show');
 Route::get('/movie', [RegisteredUserController::class, 'readAllMovies'])->middleware(['auth', 'verified'])->name('movie');
 Route::get('/show', [RegisteredUserController::class, 'readAllShows'])->middleware(['auth', 'verified'])->name('show');
-Route::get('/watchlist', [RegisteredUserController::class, 'watchlist'])->middleware(['auth', 'verified'])->name('watchlist');
+Route::get('/watchlist', [RegisteredUserController::class, 'createWatchlist'])->middleware(['auth', 'verified'])->name('watchlist');
 Route::delete('movie/deletemovie/{id}', [RegisteredUserController::class, "deleteMovies"])->name('movie.delete');;
 Route::delete('show/deleteshow/{id}', [RegisteredUserController::class, "deleteShows"])->name('show.delete');
 Route::delete('dashboard/{id}', [RegisteredUserController::class, "deleteUser"]);
 Route::delete('comments/{id}', [RegisteredUserController::class, "deleteComment"]);
 
-Route::get('film-view/{id}', [RegisteredUserController::class, "filmView"])->name('film-view'); // Route från movie
 
-Route::post('film-view/{id}/watchlist' , [RegisteredUserController::class, "watchlist"])->name('watchlist.add');
+Route::get('film-view/{id}', [RegisteredUserController::class, "filmView"])->name('film-view');
+Route::post('add-watchlist', [RegisteredUserController::class, 'storeWatchlist'])->name('add-watchlist');   // Ändra till punkt?
+Route::delete('delete-watchlist/{id}', [RegisteredUserController::class, 'deleteWatchlist'])->name('delete-watchlist'); // Ändra till punkt?
 
-// Route::post('film-view/{id}/add-watchlist', [RegisteredUserController::class, "addWatchlist"])->name('watchlist');
-// Route::post('film-view/{id}/watchlist', 'App\Http\Controllers\WatchlistController@addWatchlist')->name('watchlist.add');
-
-
-Route::put('dashboard/admin/{id}', [RegisteredUserController::class, "makeAdmin"])->name('user.admin');
 
 require __DIR__ . '/auth.php';

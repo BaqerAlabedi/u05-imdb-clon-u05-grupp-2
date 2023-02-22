@@ -95,65 +95,13 @@ class RegisteredUserController extends Controller
         $comment->delete();
     }
 
-/////////////////////////////////////////////////////////////
-
-    public function filmView($id) {
-        $films = Film::find($id);
-        $shows = Show::find($id);
-        return view('film-view', ['films' => $films, 'shows' => $shows]);
-    }
-
-    public function watchlist() {
-        
+    public function createWatchlist()
+    {
         $films = Film::all();
         $shows = Show::all();
-        return route('watchlist', ['films' => $films, 'shows' => $shows]);
+        $watchlists = Watchlist::get();
+        return view('watchlist', ['shows' => $shows, 'films' => $films, 'watchlists' => $watchlists]);
     }
-
-    // $watchlists = Watchlist::get();
-        // return redirect()->route('watchlist');
-
-    // public function viewWatchlist()
-    // {
-    //     $films = Film::all();
-    //     $shows = Show::all();
-    //     $watchlists = Watchlist::get();
-    //     return view('film-view', ['shows' => $shows, 'films' => $films, 'watchlists' => $watchlists]);
-
-    //     return redirect()->route('movie')->with('status', 'New post added successfully!');
-
-    // }
-
-    // public function showFilm($id)
-    // {
-    //     $film = Film::findOrFail($id);
-    //     return view('film', ['film' => $film, 'id' => $id]);
-    // }
-
-    // public function addWatchlist(Request $request, $id) {
-        
-    //     $films = Film::find($request->id);
-    //     $shows = Show::find($request->id);
-    //     $films->save();
-    //     $shows->save();
-    //     return view('watchlist', ['film' => $films,'shows' => $shows, 'id' => $id]);
-
-        // return redirect()->route('watchlist');
-
-        // $films = Film::where('id', $id)->first();
-        // $shows = Show::where('id', $id)->first();
-        // $films->save();
-        // $shows->save();
-        // return redirect()->route('watchlist');
-
-        // $films = Film::where($request->id);
-        // $shows = Show::where($request->id);
-        // $films->save();
-        // $shows->save();
-        // $watchlists = Watchlist::get();
-        // return redirect()->route('watchlist');
-        // return view('watchlist', ['shows' => $shows, 'films' => $films, 'watchlists' => $watchlists]);
-    // }
 
     /**
      * Delete stuff.
@@ -191,5 +139,34 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME);
+    }
+
+    /////////////////////////////////////////////////////////////
+
+    public function filmView($id) {
+        $films = Film::find($id);
+        $shows = Show::find($id);
+        return view('film-view', ['films' => $films, 'shows' => $shows, 'id' => $id]);
+    }
+
+    public function readAllWatchlist() {
+        $watchlists = Watchlist::get();
+        return view('watchlist', ['films' => $watchlists, 'shows' => $watchlists]);
+    }
+
+    public function storeWatchlist(Request $request) {
+        
+        $watchlists = new Watchlist;
+        $watchlists->film_id= $request->filmId;
+        $watchlists->user_id = Auth::user()->id;
+        $watchlists->save();
+        return to_route('film-view', ['id' => $request->filmId])->with('status', 'New movie added successfully!');
+    }
+
+    public function deleteWatchlist($id) {
+        
+        $watchlists = Watchlist::find($id);
+        $watchlists->delete();
+        return to_route('watchlist')->with('status', 'Movie deleted added successfully!');
     }
 }

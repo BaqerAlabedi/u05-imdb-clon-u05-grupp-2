@@ -55,9 +55,9 @@
 
         <div class="container m-auto mt-6 mb-6 w-9/12 bg-gray-700 rounded-lg flex" id="background1">
             <div class="overflow-hidden rounded-lg shadow-lg text-gray-200">
-                <h2 class="text-gray-200 text-3xl md:text-5xl sm:text-4xl text-center my-6">Interstellar</h2>
+                <h2 class="text-gray-200 text-3xl md:text-5xl sm:text-4xl text-center my-6">{{ $films->title }}</h2>
                 <div class="flex justify-center">
-                    <img class="mb-10 ml-6 md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3" src="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" alt="Placeholder">
+                    <img class="mb-10 ml-6 md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3" src="{{ $films->imgurl }}" alt="Placeholder">
                     <p class="mx-6 mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                         nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
                         sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -66,9 +66,16 @@
                     <span class="m-auto ml-1">
                     Play trailer
                     </span></button>
-
+                    
+                    @if(session('status'))
+                        {{ session('status') }}
+                    @endif
+            
                     @if (Auth::user()->role == 1)
-                    <a href="{{ url('/watchlist') }}" class="flex absolute ml-60 mt-56 w-36 h-12 bg-amber-300 rounded-lg text-black"><button>
+                    <form method="post" action="{{ route('add-watchlist')}}" class="flex absolute ml-60 mt-56 w-36 h-12 bg-amber-300 rounded-lg text-black">
+                    <input type="hidden" name="filmId" value="{{$id}}"/>
+                    <button>
+                        @csrf
                         <span class="m-auto ml-1">
                             Add to
                         </span>
@@ -76,11 +83,11 @@
                             <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"></path>
                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"></path>
                         </svg>
-                    </button></a>
+                    </button>
+                    </form>
                     @endif
 
                 </div>
-            
                 <div id="carouselExampleControls" class="flex pb-6 carousel slide relative" data-bs-ride="carousel">
                     <div class="flex carousel-inner relative w-full overflow-hidden">
                         <button type="button" class="relative flex pl-6 cursor-pointer group focus:outline-none items-center">

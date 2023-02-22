@@ -15,10 +15,18 @@ return new class extends Migration
     {
         Schema::create('watchlists', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->BigInteger('user_id')->unsigned();
+            $table->bigInteger('film_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('film_id')->references('id')->on('films');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
+
+        Schema::table('watchlists', function (Blueprint $table) {
+            $table->dropForeign(['film_id']);
+        });
+
+        
     }
 
     /**
@@ -27,7 +35,7 @@ return new class extends Migration
      * @return void
      */
     public function down()
-    {
+    {   
         Schema::dropIfExists('watchlists');
     }
 };

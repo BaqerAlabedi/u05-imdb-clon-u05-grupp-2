@@ -117,8 +117,8 @@
                         </svg>
                     </button>
                     @endif
-                    @if (Auth::user()->role == 0)
-                    <form method="POST" action="{{ route('movie.delete', $film->id) }}">
+                    @if (Auth::user()->role == 1)
+                    <form method="POST" action="{{ route('delete-watchlist', $film->id)}}">
                         @csrf
                         @method('DELETE')
                         <button class="w-1/10 inline-block text-sm font-medium text-gray-900 bg-gray-800 hover:bg-gray-700 absolute top-0 right-0 px-2 py-2 rounded-lg scale-200 lg:scale-90 sm:scale-60" type="submit">❌</button>
@@ -138,103 +138,6 @@
             </div>
             <!-- END Column -->
             @endforeach
-
-
-
-            <!-- Column -->
-            <div class="my-1 px-1 w-full md:w-1/2 sm:w-1/3 md:w-1/3 lg:my-4 lg:w-1/5">
-
-                <!-- Article -->
-                <article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200">
-
-                    <a href="#">
-                        <img alt="Placeholder" class="block h-auto w-full" src="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg">
-                    </a>
-
-                    <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-                        <h1 class="text-lg">
-                            <a class="no-underline hover:underline text-gray-200" href="#">
-                                Interstellar
-                            </a>
-                        </h1>
-                    </header>
-
-                </article>
-                <!-- END Article -->
-
-            </div>
-            <!-- END Column -->
-            <!-- Column -->
-            <div class="my-1 px-1 w-full md:w-1/2 sm:w-1/3 md:w-1/3 lg:my-4 lg:w-1/5">
-
-                <!-- Article -->
-                <article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200">
-
-                    <a href="#">
-                        <img alt="Placeholder" class="block h-auto w-full" src="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg">
-                    </a>
-
-                    <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-                        <h1 class="text-lg">
-                            <a class="no-underline hover:underline text-gray-200" href="#">
-                                Interstellar
-                            </a>
-                        </h1>
-                    </header>
-
-                </article>
-                <!-- END Article -->
-
-            </div>
-            <!-- END Column -->
-            <!-- Column -->
-            <div class="my-1 px-1 w-full md:w-1/2 sm:w-1/3 md:w-1/3 lg:my-4 lg:w-1/5">
-
-                <!-- Article -->
-                <article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200">
-
-                    <a href="#">
-                        <img alt="Placeholder" class="block h-auto w-full" src="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg">
-                    </a>
-
-                    <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-                        <h1 class="text-lg">
-                            <a class="no-underline hover:underline text-gray-200" href="#">
-                                Interstellar
-                            </a>
-                        </h1>
-                    </header>
-
-                </article>
-                <!-- END Article -->
-
-            </div>
-            <!-- END Column -->
-
-            <!-- Column -->
-            <div class="my-1 px-1 w-full md:w-1/2 sm:w-1/3 md:w-1/3 lg:my-4 lg:w-1/5">
-
-                <!-- Article -->
-                <article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200">
-
-                    <a href="#">
-                        <img alt="Placeholder" class="block h-auto w-full" src="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg">
-                    </a>
-
-                    <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-                        <h1 class="text-lg">
-                            <a class="no-underline hover:underline text-gray-200" href="#">
-                                Interstellar
-                            </a>
-                        </h1>
-                    </header>
-
-                </article>
-                <!-- END Article -->
-
-            </div>
-            <!-- END Column -->
-
         </div>
     </div>
 
