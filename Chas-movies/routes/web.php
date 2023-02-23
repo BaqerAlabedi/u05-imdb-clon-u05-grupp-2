@@ -80,6 +80,15 @@ Route::get('/watchlist', function () {
     return view('watchlist', ["users" => $users])->name('watchlist');
 });;
 
+
+
+
+route::post('/add_comment', [RegisteredUserController::class, 'add_comment']);
+
+route::get('/film-view', [RegisteredUserController::class, 'filmview']);
+
+
+
 Route::post('movie/add-movie', [RegisteredUserController::class, 'createMovie'])->middleware(['auth', 'verified'])->name('add.movie'); // Test route!
 Route::post('movie/add-show', [RegisteredUserController::class, 'createShow'])->middleware(['auth', 'verified'])->name('add.show');
 Route::get('/movie', [RegisteredUserController::class, 'readAllMovies'])->name('movie');
