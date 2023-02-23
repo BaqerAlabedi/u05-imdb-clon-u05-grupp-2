@@ -17,6 +17,12 @@ class User extends Authenticatable
     /**
      * The Watchlists that belong to the user.
      */
+    public function comment()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+
     public function watchlists()
     {
         return $this->hasMany(Watchlist::class);

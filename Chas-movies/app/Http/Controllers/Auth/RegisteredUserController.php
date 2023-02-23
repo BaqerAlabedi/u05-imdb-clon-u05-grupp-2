@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CommentStoreRequest;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -16,6 +17,8 @@ use App\Models\Show;
 use App\Models\Film;
 use App\Models\Comment;
 use App\Models\Watchlist;
+
+
 
 class RegisteredUserController extends Controller
 {
@@ -83,6 +86,9 @@ class RegisteredUserController extends Controller
         return redirect()->route('show')->with('status', 'Show deletedadded successfully!');
     }
 
+
+
+
     public function deleteUser($id)
     {
         $user = User::find($id);
@@ -137,7 +143,40 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
-
+        
         return redirect(RouteServiceProvider::HOME);
     }
+// comment
+
+    public function filmview()
+{
+    $comment = Comment::get();
+    $comment =comment::all();
+    return view('film-view', ['comments' => $comment]);
+}
+
+
+
+    public function add_comment(Request $request)
+    {
+     if(Auth::id())
+     {
+        $comment=new comment;
+         
+        
+        $comment->user_id=Auth::user()->id;
+        $comment->name=Auth::user()->name;
+        $comment->comment=$request->comment;
+        $comment->save();
+        
+        return redirect()->back();
+     }
+     else
+    
+    { 
+        return redirect('login');
+    }
+   }
+
+
 }

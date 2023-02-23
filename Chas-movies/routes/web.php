@@ -80,6 +80,15 @@ Route::get('/watchlist', function () {
     return view('watchlist', ["users" => $users])->name('watchlist');
 });;
 
+
+
+
+route::post('/add_comment',[RegisteredUserController::class,'add_comment']);
+
+route::get('/film-view',[RegisteredUserController::class,'filmview']);
+
+
+
 Route::post('movie/add-movie', [RegisteredUserController::class, 'createMovie'])->middleware(['auth', 'verified'])->name('add.movie'); // Test route!
 Route::post('movie/add-show', [RegisteredUserController::class, 'createShow'])->middleware(['auth', 'verified'])->name('add.show');
 Route::get('/movie', [RegisteredUserController::class, 'readAllMovies'])->middleware(['auth', 'verified'])->name('movie');
@@ -88,8 +97,10 @@ Route::get('/watchlist', [RegisteredUserController::class, 'createWatchlist'])->
 Route::delete('movie/deletemovie/{id}', [RegisteredUserController::class, "deleteMovies"])->name('movie.delete');;
 Route::delete('show/deleteshow/{id}', [RegisteredUserController::class, "deleteShows"])->name('show.delete');
 Route::delete('dashboard/{id}', [RegisteredUserController::class, "deleteUser"]);
-Route::delete('comments/{id}', [RegisteredUserController::class, "deleteComment"]);
+
 
 
 
 require __DIR__ . '/auth.php';
+
+

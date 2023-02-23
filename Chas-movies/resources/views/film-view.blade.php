@@ -8,6 +8,7 @@
     <title>Chas movies</title>
     @vite('resources/css/app.css')
     <script defer src="https://unpkg.com/tailwindcss-jit-cdn"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <style>
         .video {
@@ -116,6 +117,52 @@
         </div>
         </div>
 
+
+
+
+         <!--comment start -->
+  
+      <div style="text-align: center; padding-bottom: 30px;">
+        <h1 style=" color:aliceblue;  font-size: 30px; text-align: center; padding-top: 20px; padding-bottom: 20px;"  >Comments</h1>
+        @if (Auth()->check())
+                @if (Auth::user()->role == 1)
+        <form action="{{url('add_comment')}}" method="POST" >
+            @csrf
+            <textarea style="height: 150px; width: 600px; border-radius:20px; padding-bottom:30px; " placeholder="Comment something here" name="comment"></textarea>
+            <br>
+          <input  style="background-color:#FFD700;  width: 150px; font-size: 20px; border-radius:20px;" type="submit"  value="Comment">
+        </form>
+        @endif
+        @endif   
+    </div>
+
+                
+       <div class="overflow-hidden rounded-lg shadow-lg text-gray-200" style="padding-left: 30%;">
+        <h1 style="font-size: 20px; padding-bottom: 20px;" class="text-white" >All Comments</h1>
+       
+      @foreach ($comments as $comment)
+
+       <div >
+        <b>{{$comment->name}}</b>
+        <p>{{$comment->comment}}</p>
+        <a href="javascript::void(0);" onclick="reply(this)"data-Commentid="{{$comment->name}}">Reply</a>
+       </div>
+       
+@endforeach 
+      
+<footer>
+
+
+</footer>
+ 
+
+
+       
+     
+
+
+
+
         <script>
             
             function background() {
@@ -143,4 +190,22 @@
             }
 
         </script>
+
+
+        <script type="text/javascript">
+         function reply(caller)
+         {
+          
+            $('.replyDiv').insertAfter($(caller));
+            $('.replyDiv').show();
+        }       
+        
+        </script>
+        <script src="/js/jquery-3.4.1.min.js"> </script>
+        <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+
+
+        
+            
 </body>
+ </html>
