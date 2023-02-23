@@ -16,6 +16,7 @@ use App\Models\Show;
 use App\Models\Film;
 use App\Models\Comment;
 use App\Models\Watchlist;
+use League\CommonMark\Extension\Table\Table;
 
 class RegisteredUserController extends Controller
 {
@@ -150,23 +151,23 @@ class RegisteredUserController extends Controller
     }
 
     public function readAllWatchlist() {
-        $watchlists = Watchlist::get();
-        return view('watchlist', ['films' => $watchlists, 'shows' => $watchlists]);
+        $listing = Watchlist::get();
+        return view('watchlist', ['films' => $listing, 'shows' => $listing]);
     }
 
     public function storeWatchlist(Request $request) {
         
-        $watchlists = new Watchlist;
-        $watchlists->film_id= $request->filmId;
-        $watchlists->user_id = Auth::user()->id;
-        $watchlists->save();
+        $listing = new Watchlist;
+        $listing->film_id= $request->filmId;
+        $listing->user_id = Auth::user()->id;
+        $listing->save();
         return to_route('film-view', ['id' => $request->filmId])->with('status', 'New movie added successfully!');
     }
+    
+    public function destroyWatchlist($id) {
 
-    public function deleteWatchlist($id) {
-        
-        $watchlists = Watchlist::find($id);
-        $watchlists->delete();
-        return to_route('watchlist')->with('status', 'Movie deleted added successfully!');
+        $listing = Watchlist::where('id', $id);
+        $listing->delete();
+        return to_route('watchlist')->with('status', 'Movie deleted successfully!');
     }
 }

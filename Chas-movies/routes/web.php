@@ -81,7 +81,7 @@ Route::get('/watchlist', function () {
     return view('watchlist', ["users" => $users])->name('readAllWatchlist');    // Ändrat från watchlist till readAllWatchlist + raderat function i RegisteredUserController
 });;
 
-Route::post('movie/add-movie', [RegisteredUserController::class, 'createMovie'])->middleware(['auth', 'verified'])->name('add.movie'); // Test route!
+Route::post('movie/add-movie', [RegisteredUserController::class, 'createMovie'])->middleware(['auth', 'verified'])->name('add.movie');
 Route::post('movie/add-show', [RegisteredUserController::class, 'createShow'])->middleware(['auth', 'verified'])->name('add.show');
 Route::get('/movie', [RegisteredUserController::class, 'readAllMovies'])->middleware(['auth', 'verified'])->name('movie');
 Route::get('/show', [RegisteredUserController::class, 'readAllShows'])->middleware(['auth', 'verified'])->name('show');
@@ -93,8 +93,10 @@ Route::delete('comments/{id}', [RegisteredUserController::class, "deleteComment"
 
 
 Route::get('film-view/{id}', [RegisteredUserController::class, "filmView"])->name('film-view');
-Route::post('add-watchlist', [RegisteredUserController::class, 'storeWatchlist'])->name('add-watchlist');   // Ändra till punkt?
-Route::delete('delete-watchlist/{id}', [RegisteredUserController::class, 'deleteWatchlist'])->name('delete-watchlist'); // Ändra till punkt?
+Route::get('watchlist', [RegisteredUserController::class, 'readAllWatchlist'])->name('watchlist');
+Route::post('add-watchlist', [RegisteredUserController::class, 'storeWatchlist'])->name('add-watchlist');
+
+Route::delete('delete-watchlist/{id}', [RegisteredUserController::class, 'destroyWatchlist'])->name('delete-watchlist');
 
 
 require __DIR__ . '/auth.php';
