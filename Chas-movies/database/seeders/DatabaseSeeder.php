@@ -15,6 +15,19 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         
+        \App\Models\User::factory()->create([
+            'name' => 'admin',
+         'email' => 'admin@admin',
+         'password' => bcrypt('12345678'),
+     ]);
+
+     \App\Models\User::factory()->create([
+        'name' => 'user',
+     'email' => 'user@user',
+     'password' => bcrypt('12345678'),
+ ]);
+
+
      \App\Models\Film::factory()->create([
         'title' => 'Avatar 2',
        'genre' => 'Fantasy',
