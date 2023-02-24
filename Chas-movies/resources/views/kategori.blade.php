@@ -11,401 +11,212 @@
 
 <body class="bg-gray-900"> 
     <!-- Component Start -->
-    <nav class="flex items-start justify-start bg-gray-900 fixed">
-        <div class="h-screen flex flex-col items-center w-40 overflow-hidden text-gray-400 bg-gray-800">
-            <a class="flex items-center w-full px-3 mt-3" href="#">
+    <nav class="flex items-start justify-start bg-gray-900 fixed min-h-screen">
+        <div class="h-screen flex flex-col items-center md:w-40 lg:w-40 sm:w-40 w-28 overflow-hidden text-gray-400 bg-gray-800">
+            <a class="flex items-center w-full px-3 mt-3" href="http://127.0.0.1:8000">
                 <img class="h-9" src="https://chasacademy.se/wp-content/uploads/2020/12/ca-emblem-white.svg" alt="">
                 <span class="ml-2 text-sm font-bold">Chas Movies</span>
             </a>
             <div class="w-full px-2">
                 <div class="flex flex-col items-center w-full mt-3 border-t border-gray-700">
-                    <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="#">
-                        <svg class="w-5 h-5 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
-                        <span class="ml-2 text-sm font-medium">Search</span>
-                    </a>
-                    <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="#">
-                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="http://127.0.0.1:8000/movie">
+                        <svg class="w-0 h-0 md:w-5 sm:w-5 lg:w-5 md:h-5 sm:h-5 lg:h-5 invisible md:visible lg:visible sm:visible" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0v6h8V1H4zm8 8H4v6h8V9zM1 1v2h2V1H1zm2 3H1v2h2V4zM1 7v2h2V7H1zm2 3H1v2h2v-2zm-2 3v2h2v-2H1zM15 1h-2v2h2V1zm-2 3v2h2V4h-2zm2 3h-2v2h2V7zm-2 3v2h2v-2h-2zm2 3h-2v2h2v-2z" fill="white"></path>
                         </svg>
                         <span class="ml-2 text-sm font-medium">Movie</span>
                     </a>
 
-                    <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="#">
-                        <svg class="w-5 h-5" style="color: white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="http://127.0.0.1:8000/show">
+                        <svg class="w-0 h-0 md:w-5 sm:w-5 lg:w-5 md:h-5 sm:h-5 lg:h-5 invisible md:visible lg:visible sm:visible" style="color: white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0v6h8V1H4zm8 8H4v6h8V9zM1 1v2h2V1H1zm2 3H1v2h2V4zM1 7v2h2V7H1zm2 3H1v2h2v-2zm-2 3v2h2v-2H1zM15 1h-2v2h2V1zm-2 3v2h2V4h-2zm2 3h-2v2h2V7zm-2 3v2h2v-2h-2zm2 3h-2v2h2v-2z" fill="white"></path>
                         </svg>
                         <span class="ml-2 text-sm font-medium">TV-show</span>
                     </a>
-                    <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="#">
-                        <span class="text-l w-5 h-5 stroke-current">🔥</span>
-                        <span class="ml-2 text-sm font-medium">Trending</span>
-                    </a>
+                    <div class="flex flex-col items-center w-full mt-3 border-t border-gray-700">
+                        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="http://127.0.0.1:8000/kategori">
+                            <svg class="w-0 h-0 md:w-5 sm:w-5 lg:w-5 md:h-5 sm:h-5 lg:h-5 invisible md:visible lg:visible sm:visible" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0v6h8V1H4zm8 8H4v6h8V9zM1 1v2h2V1H1zm2 3H1v2h2V4zM1 7v2h2V7H1zm2 3H1v2h2v-2zm-2 3v2h2v-2H1zM15 1h-2v2h2V1zm-2 3v2h2V4h-2zm2 3h-2v2h2V7zm-2 3v2h2v-2h-2zm2 3h-2v2h2v-2z" fill="white"></path>
+                            </svg>
+                            <span class="ml-2 text-sm font-medium">Categories</span>
+                        </a>
+                        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="http://127.0.0.1:8000/trending">
+                            <span class="w-0 h-0 md:w-5 sm:w-5 lg:w-5 md:h-5 sm:h-5 lg:h-5 invisible md:visible lg:visible sm:visible">🔥</span>
+                            <span class="ml-2 text-sm font-medium">Trending</span>
+                        </a>
+                    </div>
+                    <div class="flex flex-col items-center w-full mt-2 border-t border-gray-700">
+                        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="http://127.0.0.1:8000/watchlist">
+                            <svg class="w-0 h-0 md:w-5 sm:w-5 lg:w-5 md:h-5 sm:h-5 lg:h-5 invisible md:visible lg:visible sm:visible" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"></path>
+                                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"></path>
+                            </svg>
+                            <span class="ml-2 text-sm font-medium">Watchlist</span>
+                        </a>
+                        <a class="relative flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="http://127.0.0.1:8000/helpcenter">
+                            <svg class="w-0 h-0 md:w-5 sm:w-5 lg:w-5 md:h-5 sm:h-5 lg:h-5 invisible md:visible lg:visible sm:visible stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
+                            </svg>
+                            <span class="ml-2 text-sm font-medium">Help Center</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="flex flex-col items-center w-full mt-2 border-t border-gray-700">
-                    <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="#">
-                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-                            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
-                            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
-                        </svg>
-                        <span class="ml-2 text-sm font-medium">Watchlist</span>
-                    </a>
-                    <a class="relative flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="#">
-                        <svg class="w-5 h-5 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                        </svg>
-                        <span class="ml-2 text-sm font-medium">Help Center</span>
-                    </a>
-                </div>
-            </div>
-            <a class="flex items-center justify-center w-full h-16 mt-auto bg-gray-800 hover:bg-gray-700 hover:text-gray-300" href="#">
-                <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span class="ml-2 text-sm font-medium">Login</span>
-            </a>
-        </div>
+                            </div>
 
 
-    </nav>
+    </div></nav>
 
 
 
  <!-- Category Start -->
-
-    <section class="text-gray-400 bg-gray-900 body-font px-2 py-2 flex-col pl-80 pr-100">
-  <div class="container mx-auto flex py-2 px-5 md:flex-row flex-col items-center">
-    <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+ <section class="flex flex-col md:ml-40 lg:ml-40 sm:ml-40 ml-28">
+    <section class="text-gray-400 bg-gray-900 body-font px-2 py-2 flex-col justify-center m-auto">
+    <div class="flex justify-center">
       <h1 class="title-font sm:text3xl text-3xl mb-4 font-medium text-white">Viking wolf
       </h1>
-      <p class="mb-8 leading-relaxed">Thale (17) has just moved with her parents to a small town after her mother has a new job in the local police. After a student is killed brutally at a party Thale attends, she becomes a key witness. Was the killer an animal? A wolf?</p>
-      <div class="flex  justify-center ">
+    </div>
+    <div class="flex md:w-1/2 w-5/6 justify-center m-auto">
+        <img class="object-cover object-center  mr-4 rounded-xl " alt="hero" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2023/02/viking-wolf-poster.jpeg?q=50&fit=contain&w=1140&h=&dpr=1.5">
+    </div>
+    <div class="flex justify-center">
+      <p class="mb-8 leading-relaxed w-5/6 ">Thale (17) has just moved with her parents to a small town after her mother has a new job in the local police. After a student is killed brutally at a party Thale attends, she becomes a key witness. Was the killer an animal? A wolf?</p>
+    </div>
+    <div class="flex justify-center ">
         <button class="ml-3 inline-flex  px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400  hover:bg-yellow-300">Horror</button>
         <button class="ml-4 inline-flex px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400  hover:bg-yellow-300">Thriller</button>
-      </div>
     </div>
-    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-      <img class="object-cover object-center  mr-4 rounded-xl block h-80" alt="hero" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2023/02/viking-wolf-poster.jpeg?q=50&fit=contain&w=1140&h=&dpr=1.5">
-    </div>
-  </div>
+</section>
 </section>
   <!-- Category L -->
-<section class="px-6 py-8 flex-col pl-80 pr-100">
-      
-        <header class="  mx-auto mt-10 ">
-        <section class="flex flex-wrap justify-between  mx-auto mt-10 ">
-<div class="w-full sm:w-1/2 md:w-1/6 p-4 ">
-        <select class=  " flex-1 mt-4 mr-4 appearance-none border-none bg-transparent py-2 pl-3 pr-9  font-semibold  px-4 text-1.5xl font-medium text-white  hover:text-yellow-300">
-                        <option value="category" >MOVIES </option>
-                        <option value="personal">Movies </option>
-                        <option value="business">Premieres </option>
-                    </select>
-
-                    <svg class="transform -rotate-90 absolute pointer-events-none" style="right: 12px;" width="22" height="22" viewBox="0 0 22 22">
-                        <g fill="none" fill-rule="evenodd">
-                            <path stroke="#000" stroke-opacity=".012" stroke-width=".5" d="M21 1v20.16H.84V1z"></path>
-                            <path fill="#222" d="M13.854 7.224l-3.847 3.856 3.847 3.856-1.184 1.184-5.04-5.04 5.04-5.04z"></path>
-                        </g>
-                    </svg>
-            </div>
-
-             <!--  Movies -->
-             <div class="w-full sm:w-1/2 md:w-1/6 p-4 ">
-        <select class="   mt-4 mr-4 appearance-none border-none bg-transparent py-2 pl-3 pr-9  font-semibold  px-4 text-1.5xl font-medium text-white  hover:text-yellow-300">
-                     <option value="category" >SERIES</option>
-                     <option value="action">Series</option>
-                     <option value="anime">Episodes</option>
-                    
-                 </select>
-
-                    <svg class="transform -rotate-90 absolute pointer-events-none" style="right: 12px;" width="22"
-                         height="22" viewBox="0 0 22 22">
-                        <g fill="none" fill-rule="evenodd">
-                            <path stroke="#000" stroke-opacity=".012" stroke-width=".5" d="M21 1v20.16H.84V1z">
-                            </path>
-                            <path fill="#222"d="M13.854 7.224l-3.847 3.856 3.847 3.856-1.184 1.184-5.04-5.04 5.04-5.04z"></path>
-                        </g>
-                    </svg>
-                </div>
-
+<section class="flex flex-col flex-wrap md:ml-40 lg:ml-40 sm:ml-40 ml-28 ">
                 <!--  Category -->
-                <div class="w-full sm:w-1/2 md:w-1/6 p-4 ">
-        <select class="   mt-4 mr-4 appearance-none border-none bg-transparent py-2 pl-3 pr-9  font-semibold  px-4 text-1.5xl font-medium text-white  hover:text-yellow-300">
-                        <option value="category">GENRE</option>
-                        <option value="action">Action</option>
-                        <option value="anime">Anime</option>
-                        <option value="adventure">Adventure</option>
-                        <option value="family">Family</option>
-                        <option value="history">History</option>
-                        <option value="comedy">Comedy</option>
-                        <option value="romantic">Romantic</option>
-                        <option value="mystery">Mystery</option>
-                        <option value="crime">Crime</option>
-                        <option value="documentary">Documentary</option>
-                        <option value="romantic">Romantic </option>
-                        <option value="sci-fi">Sci-fi</option>
-                    </select>
-
-                    <svg class="transform -rotate-90 absolute pointer-events-none" style="right: 12px;" width="22"
-                         height="22" viewBox="0 0 22 22">
-                        <g fill="none" fill-rule="evenodd">
-                            <path stroke="#000" stroke-opacity=".012" stroke-width=".5" d="M21 1v20.16H.84V1z">
-                            </path>
-                            <path fill="#222"d="M13.854 7.224l-3.847 3.856 3.847 3.856-1.184 1.184-5.04-5.04 5.04-5.04z"></path>
-                        </g>
-                    </svg>
+                <div class="justify-center m-auto scale-125 my-24">
+                    <form id="category-form" method="GET" action="{{ url('/kategori') }}">
+                        <select id="category" class="mt-4 mr-4 appearance-none border-none bg-transparent py-2 pl-3 pr-9  font-semibold  px-4 text-1.5xl font-medium text-white  hover:text-yellow-300" name="id" onchange="this.form.submit()">
+                            <option class="bg-gray-800">Genre</option>
+                            <option class="bg-gray-800" value="Horror">Horror</option>
+                            <option class="bg-gray-800" value="Fantasy">Fantasy</option>
+                            <option class="bg-gray-800" value="Adventure">Adventure</option>
+                            <option class="bg-gray-800" value="Action">Action</option>
+                            <option class="bg-gray-800" value="Anime">Anime</option>
+                            <option class="bg-gray-800" value="Family">Family</option>
+                            <option class="bg-gray-800" value="History">History</option>
+                            <option class="bg-gray-800" value="Comedy">Comedy</option>
+                            <option class="bg-gray-800" value="Romantic">Romantic</option>
+                            <option class="bg-gray-800" value="Mystery">Mystery</option>
+                            <option class="bg-gray-800" value="Crime">Crime</option>
+                            <option class="bg-gray-800" value="Documentary">Documentary</option>
+                            <option class="bg-gray-800" value="Romantic">Romantic </option>
+                            <option class="bg-gray-800" value="Sci-fi">Sci-fi</option>
+                            <!-- Add more options for your categories -->
+                        </select>
+                    </form>
                 </div>
-
-                <div class="w-full sm:w-1/2 md:w-1/6 p-4  ">
-        <select class= " mt-4 mr-4 appearance-none border-none bg-transparent py-2 pl-3 pr-9  font-semibold  px-4 text-1.5xl font-medium text-white  hover:text-yellow-300">
-                        <option value="category" disabled selected>YEAR
-                        </option>
-                        <option value="2023">2023</option>
-                        <option value="2022">2022</option>
-                        <option value="2021">2021</option> 
-                        <option value="2020">2020</option> 
-                        <option value="2019">2019</option> 
-                        <option value="2018">2018</option> 
-                        <option value="2017">2017</option> 
-                        <option value="2016">2016</option> 
-                     </select>
-
-                     <svg class="transform -rotate-90 absolute pointer-events-none " style="right: 12px;" width="22"
-                         height="22" viewBox="0 0 22 22">
-                        <g fill="none" fill-rule="evenodd">
-                            <path stroke="#000" stroke-opacity=".012" stroke-width=".5" d="M21 1v20.16H.84V1z">
-                            </path>
-                            <path fill="#222" d="M13.854 7.224l-3.847 3.856 3.847 3.856-1.184 1.184-5.04-5.04 5.04-5.04z"></path>
-                        </g>
-                    </svg>
-                </div>
-
-                <!-- Top -->
-                <div class="w-full sm:w-1/2 md:w-1/6 p-4 ">
-        <select class="  mt-4 mr-4 appearance-none border-none bg-transparent py-2 pl-3 pr-9  font-semibold  px-4 text-1.5xl font-medium text-white  hover:text-yellow-300">
-                        </option>
-                        <option value="2023">A-Z</option>
-                        <option value="2022">A</option>
-                        <option value="2021">B</option> 
-                        <option value="2020">c</option> 
-                        <option value="2019">D</option> 
-                     </select>
-
-                     <svg class="transform -rotate-90 absolute pointer-events-none" style="right: 12px;" width="22"
-                         height="22" viewBox="0 0 22 22">
-                        <g fill="none" fill-rule="evenodd">
-                            <path stroke="#000" stroke-opacity=".012" stroke-width=".5" d="M21 1v20.16H.84V1z">
-                            </path>
-                            <path fill="#222"d="M13.854 7.224l-3.847 3.856 3.847 3.856-1.184 1.184-5.04-5.04 5.04-5.04z"></path>
-                        </g>
-                    </svg>
-                </div>
-               
-                <!-- Year -->
-               
-                
              </section>
             </header> 
   
            
            
             <!-- List movies -->
-
-    <div class=" py-8 pb-5 lg:grid lg:grid-cols-3  ">
-    <article
-    class="  border border-black border-opacity-0 hover:border-opacity-5 rounded-xl">
-                    
-                    <div class="py-6 px-5">
-                           
-                        <div class="hover:scale-105 transition-all duration-400 mt-8 flex flex-col justify-between">
-                             <div class="space-x-2">
-                             <article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200">
-                               <img alt="Placeholder" class="block h-auto w-full " src="https://m.media-amazon.com/images/M/MV5BOWQzMDc5OTMtMjFiMy00M2I3LWIyZWMtODM4NTRhMGI2ZTRkXkEyXkFqcGdeQXVyNDAxNzcyNw@@._V1_FMjpg_UX1000_.jpg">
-                             </a>
-                             <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-                                <h1 class="text-lg">
-                                   <a class="no-underline hover:underline text-gray-200" href="#">
-                                      Troll
-                                   </a>
-                                </h1>
-                                <div class="flex items-center text-sm">
-                              <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Rating star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                              <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Rating star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            
-                                <p class="ml-2 text-sm font-bold text-white-900 text-white">5.00</p>
-                                <span class="w-1 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400"></span>
-                               <a href="#" class="text-sm font-medium text-white-900 underline hover:no-underline text-white">89 reviews</a>
-                               </div>
-                           </header>
-                         </article>
-                         </div>   
-                        </div>
-                    </div>
-                </article>
-
-     
-                <article
-                    class="border border-black border-opacity-0 hover:border-opacity-5 rounded-xl">
-                    
-                    <div class="py-6 px-5">
-                           
-                        <div class="hover:scale-105 transition-all duration-400 mt-8 flex flex-col justify-between">
-                             <div class="space-x-2">
-                             <article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200">
-                               <img alt="Placeholder" class="block h-auto w-full" src="https://resizing.flixster.com/sIIIT-HMVARKZnPDufuE5g9VasE=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vODg2NDIxYjAtMWM0My00OTFkLWJmNTQtODZmY2QzYjkyMTkzLmpwZw==">
-                             </a>
-                             <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-                                <h1 class="text-lg">
-                                   <a class="no-underline hover:underline text-gray-200" href="#">
-                                      You
-                                   </a>
-                                </h1>
-                                <div class="flex items-center text-sm">
-                              <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Rating star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                              <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Rating star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                              <p class="ml-2 text-sm font-bold text-white-900 text-white">6.5</p>
-                                <span class="w-1 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400"></span>
-                               <a href="#" class="text-sm font-medium text-white-900 underline hover:no-underline text-white">73 reviews</a>
-                               </div>
-                           </header>
-                         </article>
-                         </div>   
-                        </div>
-                    </div>
-                </article>
-
-
-                <article
-                class="border border-black border-opacity-0 hover:border-opacity-5 rounded-xl">
-                    
-                    <div class="py-6 px-5">
-                           
-                        <div class="hover:scale-105 transition-all duration-400 mt-8 flex flex-col justify-between">
-                             <div class="space-x-2">
-                             <article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200">
-                               <img alt="Placeholder" class="block h-auto w-full" src="https://m.media-amazon.com/images/M/MV5BYWQ2NzQ1NjktMzNkNS00MGY1LTgwMmMtYTllYTI5YzNmMmE0XkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_.jpg">
-                             </a>
-                             <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-                                <h1 class="text-lg">
-                                   <a class="no-underline hover:underline text-gray-200" href="#">
-                                   No Time to Die
-                                   </a>
-                                </h1>
-                                <div class="flex items-center text-sm">
-                              <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Rating star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                                <p class="ml-2 text-sm font-bold text-white-900 text-white">4.95</p>
-                                <span class="w-1 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400"></span>
-                               <a href="#" class="text-sm font-medium text-white-900 underline hover:no-underline text-white">56 reviews</a>
-                               </div>
-                           </header>
-                         </article>
-                         </div>   
-                            </div>
-                          </div>
-                     </article>
-                 </div>
-
-
-            <!-- List movies -->                 
-            <div class="  mb-5 lg:grid lg:grid-cols-3  ">
-               <article 
-               class="border border-black border-opacity-0 hover:border-opacity-5 rounded-xl">
-                    
-                    <div class="py-6 px-5">
-                           
-                        <div class="hover:scale-105 transition-all duration-400 mt-8 flex flex-col justify-between">
-                      <div class="space-x-2">
-                         <article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200">
-                             <img alt="Placeholder" class="block h-auto w-full" src="https://m.media-amazon.com/images/M/MV5BMjExMTEzODkyN15BMl5BanBnXkFtZTcwNTU4NTc4OQ@@._V1_.jpg">
-                             <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-                                <h1 class="text-lg">
-                                   <a class="no-underline hover:underline text-gray-200" href="#">
-                                   12 Years a Slave
-                                   </a>
-                                </h1>
-                                <div class="flex items-center text-sm">
-                              <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Rating star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                                <p class="ml-2 text-sm font-bold text-white-900 text-white">4.95</p>
-                                <span class="w-1 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400"></span>
-                               <a href="#" class="text-sm font-medium text-white-900 underline hover:no-underline text-white">73 reviews</a>
-                               </div>
-                           </header>
-                          </article>
-                         </div>   
-                        </div>
-                    </div>
-                </article>
-
-     
-                <article
-                    class="border border-black border-opacity-0 hover:border-opacity-5 rounded-xl">
-                    
-                    <div class="py-6 px-5">
-                           
-                        <div class="hover:scale-105 transition-all duration-400 mt-8 flex flex-col justify-between">
-                             <div class="space-x-2">
-                             <article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200">
-                               <img alt="Placeholder" class="block h-auto w-full" src="https://m.media-amazon.com/images/M/MV5BNTFkZjdjN2QtOGE5MS00ZTgzLTgxZjAtYzkyZWQ5MjEzYmZjXkEyXkFqcGdeQXVyMTM0NTUzNDIy._V1_.jpg">
-                             </a>
-                             <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-                                <h1 class="text-lg">
-                                   <a class="no-underline hover:underline text-gray-200" href="#">
-                                      Venom
-                                   </a>
-                                </h1>
-                                <div class="flex items-center text-sm">
-                              <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Rating star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                              <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Rating star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                              <p class="ml-2 text-sm font-bold text-white-900 text-white">7.00</p>
-                                <span class="w-1 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400"></span>
-                               <a href="#" class="text-sm font-medium text-white-900 underline hover:no-underline text-white">98 reviews</a>
-                               </div>
-                           </header>
-                         </article>
-                         </div>   
-                        </div>
-                    </div>
-                </article>
-
-
-                <article
-                     class="border border-black border-opacity-0 hover:border-opacity-5 rounded-xl">
-                    
-                    <div class="py-6 px-5">
-                           
-                        <div class="hover:scale-105 transition-all duration-400 mt-8 flex flex-col justify-between">
-                             <div class="space-x-2">
-                             <article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200">
-                               <img alt="Placeholder" class="block h-auto w-full" src="https://m.media-amazon.com/images/M/MV5BZDc4MzVkNzYtZTRiZC00ODYwLWJjZmMtMDIyNjQ1M2M1OGM2XkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_FMjpg_UX1000_.jpg">
-                             </a>
-                             <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-                                <h1 class="text-lg">
-                                   <a class="no-underline hover:underline text-gray-200" href="#">
-                                      Planet
-                                   </a>
-                                </h1>
-                                <div class="flex items-center text-sm">
-                              <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Rating star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                              <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Rating star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                              <p class="ml-2 text-sm font-bold text-white-900 text-white">4.95</p>
-                                <span class="w-1 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400"></span>
-                               <a href="#" class="text-sm font-medium text-white-900 underline hover:no-underline text-white">58 reviews</a>
-                               </div>
-                           </header>
-                         </article>
-                         </div>   
-                            </div>
-                          </div>
-                     </article>
-                 </div>
-
+            <div class="flex justify-center">
+                <h1 class="title-font sm:text3xl text-3xl mb-4 font-medium text-white md:ml-40 lg:ml-40 sm:ml-40 ml-28">Movies
+                </h1>
+            </div>
+        <article class="flex flex-col sm:flex-row md:flex-row lg:flex-row justify-center md:ml-40 lg:ml-40 sm:ml-40 ml-28 my-10">
+                <!-- Article -->
+                @foreach ($films as $film)
+                @if ($film->genre == $genre)
+                <div class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200 mx-2 max-w-xs justify-center ">
+                    <a href="#">
+                        <img alt="Placeholder" class="block h-auto w-full" src="{{ $film->imgurl }}">
+                    </a>
+                    @if (Auth()->check())
+                    @if (Auth::user()->role == 1 OR Auth::user()->role == 0)
+                    <button class="text-gray-900 bg-yellow-400 hover:bg-yellow-300 w-1/10 inline-block text-sm font-medium text-white-200 bg-gray-800 hover:bg-gray-700 absolute bottom-16 right-0 px-2 py-2 rounded-lg" type="button">
+                        Add to <svg class="md:w-5 sm:w-5 lg:w-5 md:h-5 sm:h-5 lg:h-5 inline" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
+                            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
+                        </svg>
+                    </button>
+                    @endif
+                    @if (Auth::user()->role == 0)
+                    <form method="POST" action="{{ route('movie.delete', $film->id) }}">
+                        @csrf
+                        @method('DELETE')
+                        <button class="w-1/10 inline-block text-sm font-medium text-gray-900 bg-gray-800 hover:bg-gray-700 absolute top-0 right-0 px-2 py-2 rounded-lg scale-200 lg:scale-90 sm:scale-60" type="submit">❌</button>
+                    </form>
+                    @endif
+                    @endif
+                    <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+                        <h1 class="text-lg">
+                            <a class="no-underline hover:underline text-gray-200" href="#">
+                                {{ $film->title }}
+                            </a>
+                        </h1>
+                    </header>
+                </div>
+                @endif
+                @endforeach
+        </article>
+        @if ($films->where('genre', $genre)->count() === 0)
+        <div class="flex justify-center">
+            <h1 class=" bg-slate-800 p-16 text-center title-font sm:textlg text-lg mb-4 font-medium text-white md:ml-40 lg:ml-40 sm:ml-40 ml-28 mb-16">No movies in this genre
+            </h1>
+        </div>
+        @endif
+        <div class="flex justify-center">
+            <h1 class="title-font sm:text3xl text-3xl mb-4 font-medium text-white md:ml-40 lg:ml-40 sm:ml-40 ml-28">Shows
+            </h1>
+        </div>
+        <article class="flex flex-col sm:flex-row md:flex-row lg:flex-row justify-center md:ml-40 lg:ml-40 sm:ml-40 ml-28 my-10">
+            <!-- Article -->
+            
+            @foreach ($shows as $show)
+            @if ($show->genre == $genre)
+            <div class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200 mx-2 max-w-xs">
+                <a href="#">
+                    <img alt="Placeholder" class="block h-auto w-full" src="{{ $show->imgurl }}">
+                </a>
+                @if (Auth()->check())
+                @if (Auth::user()->role == 1 OR Auth::user()->role == 0)
+                <button class="text-gray-900 bg-yellow-400 hover:bg-yellow-300 w-1/10 inline-block text-sm font-medium text-white-200 bg-gray-800 hover:bg-gray-700 absolute bottom-16 right-0 px-2 py-2 rounded-lg" type="button">
+                    Add to <svg class="md:w-5 sm:w-5 lg:w-5 md:h-5 sm:h-5 lg:h-5 inline" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                        <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
+                        <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
+                    </svg>
+                </button>
+                @endif
+                @if (Auth::user()->role == 0)
+                <form method="POST" action="{{ route('movie.delete', $show->id) }}">
+                    @csrf
+                    @method('DELETE')
+                    <button class="w-1/10 inline-block text-sm font-medium text-gray-900 bg-gray-800 hover:bg-gray-700 absolute top-0 right-0 px-2 py-2 rounded-lg scale-200 lg:scale-90 sm:scale-60" type="submit">❌</button>
+                </form>
+                @endif
+                @endif
+                <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+                    <h1 class="text-lg">
+                        <a class="no-underline hover:underline text-gray-200" href="#">
+                            {{ $show->title }}
+                        </a>
+                    </h1>
+                </header>
+            </div>
+            @endif
+        @endforeach
+    </article>
+    @if ($shows->where('genre', $genre)->count() === 0)
+        <div class="flex justify-center">
+            <h1 class=" bg-slate-800 p-16 text-center title-font sm:textlg text-lg mb-4 font-medium text-white md:ml-40 lg:ml-40 sm:ml-40 ml-28">No shows in this genre
+            </h1>
+        </div>
+        @endif
+        
 
 
 
                   <!-- Footer -->   
-
-<div class=" flex justify-center "> 
+<footer class= " md:ml-40 lg:ml-40 sm:ml-40 ml-28">
+<div class=" flex justify-center my-24 "> 
     
 <!-- Previous Button -->
 <a href="#" class="inline-flex items-center px-4 py-2 mr-3 text-sm text-sm font-medium text-gray-900 bg-yellow-400 rounded-lg hover:bg-yellow-300">
@@ -420,10 +231,10 @@
    
  </div>                         
 
-<footer class=" rounded-xl text-center py-10 px-5 mt-16">
+<footer class=" rounded-xl text-center py-10">
     <h1 class="mb-4 text-xl font-extrabold text-white-900 text-white md:text-2xl lg:text-x"><span class="text-transparent bg-clip-text bg-yellow-400 rounded-full hover:bg-yellow-300">Chas-movies</span> The best quality </h1>
         <p class="text-lg font-normal text-gray-500 lg:text-x dark:text-gray-400">Here at Chas-movies we focus on good quality, with different languages and free for the public.</p>
-          <div class="mt-10">
+          <div class="my-10 mx-2">
             <div class=" relative inline-block mx-auto lg:bg-gray-200 rounded-full">
                 <form method="POST" action="#" class="lg:flex text-sm">
                     <div class="lg:py-3 lg:px-5 flex items-center">
@@ -436,8 +247,8 @@
             </div>
           </div>
        
-      <div class=" mr-10 pt-5 md:flex md:justify-between">
-         <div class=" md:mb-0">
+      <div class="md:flex md:justify-between my-10">
+         <div class="my-10">
              <a href="https://flowbite.com/" class="flex items-center">
                 <img src="https://chasacademy.se/wp-content/uploads/2020/12/ca-emblem-white.svg" class="h-9 mr-3 bg-black" alt="Chas-movies Logo" />
                 <span class="self-center text-1xl font-semibold whitespace-nowrap text-white">Chas-movies</span>
@@ -510,6 +321,5 @@
            </div>
          </div>
       </footer>
-    </section>
   </body>
 </html>

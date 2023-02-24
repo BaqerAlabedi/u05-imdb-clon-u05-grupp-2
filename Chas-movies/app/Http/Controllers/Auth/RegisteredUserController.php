@@ -16,6 +16,7 @@ use App\Models\Show;
 use App\Models\Film;
 use App\Models\Comment;
 use App\Models\Watchlist;
+use App\Models\Genre;
 
 class RegisteredUserController extends Controller
 {
@@ -105,6 +106,14 @@ class RegisteredUserController extends Controller
         return view('watchlist', ['shows' => $shows, 'films' => $films, 'watchlists' => $watchlists]);
     }
 
+    public function displayGenre(Request $request)
+    {
+        $films = Film::all();
+        $shows = Show::all();
+        $genre = $request->get("id");
+        return view('kategori', ['films' => $films, 'shows' => $shows, 'genre' => $genre]);
+    }
+
     /**
      * update stuff.
      */
@@ -114,6 +123,13 @@ class RegisteredUserController extends Controller
         $user->role = 0;
         $user->save();
         return redirect()->route('dashboard')->with('status', 'User deleted successfully!');
+    }
+
+    public function filmView($id)
+    {
+        $films = Film::find($id);
+        $shows = Show::find($id);
+        return view('film-view', ['films' => $films, 'shows' => $shows, 'id' => $id]);
     }
     /**
      * Display the registration view.
