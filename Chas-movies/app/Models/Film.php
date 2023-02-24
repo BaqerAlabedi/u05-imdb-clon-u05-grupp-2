@@ -16,4 +16,9 @@ class Film extends Model
     {
         return $this->belongsTo(Watchlist::class);
     }
+
+    public function Genre()
+    {
+        return $this->belongsTo(Genre::class);
+    }
 }

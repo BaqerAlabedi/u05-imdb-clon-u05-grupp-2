@@ -90,6 +90,7 @@ Route::delete('dashboard/d/{id}', [RegisteredUserController::class, "deleteUser"
 Route::put('dashboard/admin/{id}', [RegisteredUserController::class, "makeAdmin"])->middleware(['auth', 'verified'])->name('user.admin');
 Route::delete('show/deleteshow/{id}', [RegisteredUserController::class, "deleteShows"])->middleware(['auth', 'verified'])->name('show.delete');
 Route::delete('comments/{id}', [RegisteredUserController::class, "deleteComment"]);
+Route::get('/kategori', [RegisteredUserController::class, "displayGenre"]);
 
 
 
