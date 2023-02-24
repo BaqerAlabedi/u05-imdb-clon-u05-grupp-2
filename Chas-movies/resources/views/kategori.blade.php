@@ -193,7 +193,7 @@
                 </div>
                 @endif
                 @endforeach
-        </article>
+        </article> 
         @if ($films->where('genre', $genre)->count() === 0)
         <div class="flex justify-center">
             <h1 class=" bg-slate-800 p-16 text-center title-font sm:textlg text-lg mb-4 font-medium text-white md:ml-40 lg:ml-40 sm:ml-40 ml-28 mb-16">No movies in this genre
