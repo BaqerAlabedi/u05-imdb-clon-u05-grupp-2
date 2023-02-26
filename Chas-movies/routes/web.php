@@ -98,5 +98,6 @@ Route::post('add-watchlist', [RegisteredUserController::class, 'storeWatchlist']
 
 Route::delete('delete-watchlist/{id}', [RegisteredUserController::class, 'destroyWatchlist'])->name('delete-watchlist');
 
+Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
 require __DIR__ . '/auth.php';
