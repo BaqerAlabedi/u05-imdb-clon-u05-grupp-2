@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\regUserController;
@@ -92,6 +93,6 @@ Route::delete('show/deleteshow/{id}', [RegisteredUserController::class, "deleteS
 Route::delete('comments/{id}', [RegisteredUserController::class, "deleteComment"]);
 Route::get('/kategori', [RegisteredUserController::class, "displayGenre"]);
 
-
+Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
 require __DIR__ . '/auth.php';
