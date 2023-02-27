@@ -70,10 +70,10 @@ class RegisteredUserController extends Controller
         return view('show', ['shows' => $shows]);
     }
 
- /**
+    /**
      * Show specific one.
      */
-    public function showMovie($id)  
+    public function showMovie($id)
     {
         $data = Film::find($id);
         return view('updatemovie', ['data' => $data]);
@@ -90,7 +90,7 @@ class RegisteredUserController extends Controller
         $data = User::find($id);
         return view('updateuser', ['data' => $data]);
     }
-     /**
+    /**
      * Update functionality.
      */
     public function updateMovie(Request $request)
@@ -184,9 +184,11 @@ class RegisteredUserController extends Controller
 
     public function filmView($id)
     {
+        $comment = Comment::get();
+        $comment = comment::all();
         $films = Film::find($id);
         $shows = Show::find($id);
-        return view('film-view', ['films' => $films, 'shows' => $shows, 'id' => $id]);
+        return view('film-view', ['films' => $films, 'shows' => $shows, 'id' => $id, 'comments' => $comment]);
     }
     /**
      * Display the registration view.
@@ -223,13 +225,6 @@ class RegisteredUserController extends Controller
         return redirect(RouteServiceProvider::HOME);
     }
     // comment
-
-    public function filmview()
-    {
-        $comment = Comment::get();
-        $comment = comment::all();
-        return view('film-view', ['comments' => $comment]);
-    }
 
     public function getDeletePost($post_id)
     {
