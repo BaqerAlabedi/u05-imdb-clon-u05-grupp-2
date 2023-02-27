@@ -110,7 +110,7 @@
                 <!-- Article -->
                 <article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200 relative">
 
-                    <a href="#">
+                    <a href="{{ route('film-view', $film->id) }}">
                         <img alt="Placeholder" class="block h-auto w-full" src="{{ $film->imgurl }}">
                     </a>
                     @if (Auth()->check())

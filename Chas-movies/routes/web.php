@@ -91,7 +91,7 @@ Route::put('dashboard/admin/{id}', [RegisteredUserController::class, "makeAdmin"
 Route::delete('show/deleteshow/{id}', [RegisteredUserController::class, "deleteShows"])->middleware(['auth', 'verified'])->name('show.delete');
 Route::delete('comments/{id}', [RegisteredUserController::class, "deleteComment"]);
 Route::get('/kategori', [RegisteredUserController::class, "displayGenre"]);
-
+Route::get('film-view/{id}', [RegisteredUserController::class, "filmView"])->name('film-view');
 
 
 require __DIR__ . '/auth.php';
