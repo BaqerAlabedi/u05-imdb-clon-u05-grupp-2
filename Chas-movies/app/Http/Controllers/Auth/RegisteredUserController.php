@@ -219,40 +219,40 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
-        
+
         return redirect(RouteServiceProvider::HOME);
     }
-// comment
+    // comment
 
     public function filmview()
-{
-    $comment = Comment::get();
-    $comment =comment::all();
-    return view('film-view', ['comments' => $comment]);
-}
+    {
+        $comment = Comment::get();
+        $comment = comment::all();
+        return view('film-view', ['comments' => $comment]);
+    }
+
+    public function getDeletePost($post_id)
+    {
+        $post = Comment::where('id', $post_id)->firstOrFail();
+        $post->delete();
+        return redirect()->route('dashboard')->with(['message' => 'Successfully deleted!!']);
+    }
 
 
 
     public function add_comment(Request $request)
     {
-     if(Auth::id())
-     {
-        $comment=new comment;
-         
-        
-        $comment->user_id=Auth::user()->id;
-        $comment->name=Auth::user()->name;
-        $comment->comment=$request->comment;
-        $comment->save();
-        
-        return redirect()->back();
-     }
-     else
-    
-    { 
-        return redirect('login');
+        if (Auth::id()) {
+            $comment = new comment;
+            $comment->user_id = Auth::user()->id;
+            $comment->name = Auth::user()->name;
+            $comment->comment = $request->comment;
+            $comment->body = $request->body;
+            $comment->save();
+
+            return redirect()->back();
+        } else {
+            return redirect('login');
+        }
     }
-   }
-
-
 }

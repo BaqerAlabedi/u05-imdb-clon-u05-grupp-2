@@ -143,8 +143,17 @@
       @foreach ($comments as $comment)
 
        <div >
-        <b>{{$comment->name}}</b>
+        <b>{{$comment->name}} </b>
         <p>{{$comment->comment}}</p>
+        @if (Auth()->check())
+        @if (Auth::user()->role == 0)
+        <form method="POST" action="{{ route('comment.delete', $comment->id) }}">
+            @csrf
+            @method('DELETE')
+            <button class="" type="submit">❌</button>
+        </form>
+        @endif
+        @endif
         <a href="javascript::void(0);" onclick="reply(this)"data-Commentid="{{$comment->name}}">Reply</a>
        </div>
        
