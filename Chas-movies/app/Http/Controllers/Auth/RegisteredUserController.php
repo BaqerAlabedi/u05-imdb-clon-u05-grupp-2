@@ -69,7 +69,7 @@ class RegisteredUserController extends Controller
  /**
      * Show specific one.
      */
-    public function showMovie($id)
+    public function showMovie($id)  
     {
         $data = Film::find($id);
         return view('updatemovie', ['data' => $data]);
