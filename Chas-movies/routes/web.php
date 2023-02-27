@@ -94,6 +94,10 @@ Route::delete('show/deleteshow/{id}', [RegisteredUserController::class, "deleteS
 Route::delete('comments/{id}', [RegisteredUserController::class, "deleteComment"]);
 Route::get('/kategori', [RegisteredUserController::class, "displayGenre"]);
 Route::get('film-view/{id}', [RegisteredUserController::class, "filmView"])->name('film-view');
+Route::get('/editmovie/{id}', [RegisteredUserController::class, 'showMovie'])->middleware(['auth', 'verified'])->name('edit.movie');
+Route::get('/editshow/{id}', [RegisteredUserController::class, 'showShow'])->middleware(['auth', 'verified'])->name('edit.show');
+Route::post('/editmovie', [RegisteredUserController::class, 'updateMovie'])->middleware(['auth', 'verified']);
+Route::post('/editshow', [RegisteredUserController::class, 'updateShow'])->middleware(['auth', 'verified']);
 
 
 
