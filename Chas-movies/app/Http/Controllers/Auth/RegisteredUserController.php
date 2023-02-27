@@ -16,6 +16,7 @@ use App\Models\Show;
 use App\Models\Film;
 use App\Models\Comment;
 use App\Models\Watchlist;
+use App\Models\Genre;
 
 class RegisteredUserController extends Controller
 {
@@ -124,20 +125,22 @@ class RegisteredUserController extends Controller
     {
         $films = Film::find($id);
         $films->delete();
-        return redirect()->route('movie')->with('status', 'Movie deleted added successfully!');
+        return redirect()->route('movie')->with('status', 'Movie deleted successfully!');
     }
+
 
     public function deleteShows($id)
     {
         $shows = Show::find($id);
         $shows->delete();
-        return redirect()->route('show')->with('status', 'Show deletedadded successfully!');
+        return redirect()->route('show')->with('status', 'Show deleted successfully!');
     }
 
     public function deleteUser($id)
     {
         $user = User::find($id);
         $user->delete();
+        return redirect()->route('dashboard')->with('status', 'User deleted successfully!');
     }
 
     public function deleteComment($id)
@@ -154,9 +157,31 @@ class RegisteredUserController extends Controller
         return view('watchlist', ['shows' => $shows, 'films' => $films, 'watchlists' => $watchlists]);
     }
 
+    public function displayGenre(Request $request)
+    {
+        $films = Film::all();
+        $shows = Show::all();
+        $genre = $request->get("id");
+        return view('kategori', ['films' => $films, 'shows' => $shows, 'genre' => $genre]);
+    }
+
     /**
-     * Delete stuff.
+     * update stuff.
      */
+    public function makeAdmin($id)
+    {
+        $user = User::find($id);
+        $user->role = 0;
+        $user->save();
+        return redirect()->route('dashboard')->with('status', 'User deleted successfully!');
+    }
+
+    public function filmView($id)
+    {
+        $films = Film::find($id);
+        $shows = Show::find($id);
+        return view('film-view', ['films' => $films, 'shows' => $shows, 'id' => $id]);
+    }
     /**
      * Display the registration view.
      */

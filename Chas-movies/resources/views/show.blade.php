@@ -59,7 +59,8 @@
                     </a>
                 </div>
             </div>
-            @if (Auth::user()->role == 0 || Auth::user()->role == 1)
+            @if (Auth()->check())
+            @if (Auth::user()->role == 0)
             <div class="flex flex-col items-center w-full mt-3 border-t border-gray-700">
                 <H2>Welcome</H2>{{ Auth::user()->name }}
                 <button data-modal-target="authentication-modal-2" data-modal-toggle="authentication-modal-2" class="w-1/10 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 hover:bg-yellow-300" type="button">
@@ -76,7 +77,24 @@
                 <span class="ml-2 text-sm font-medium">Profile</span>
             </a>
             @endif
-        </div>
+            @if (Auth::user()->role == 1)
+                <div class="flex flex-col items-center w-full mt-3 border-t border-gray-700">
+                    <H2>Welcome</H2>{{ Auth::user()->name }}
+                    <a href="{{ url('/watchlist')}}"><button class="w-1/10 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 hover:bg-yellow-300" type="button">
+                            My Watchlists
+                        </button></a>
+
+                        <a class="flex items-center justify-center w-full h-16 mt-auto bg-gray-800 hover:bg-gray-700 hover:text-gray-300" href="{{ url('/user') }}">
+                            <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span class="ml-2 text-sm font-medium">Profile</span>
+                        </a>
+                </div>
+                
+                @endif
+                @endif
+            </div>
 
 
     </nav>
@@ -93,7 +111,9 @@
                     <a href="#">
                         <img alt="Placeholder" class="block h-auto w-full" src="{{ $show->imgurl }}">
                     </a>
-                    <button class="w-1/10 inline-block text-sm font-medium text-white-200 bg-gray-800 hover:bg-gray-700 absolute bottom-16 right-0 px-2 py-2 rounded-lg" type="button">
+                    @if (Auth()->check())
+                    @if (Auth::user()->role == 0 OR Auth::user()->role == 1)
+                    <button class="text-gray-900 bg-yellow-400 hover:bg-yellow-300 w-1/10 inline-block text-sm font-medium text-white-200 bg-gray-800 hover:bg-gray-700 absolute bottom-16 right-0 px-2 py-2 rounded-lg" type="button">
                         Add to <svg class="md:w-5 sm:w-5 lg:w-5 md:h-5 sm:h-5 lg:h-5 inline" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                             <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -109,6 +129,8 @@
                         @method('DELETE')
                         <button class="w-1/10 inline-block text-sm font-medium text-gray-900 bg-gray-800 hover:bg-gray-700 absolute top-0 right-0 px-2 py-2 rounded-lg scale-200 lg:scale-90 sm:scale-60" type="submit">❌</button>
                     </form>
+                    @endif
+                    @endif
                     @endif
 
                     <header class="flex items-center justify-between leading-tight p-2 md:p-4">
@@ -223,7 +245,8 @@
 
         </div>
     </div>
-    @if (Auth::user()->role == 0 || Auth::user()->role == 1)
+    @if (Auth()->check())
+    @if (Auth::user()->role == 0)
     <div id="authentication-modal-2" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
         <div class="relative w-full h-full max-w-md md:h-auto">
             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
@@ -274,6 +297,7 @@
             </div>
         </div>
     </div>
+    @endif
     @endif
     <script src="https://unpkg.com/flowbite@1.6.0/dist/flowbite.min.js"></script>
 </body>

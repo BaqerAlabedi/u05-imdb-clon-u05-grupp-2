@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Genre extends Model
 {
     use HasFactory;
+
+    public function film()
+    {
+        return $this->hasMany(Film::class);
+    }
+
+    public function shows()
+    {
+        return $this->hasMany(Show::class);
+    }
 }
