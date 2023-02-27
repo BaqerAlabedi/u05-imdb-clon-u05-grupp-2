@@ -96,6 +96,16 @@
                     <span class="ml-2 text-sm font-medium">Profile</span>
                 </a>
                 @endif
+
+                @if (Auth::user()->role == 1 || Auth::user()->role == 0)
+                <div class="text-center">
+                <form method="POST" action="{{ route('logout') }}" class="w-1/10 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 hover:bg-yellow-300">
+                  @csrf
+                  <button type="submit">Log out
+                  </button>
+                </form>
+                </div>
+                @endif
                 @endif
             </div>
 
