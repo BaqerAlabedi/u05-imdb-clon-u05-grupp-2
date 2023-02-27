@@ -96,13 +96,13 @@ class RegisteredUserController extends Controller
         $comment->delete();
     }
 
-    public function createWatchlist()
-    {
-        $films = Film::all();
-        $shows = Show::all();
-        $watchlists = Watchlist::get();
-        return view('watchlist', ['shows' => $shows, 'films' => $films, 'watchlists' => $watchlists]);
-    }
+    // public function createWatchlist()
+    // {
+    //     $films = Film::all();
+    //     $shows = Show::all();
+    //     $watchlists = Watchlist::get();
+    //     return view('watchlist', ['shows' => $shows, 'films' => $films, 'watchlists' => $watchlists]);
+    // }
 
     /**
      * Delete stuff.
@@ -151,6 +151,34 @@ class RegisteredUserController extends Controller
     }
 
     public function readAllWatchlist() {
+        // $films = Watchlist::where($id)->get();
+        // $user = auth()->user($id);
+
+        // $user = auth()->user();
+        // $films = $user->watchlist;
+        // return view('watchlist', ['films' => $films, 'users' => $user]);
+
+        // $user = auth()->user()->id;
+        // $listing = Watchlist::select('film_id')->get();
+        
+        // $user = User::find($id);
+        // $films = Film::get();
+        // return view('watchlist', ['id' => $id, 'users' => $user, 'films' => $films,]);
+        
+        // $listing = Watchlist::get();
+        // $listing->user_id = Auth::user()->id;
+        // return to_route('watchlist', ['id' => $request->user_id], ['films' => $listing]);
+
+        // $user = User::find($id);
+        // $films = Film::get();
+        // return view('watchlist', ['users' => $user, 'films' => $films, 'id' => $id]);
+
+        // $user = Auth::user()->id;
+        // return to_route('watchlist', ['id' => $request->userId, 'users' => $user]);
+        
+        // $user = Watchlist::find($id);
+        // return view('watchlist', ['user' => $user, 'id' => $id]);
+
         $listing = Watchlist::get();
         return view('watchlist', ['films' => $listing, 'shows' => $listing]);
     }
@@ -164,7 +192,7 @@ class RegisteredUserController extends Controller
         return to_route('film-view', ['id' => $request->filmId])->with('status', 'New movie added successfully!');
     }
     
-    public function destroyWatchlist($id) {
+    public function destroyWatchlist($id) { //  Fixa route till watchlist/{id}?
 
         $listing = Watchlist::where('id', $id);
         $listing->delete();

@@ -76,28 +76,29 @@ Route::get('/show', function () {
     return view('show', ["users" => $users])->name('show');
 });
 
-Route::get('/watchlist', function () {
-    $users = User::all();
-    return view('watchlist', ["users" => $users])->name('readAllWatchlist');    // Ändrat från watchlist till readAllWatchlist + raderat function i RegisteredUserController
-});;
-
 Route::post('movie/add-movie', [RegisteredUserController::class, 'createMovie'])->middleware(['auth', 'verified'])->name('add.movie');
 Route::post('movie/add-show', [RegisteredUserController::class, 'createShow'])->middleware(['auth', 'verified'])->name('add.show');
 Route::get('/movie', [RegisteredUserController::class, 'readAllMovies'])->middleware(['auth', 'verified'])->name('movie');
 Route::get('/show', [RegisteredUserController::class, 'readAllShows'])->middleware(['auth', 'verified'])->name('show');
-Route::get('/watchlist', [RegisteredUserController::class, 'createWatchlist'])->middleware(['auth', 'verified'])->name('watchlist');
 Route::delete('movie/deletemovie/{id}', [RegisteredUserController::class, "deleteMovies"])->name('movie.delete');;
 Route::delete('show/deleteshow/{id}', [RegisteredUserController::class, "deleteShows"])->name('show.delete');
 Route::delete('dashboard/{id}', [RegisteredUserController::class, "deleteUser"]);
 Route::delete('comments/{id}', [RegisteredUserController::class, "deleteComment"]);
 
+Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
 Route::get('film-view/{id}', [RegisteredUserController::class, "filmView"])->name('film-view');
-Route::get('watchlist', [RegisteredUserController::class, 'readAllWatchlist'])->name('watchlist');
 Route::post('add-watchlist', [RegisteredUserController::class, 'storeWatchlist'])->name('add-watchlist');
-
 Route::delete('delete-watchlist/{id}', [RegisteredUserController::class, 'destroyWatchlist'])->name('delete-watchlist');
 
-Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+///////////////////////////////////////////////////////////////////////
+
+// Route::get('/watchlist', function () {
+//     $users = User::all();
+//     return view('watchlist', ["users" => $users])->name('watchlist');
+// });;
+
+Route::get('watchlist/', [RegisteredUserController::class, 'readAllWatchlist'])->middleware(['auth', 'verified'])->name('watchlist');
+Route::get('watchlist', [RegisteredUserController::class, 'readAllWatchlist'])->name('watchlist');
 
 require __DIR__ . '/auth.php';
