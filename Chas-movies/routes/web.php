@@ -85,6 +85,8 @@ Route::post('movie/add-show', [RegisteredUserController::class, 'createShow'])->
 Route::get('/movie', [RegisteredUserController::class, 'readAllMovies'])->name('movie');
 Route::get('/show', [RegisteredUserController::class, 'readAllShows'])->name('show');
 Route::get('/watchlist', [RegisteredUserController::class, 'createWatchlist'])->middleware(['auth', 'verified'])->name('watchlist');
+
+
 Route::delete('movie/deletemovie/{id}', [RegisteredUserController::class, "deleteMovies"])->middleware(['auth', 'verified'])->name('movie.delete');
 Route::delete('dashboard/d/{id}', [RegisteredUserController::class, "deleteUser"])->middleware(['auth', 'verified'])->name('user.delete');
 Route::put('dashboard/admin/{id}', [RegisteredUserController::class, "makeAdmin"])->middleware(['auth', 'verified'])->name('user.admin');
@@ -92,6 +94,7 @@ Route::delete('show/deleteshow/{id}', [RegisteredUserController::class, "deleteS
 Route::delete('comments/{id}', [RegisteredUserController::class, "deleteComment"]);
 Route::get('/kategori', [RegisteredUserController::class, "displayGenre"]);
 Route::get('film-view/{id}', [RegisteredUserController::class, "filmView"])->name('film-view');
+
 
 
 require __DIR__ . '/auth.php';
