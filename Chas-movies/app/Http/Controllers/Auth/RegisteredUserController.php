@@ -55,7 +55,8 @@ class RegisteredUserController extends Controller
     public function readAllMovies()
     {
         $films = Film::get();
-        return view('movie', ['films' => $films]);
+        $user_id = Auth::user()->id;
+        return view('movie', ['films' => $films, "user_id" => $user_id]);
     }
 
     /**
@@ -144,17 +145,21 @@ class RegisteredUserController extends Controller
 
     /////////////////////////////////////////////////////////////
 
-    public function filmView($id) {
+    public function filmView($id)
+    {
         $films = Film::find($id);
         $shows = Show::find($id);
         return view('film-view', ['films' => $films, 'shows' => $shows, 'id' => $id]);
     }
 
-    public function readAllWatchlist($id) {        
+    public function readAllWatchlist($id)
+    {
 
         $users = Watchlist::find($id);
-        $films = Watchlist::where('film_id');
-        return view('watchlist', ['id' => $id, 'films' => $films, 'users' => $users]);
+        $user_id = Auth::user()->id;
+        $films = Film::get();
+        $shows = Show::get();
+        return view('watchlist', ['id' => $id, 'films' => $films, 'shows' => $shows, 'users' => $users, "user_id" => $user_id]);
 
         // $user->id = $request->userId;
         // $films = Watchlist::where('film_id');
@@ -162,16 +167,18 @@ class RegisteredUserController extends Controller
 
     }
 
-    public function storeWatchlist(Request $request) {
-        
+    public function storeWatchlist(Request $request)
+    {
+
         $listing = new Watchlist;
-        $listing->film_id= $request->filmId;
+        $listing->film_id = $request->filmId;
         $listing->user_id = Auth::user()->id;
         $listing->save();
         return to_route('film-view', ['id' => $request->filmId])->with('status', 'New movie added successfully!');
     }
-    
-    public function destroyWatchlist($id) { //  Fixa route till watchlist/{id}?
+
+    public function destroyWatchlist($id)
+    { //  Fixa route till watchlist/{id}?
 
         $listing = Watchlist::where('id', $id);
         $listing->delete();
