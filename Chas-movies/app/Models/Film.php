@@ -12,8 +12,9 @@ class Film extends Model
     /**
      * Get the Film that belongs to the watchlist.
      */
+    
     public function watchlist()
     {
-        return $this->belongsTo(Watchlist::class);
+        return $this->hasMany(Watchlist::class);
     }
 }

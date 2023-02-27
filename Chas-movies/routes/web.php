@@ -98,7 +98,7 @@ Route::delete('delete-watchlist/{id}', [RegisteredUserController::class, 'destro
 //     return view('watchlist', ["users" => $users])->name('watchlist');
 // });;
 
-Route::get('watchlist/', [RegisteredUserController::class, 'readAllWatchlist'])->middleware(['auth', 'verified'])->name('watchlist');
-Route::get('watchlist', [RegisteredUserController::class, 'readAllWatchlist'])->name('watchlist');
+Route::get('watchlist/{id}', [RegisteredUserController::class, 'readAllWatchlist'])->middleware(['auth', 'verified'])->name('watchlist');
+// Route::get('watchlist', [RegisteredUserController::class, 'readAllWatchlist'])->name('watchlist');
 
 require __DIR__ . '/auth.php';

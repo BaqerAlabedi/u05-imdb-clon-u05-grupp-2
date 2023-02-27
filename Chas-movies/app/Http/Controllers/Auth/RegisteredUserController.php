@@ -150,37 +150,16 @@ class RegisteredUserController extends Controller
         return view('film-view', ['films' => $films, 'shows' => $shows, 'id' => $id]);
     }
 
-    public function readAllWatchlist() {
-        // $films = Watchlist::where($id)->get();
-        // $user = auth()->user($id);
+    public function readAllWatchlist($id) {        
 
-        // $user = auth()->user();
-        // $films = $user->watchlist;
-        // return view('watchlist', ['films' => $films, 'users' => $user]);
+        $users = Watchlist::find($id);
+        $films = Watchlist::where('film_id');
+        return view('watchlist', ['id' => $id, 'films' => $films, 'users' => $users]);
 
-        // $user = auth()->user()->id;
-        // $listing = Watchlist::select('film_id')->get();
-        
-        // $user = User::find($id);
-        // $films = Film::get();
-        // return view('watchlist', ['id' => $id, 'users' => $user, 'films' => $films,]);
-        
-        // $listing = Watchlist::get();
-        // $listing->user_id = Auth::user()->id;
-        // return to_route('watchlist', ['id' => $request->user_id], ['films' => $listing]);
+        // $user->id = $request->userId;
+        // $films = Watchlist::where('film_id');
+        // return to_route('watchlist', ['id' => $request->userId, 'films' => $films, 'users' => $user]);
 
-        // $user = User::find($id);
-        // $films = Film::get();
-        // return view('watchlist', ['users' => $user, 'films' => $films, 'id' => $id]);
-
-        // $user = Auth::user()->id;
-        // return to_route('watchlist', ['id' => $request->userId, 'users' => $user]);
-        
-        // $user = Watchlist::find($id);
-        // return view('watchlist', ['user' => $user, 'id' => $id]);
-
-        $listing = Watchlist::get();
-        return view('watchlist', ['films' => $listing, 'shows' => $listing]);
     }
 
     public function storeWatchlist(Request $request) {

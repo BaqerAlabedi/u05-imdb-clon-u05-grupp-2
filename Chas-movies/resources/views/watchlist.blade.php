@@ -100,8 +100,11 @@
 
     <div class="pl-32 sm:pl-34 md:pl-40 lg:pl-40">
         <div class="flex flex-wrap -w-1/4 -md:w-1/2 md:justify-start lg:justify-start">
+        @if($films->count())
             @foreach ($films as $film)
             <!-- Column -->
+    <h1>Testtesttest</h1>
+
             <div class="my-1 px-1 md:w-1/2 sm:w-1/3 md:w-1/3 lg:my-4 lg:w-1/5">
                 <!-- Article -->
                 <article class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200 relative">
@@ -145,6 +148,12 @@
             </div>
             <!-- END Column -->
             @endforeach
+
+            <p>Test</p>
+
+            @else
+            <p class="my-4">No movies added. Please check back later.</p>
+            @endif
 
         </div>
     </div>
