@@ -83,9 +83,9 @@ Route::get('/watchlist', function () {
 
 
 
-route::post('/add_comment',[RegisteredUserController::class,'add_comment']);
+route::post('/add_comment', [RegisteredUserController::class, 'add_comment']);
 
-route::get('/film-view',[RegisteredUserController::class,'filmview']);
+route::get('/film-view', [RegisteredUserController::class, 'filmview']);
 
 
 
@@ -97,10 +97,9 @@ Route::get('/watchlist', [RegisteredUserController::class, 'createWatchlist'])->
 Route::delete('movie/deletemovie/{id}', [RegisteredUserController::class, "deleteMovies"])->name('movie.delete');;
 Route::delete('show/deleteshow/{id}', [RegisteredUserController::class, "deleteShows"])->name('show.delete');
 Route::delete('dashboard/{id}', [RegisteredUserController::class, "deleteUser"]);
+Route::delete('comments/{id}', [RegisteredUserController::class, "deleteComment"])->name('comment.delete');
 
 
 
 
 require __DIR__ . '/auth.php';
-
-
