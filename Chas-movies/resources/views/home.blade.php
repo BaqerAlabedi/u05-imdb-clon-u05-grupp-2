@@ -102,12 +102,15 @@
     <div class="flex justify-center">
         <h2 class="text-4xl font-medium text-yellow-400 py-5">Featured Today</h2>
     </div>
-    <section class="flex flex-wrap justify-center">
+    <section class="flex w-30 h-full flex-wrap justify-center">
         <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
+        @foreach ($films as $film)
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
-                <img class="w-full h-48 object-cover object-center" src="https://posterspy.com/wp-content/uploads/2016/07/MRBT_S2-P01.jpg" alt="Card Image">
+                <img class="200x200 object-cover object-center" src="https://posterspy.com/wp-content/uploads/2016/07/MRBT_S2-P01.jpg" alt="Card Image">
                 <div class="p-6 flex flex-col">
+                    <a href="{{ $film->title }}"> 
                     <h2 class="text-lg font-medium text-gray-200">Mr.Robot</h2>
+                    </a>
                     <p class="text-gray-300">Elliot, a brilliant but highly unstable young cyber-security engineer and vigilante hacker, becomes a key figure in a complex game of global dominance when he and his shadowy allies try to take down the corrupt corporation he works for.</p>
                     <div class="flex justify-center mt-4">
                         <a href="#" class="w-1/10 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-300">Learn More</a>
@@ -117,7 +120,7 @@
         </div>
         <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
-                <img class="w-full h-48 object-cover object-center" src="https://static.tvmaze.com/uploads/images/medium_portrait/0/537.jpg" alt="Card Image">
+                <img class="m-auto object-cover object-center" src="https://static.tvmaze.com/uploads/images/medium_portrait/0/537.jpg" alt="Card Image">
                 <div class="p-6 flex flex-col">
                     <h2 class="text-lg font-medium text-gray-200">Sons of Anarchy</h2>
                     <p class="text-gray-300">
@@ -130,7 +133,7 @@
         </div>
         <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
-                <img class="w-full h-48 object-cover object-center" src="https://www.formulatv.com/images/series/posters/2600/2610/dest_3.jpg" alt="Card Image">
+                <img class=" m-auto object-cover object-center" src="https://www.formulatv.com/images/series/posters/2600/2610/dest_3.jpg" alt="Card Image">
                 <div class="p-6 flex flex-col justify-center">
                     <h2 class="text-lg font-medium text-gray-200">BMF</h2>
                     <p class="text-gray-300">"BMF" follows the story of two brothers who created the "Black Mafia Family", the most prominent drug distribution network in US history.</p>
@@ -140,6 +143,7 @@
                 </div>
             </div>
         </div>
+        @endforeach
     </section>
 
     </section>
@@ -149,7 +153,7 @@
     <section class="flex flex-wrap justify-center">
         <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
-                <img class="w-full h-48 object-cover object-center" src="https://juksun.com/wp-content/uploads/2023/02/The-Man-from-Toronto-Movie-Poster.jpg?x54573" alt="Card Image">
+                <img class="object-cover object-center" src="https://juksun.com/wp-content/uploads/2023/02/The-Man-from-Toronto-Movie-Poster.jpg?x54573" alt="Card Image">
                 <div class="p-6 flex flex-col">
                     <h2 class="text-lg font-medium text-gray-200">The Man from Toronto</h2>
                     <p class="text-gray-300">Teddy, a struggling fitness entrepreneur in Yorktown, Virginia, is fired from his job at a local gym. He decides not to tell his wife Lori, taking her to Onancock for her birthday. Leaving her at a spa, Teddy arrives at the wrong cabin, where a man named Coughlin is being held hostage.</p>
@@ -161,7 +165,7 @@
         </div>
         <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
-                <img class="w-full h-48 object-cover object-center" src="https://static0.colliderimages.com/wordpress/wp-content/uploads/2015/01/the-divergent-series-insurgent-poster.jpg" alt="Card Image">
+                <img class="object-cover object-center" src="https://static0.colliderimages.com/wordpress/wp-content/uploads/2015/01/the-divergent-series-insurgent-poster.jpg" alt="Card Image">
                 <div class="p-6 flex flex-col">
                     <h2 class="text-lg font-medium text-gray-200">Divergent</h2>
                     <p class="text-gray-300">In a world divided by factions based on virtues, Tris learns she's Divergent and won't fit in. When she discovers a plot to destroy Divergents, Tris and the mysterious Four must find out what makes Divergents dangerous before it's too late.</p>
@@ -173,7 +177,7 @@
         </div>
         <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
-                <img class="w-full h-48 object-cover object-center" src="http://www.followingthenerd.com/site/wp-content/uploads/Aquaman-and-Mera-poster.jpg.jpg" alt="Card Image">
+                <img class="object-cover object-center" src="http://www.followingthenerd.com/site/wp-content/uploads/Aquaman-and-Mera-poster.jpg.jpg" alt="Card Image">
                 <div class="p-6 flex flex-col justify-center">
                     <h2 class="text-lg font-medium text-gray-200">AQUAMAN</h2>
                     <p class="text-gray-300">Born upon the shores of the surface world, Arthur Curry (Jason Momoa) discovers that he is only half human, with the other half of his blood being of Atlanteean descent, thus making him the rightful heir to the throne of the undersea kingdom of Atlantis.</p>

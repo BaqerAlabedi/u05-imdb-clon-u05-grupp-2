@@ -111,4 +111,7 @@ Route::post('/editshow', [RegisteredUserController::class, 'updateShow'])->middl
 
 Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
+Route::get('home',[AuthenticatedSessionController::class, 'updateHome'])->name('home');
+
 require __DIR__ . '/auth.php';
+
