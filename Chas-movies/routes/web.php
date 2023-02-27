@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\regUserController;
@@ -80,6 +81,15 @@ Route::get('/watchlist', function () {
     return view('watchlist', ["users" => $users])->name('watchlist');
 });;
 
+
+
+
+route::post('/add_comment', [RegisteredUserController::class, 'add_comment']);
+
+route::get('/film-view', [RegisteredUserController::class, 'filmview']);
+
+
+
 Route::post('movie/add-movie', [RegisteredUserController::class, 'createMovie'])->middleware(['auth', 'verified'])->name('add.movie'); // Test route!
 Route::post('movie/add-show', [RegisteredUserController::class, 'createShow'])->middleware(['auth', 'verified'])->name('add.show');
 Route::get('/movie', [RegisteredUserController::class, 'readAllMovies'])->name('movie');
@@ -99,6 +109,6 @@ Route::get('/editshow/{id}', [RegisteredUserController::class, 'showShow'])->mid
 Route::post('/editmovie', [RegisteredUserController::class, 'updateMovie'])->middleware(['auth', 'verified']);
 Route::post('/editshow', [RegisteredUserController::class, 'updateShow'])->middleware(['auth', 'verified']);
 
-
+Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
 require __DIR__ . '/auth.php';
