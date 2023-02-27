@@ -45,8 +45,10 @@
                         </a>
                     </div>
                     <div class="flex flex-col items-center w-full mt-2 border-t border-gray-700">
+
                     
-                    <form method="get" action="{{ route('watchlist', $users->id) }}" class="flex absolute ml-60 mt-56 w-36 h-12 bg-amber-300 rounded-lg text-black">
+                    <form id="userId" method="GET" action="{{ route('watchlist') }}" class="flex absolute ml-60 mt-56 w-36 h-12 bg-amber-300 rounded-lg text-black">
+                    <input type="hidden" name="userId" id="id"/>
                     <button class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300">
                             <svg class="w-0 h-0 md:w-5 sm:w-5 lg:w-5 md:h-5 sm:h-5 lg:h-5 invisible md:visible lg:visible sm:visible" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                 <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />

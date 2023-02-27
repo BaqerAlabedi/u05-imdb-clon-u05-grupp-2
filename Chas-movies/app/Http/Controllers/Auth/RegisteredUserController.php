@@ -150,15 +150,21 @@ class RegisteredUserController extends Controller
         return view('film-view', ['films' => $films, 'shows' => $shows, 'id' => $id]);
     }
 
-    public function readAllWatchlist($id) {        
+    public function readAllWatchlist(Request $request) {        
 
-        $users = Watchlist::find($id);
-        $films = Watchlist::where('film_id');
-        return view('watchlist', ['id' => $id, 'films' => $films, 'users' => $users]);
+        // $users = Watchlist::find($id);
+        // $films = Watchlist::where('film_id');
+        // return view('watchlist', ['id' => $id, 'films' => $films, 'users' => $users]);
 
         // $user->id = $request->userId;
         // $films = Watchlist::where('film_id');
         // return to_route('watchlist', ['id' => $request->userId, 'films' => $films, 'users' => $user]);
+
+        // $films = Film::get();
+        // $shows = Show::get();
+        
+        Auth::user()->id = $request->get("id");
+        return view('watchlist', ['user' => $request->userId]);
 
     }
 
