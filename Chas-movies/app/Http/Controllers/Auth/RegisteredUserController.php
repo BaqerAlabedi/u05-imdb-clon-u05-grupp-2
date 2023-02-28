@@ -17,6 +17,7 @@ use App\Models\Show;
 use App\Models\Film;
 use App\Models\Comment;
 use App\Models\Watchlist;
+use League\CommonMark\Extension\Table\Table;
 use App\Models\Genre;
 
 
@@ -58,7 +59,8 @@ class RegisteredUserController extends Controller
     public function readAllMovies()
     {
         $films = Film::get();
-        return view('movie', ['films' => $films]);
+        $user_id = Auth::user()->id;
+        return view('movie', ['films' => $films, "user_id" => $user_id]);
     }
 
     /**
@@ -153,15 +155,16 @@ class RegisteredUserController extends Controller
     {
         $comment = Comment::find($id);
         $comment->delete();
+        return redirect()->back();
     }
 
-    public function createWatchlist()
-    {
-        $films = Film::all();
-        $shows = Show::all();
-        $watchlists = Watchlist::get();
-        return view('watchlist', ['shows' => $shows, 'films' => $films, 'watchlists' => $watchlists]);
-    }
+    // public function createWatchlist()
+    // {
+    //     $films = Film::all();
+    //     $shows = Show::all();
+    //     $watchlists = Watchlist::get();
+    //     return view('watchlist', ['shows' => $shows, 'films' => $films, 'watchlists' => $watchlists]);
+    // }
 
     public function displayGenre(Request $request)
     {
@@ -182,14 +185,6 @@ class RegisteredUserController extends Controller
         return redirect()->route('dashboard')->with('status', 'User deleted successfully!');
     }
 
-    public function filmView($id)
-    {
-        $comment = Comment::get();
-        $comment = comment::all();
-        $films = Film::find($id);
-        $shows = Show::find($id);
-        return view('film-view', ['films' => $films, 'shows' => $shows, 'id' => $id, 'comments' => $comment]);
-    }
     /**
      * Display the registration view.
      */
@@ -224,7 +219,47 @@ class RegisteredUserController extends Controller
 
         return redirect(RouteServiceProvider::HOME);
     }
-    // comment
+
+
+    public function filmView($id)
+    {
+        $comment = Comment::get();
+        $comment = comment::all();
+        $films = Film::find($id);
+        $shows = Show::find($id);
+        $user_id = Auth::user()->id;
+        return view('film-view', ['user_id' => $user_id, 'films' => $films, 'shows' => $shows, 'id' => $id, 'comments' => $comment]);
+    }
+
+    public function readAllWatchlist($id)
+    {
+
+        $users = Watchlist::find($id);
+        $user_id = Auth::user()->id;
+        $films = Film::whereHas('watchlist', function ($query) use ($user_id) {
+            $query->where('user_id', $user_id);
+        })->with('watchlist')->get()->unique();
+        $shows = Show::get();
+        return view('watchlist', ['id' => $id, 'films' => $films, 'shows' => $shows, 'users' => $users, "user_id" => $user_id]);
+    }
+
+    public function storeWatchlist(Request $request)
+    {
+        $listing = new Watchlist;
+        $listing->film_id = $request->filmId;
+        $listing->user_id = Auth::user()->id;
+        $listing->save();
+        return to_route('film-view', ['id' => $request->filmId])->with('status', 'New movie added successfully!');
+    }
+
+    public function destroyWatchlist($id)
+    { //  Fixa route till watchlist/{id}?
+
+        $listing = Watchlist::where('id', $id);
+        $listing->delete();
+        return to_route('watchlist')->with('status', 'Movie deleted successfully!');
+        // comment
+    }
 
     public function getDeletePost($post_id)
     {

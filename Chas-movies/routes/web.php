@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\regUserController;
 use App\Models\User;
 use App\Models\Film;
+use App\Models\Watchlist;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -94,22 +95,34 @@ Route::post('movie/add-movie', [RegisteredUserController::class, 'createMovie'])
 Route::post('movie/add-show', [RegisteredUserController::class, 'createShow'])->middleware(['auth', 'verified'])->name('add.show');
 Route::get('/movie', [RegisteredUserController::class, 'readAllMovies'])->name('movie');
 Route::get('/show', [RegisteredUserController::class, 'readAllShows'])->name('show');
-Route::get('/watchlist', [RegisteredUserController::class, 'createWatchlist'])->middleware(['auth', 'verified'])->name('watchlist');
 
 
 Route::delete('movie/deletemovie/{id}', [RegisteredUserController::class, "deleteMovies"])->middleware(['auth', 'verified'])->name('movie.delete');
 Route::delete('dashboard/d/{id}', [RegisteredUserController::class, "deleteUser"])->middleware(['auth', 'verified'])->name('user.delete');
 Route::put('dashboard/admin/{id}', [RegisteredUserController::class, "makeAdmin"])->middleware(['auth', 'verified'])->name('user.admin');
 Route::delete('show/deleteshow/{id}', [RegisteredUserController::class, "deleteShows"])->middleware(['auth', 'verified'])->name('show.delete');
-Route::delete('comments/{id}', [RegisteredUserController::class, "deleteComment"]);
+Route::delete('comments/{id}', [RegisteredUserController::class, "deleteComment"])->name('comment.delete');
 Route::get('/kategori', [RegisteredUserController::class, "displayGenre"]);
 Route::get('film-view/{id}', [RegisteredUserController::class, "filmView"])->name('film-view');
 Route::get('/editmovie/{id}', [RegisteredUserController::class, 'showMovie'])->middleware(['auth', 'verified'])->name('edit.movie');
 Route::get('/editshow/{id}', [RegisteredUserController::class, 'showShow'])->middleware(['auth', 'verified'])->name('edit.show');
 Route::post('/editmovie', [RegisteredUserController::class, 'updateMovie'])->middleware(['auth', 'verified']);
 Route::post('/editshow', [RegisteredUserController::class, 'updateShow'])->middleware(['auth', 'verified']);
-
 Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+Route::get('home', [AuthenticatedSessionController::class, 'updateHome'])->name('home');
+
+Route::post('add-watchlist', [RegisteredUserController::class, 'storeWatchlist'])->name('add-watchlist');
+Route::delete('delete-watchlist/{id}', [RegisteredUserController::class, 'destroyWatchlist'])->name('delete-watchlist');
+
+///////////////////////////////////////////////////////////////////////
+
+// Route::get('/watchlist', function () {
+//     $users = User::all();
+//     return view('watchlist', ["users" => $users])->name('watchlist');
+// });;
+
+Route::get('watchlist{id}', [RegisteredUserController::class, 'readAllWatchlist'])->middleware(['auth', 'verified'])->name('watchlist');
+// Route::get('watchlist', [RegisteredUserController::class, 'readAllWatchlist'])->name('watchlist');
 
 Route::get('home',[AuthenticatedSessionController::class, 'updateHome'])->name('home');
 
