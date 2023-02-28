@@ -166,7 +166,6 @@ class RegisteredUserController extends Controller
 
     public function storeWatchlist(Request $request)
     {
-
         $listing = new Watchlist;
         $listing->film_id = $request->filmId;
         $listing->user_id = Auth::user()->id;
