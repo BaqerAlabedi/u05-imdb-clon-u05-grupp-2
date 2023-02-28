@@ -90,7 +90,7 @@
                 </button>
 
             </div>
-              <!--Userbalde logga ut--->
+              <!--Userbalde logga ut-->
             @if (Auth::user()->role == 1 || Auth::user()->role == 0)
                 <div class="text-center">
                 <form method="POST" action="{{ route('logout') }}" class="w-1/10 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 hover:bg-yellow-300">
@@ -100,7 +100,7 @@
                 </form>
                 </div>
                 @endif
-
+            <!--End logga ut-->
             <a class="flex items-center justify-center w-full h-16 mt-auto bg-gray-800 hover:bg-gray-700 hover:text-gray-300" href="{{ url('/user') }}">
                 <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
