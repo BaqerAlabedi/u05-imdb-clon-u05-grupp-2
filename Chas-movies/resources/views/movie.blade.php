@@ -46,7 +46,8 @@
                     </div>
                     <div class="flex flex-col items-center w-full mt-2 border-t border-gray-700">
 
-                    
+                    @if (Auth()->check())
+                    @if (Auth::user()->role == 0)
                     <form method="get" action="{{ route('watchlist', $user_id) }}" class="flex absolute ml-60 mt-56 w-36 h-12 bg-amber-300 rounded-lg text-black">
                     <button class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300">
                             <svg class="w-0 h-0 md:w-5 sm:w-5 lg:w-5 md:h-5 sm:h-5 lg:h-5 invisible md:visible lg:visible sm:visible" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
@@ -56,8 +57,8 @@
                         <span class="ml-2 text-sm font-medium">Watchlist</span>
                     </button type="submit">
                     </form>
-
-
+                    @endif
+                    @endif
                         <a class="relative flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="{{ url('/helpcenter') }}">
                             <svg class="w-0 h-0 md:w-5 sm:w-5 lg:w-5 md:h-5 sm:h-5 lg:h-5 invisible md:visible lg:visible sm:visible stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
