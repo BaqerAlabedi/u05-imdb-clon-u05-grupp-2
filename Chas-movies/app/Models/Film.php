@@ -12,9 +12,9 @@ class Film extends Model
     /**
      * Get the Film that belongs to the watchlist.
      */
-    
+
     public function watchlist()
     {
-        return $this->hasMany(Watchlist::class);
+        return $this->belongsToMany(User::class, 'watchlists')->withPivot('user_id');
     }
 }
