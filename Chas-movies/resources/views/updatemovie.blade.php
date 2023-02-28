@@ -32,6 +32,7 @@
                         </svg>
                         <span class="ml-2 text-sm font-medium">TV-show</span>
                     </a>
+                    <div class="flex flex-col items-center w-full mt-3 border-t border-gray-700">
                     <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="{{ url('/kategori') }}">
                         <svg class="w-0 h-0 md:w-5 sm:w-5 lg:w-5 md:h-5 sm:h-5 lg:h-5 invisible md:visible lg:visible sm:visible" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
                             <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0v6h8V1H4zm8 8H4v6h8V9zM1 1v2h2V1H1zm2 3H1v2h2V4zM1 7v2h2V7H1zm2 3H1v2h2v-2zm-2 3v2h2v-2H1zM15 1h-2v2h2V1zm-2 3v2h2V4h-2zm2 3h-2v2h2V7zm-2 3v2h2v-2h-2zm2 3h-2v2h2v-2z" fill="white"></path>
@@ -59,7 +60,6 @@
                     </a>
                 </div>
             </div>
-            @if (Auth()->check())
             @if (Auth::user()->role == 0)
             <div class="flex flex-col items-center w-full mt-3 border-t border-gray-700">
                 <H2>Welcome</H2>{{ Auth::user()->name }}
@@ -78,82 +78,35 @@
                 <span class="ml-2 text-sm font-medium">Profile</span>
             </a>
             @endif
+            </nav>
 
-            @if (Auth::user()->role == 1)
-            <div class="flex flex-col items-center w-full mt-3 border-t border-gray-700">
-                <H2>Welcome</H2>{{ Auth::user()->name }}
-                <a href="{{ url('/watchlist')}}"><button class="w-1/10 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 hover:bg-yellow-300" type="button">
-                        My Watchlists
-                    </button></a>
+           
+            <section class="flex justify-center -mx-1 lg:-mx-4">
+<!-- Column -->
+<div class="my-1 px-1 w-full md:w-1/2 sm:w-1/3 md:w-1/3 lg:my-4 lg:w-1/5  flex flex-col">
+@if (Auth::user()->role == 0)
+<h1 class=" ml-3 text-xl dark:text-gray-300 self-center">Update movie</h1>
+                    <form method="POST" action="/editmovie" class="py-8 space-y-2 flex flex-col">
+                        @csrf
+                        <input type="hidden" name="id" value="{{ $data->id}}">
+                        <label class="block font-medium text-sm text-gray-700 dark:text-gray-300" for="title">Title</label>
+                        <input class="" type="text" name="title" value="{{ $data->title}}">
+                        <label class="block font-medium text-sm text-gray-700 dark:text-gray-300" for="genre">Genre</label>
+                        <input type="text" name="genre" value="{{ $data->genre}}">
+                        <label class="block font-medium text-sm text-gray-700 dark:text-gray-300" for="director">Director</label>
+                        <input type="text" name="director" value="{{ $data->director}}">
+                        <label class="block font-medium text-sm text-gray-700 dark:text-gray-300" for="maincast">Main cast</label>
+                        <input type="text" name="maincast" value="{{ $data->maincast}}">
+                        <label class="block font-medium text-sm text-gray-700 dark:text-gray-300" for="imgurl">URL</label>
+                        <input type="text" name="imgurl" value="{{ $data->imgurl}}">
+                        <button class="w-1/10 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 hover:bg-yellow-300" submit">Update</button>
+                    </form>
+                    @endif
 
-
-            </div>
-            <a class="flex items-center justify-center w-full h-16 mt-auto bg-gray-800 hover:bg-gray-700 hover:text-gray-300" href="{{ url('/user') }}">
-                <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span class="ml-2 text-sm font-medium">Profile</span>
-            </a>
-            @endif
-            @endif
-        </div>
-
-
-    </nav>
-<!--New chas helpcenter-->
-<div class="flex justify-center">
-  <h1 class="block rounded-lg shadow-lg max-w-sm text-center text-white text-2xl">Chas Helpcenter</h1>
 </div>
+<!-- END Column -->
+</div>
+</div>
+</section>
 
-<!-- New Cards start here -->
-
-<div class="flex flex-wrap justify-center mt-8 gap-8 sm:gap-4 md:gap-6 lg:gap-8">
-  <div class="flex justify-center mb-8">
-    <div class="flex items-center">
-      <div class="block rounded-lg shadow-lg bg-white w-full max-w-sm text-center">
-        <div class="mr-4">
-          <div class="p-4">
-            <h5 class="text-gray-100 text-xl font-medium mb-2">Ta bort konto</h5>
-            <p class="text-gray-700 text-base mb-4">
-              Kontakta oss så hjälper vi dig
-            </p>
-            <button type="button" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Dive in</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="flex justify-center mb-8">
-    <div class="flex items-center">
-      <div class="block rounded-lg shadow-lg bg-white w-full max-w-sm text-center">
-        <div class="mr-4">
-          <div class="p-4">
-            <h5 class="text-gray-900 text-xl font-medium mb-2">mitt konto är fryst</h5>
-            <p class="text-gray-700 text-base mb-4">
-             Kontakta oss så hjälper vi dig
-            </p>
-            <button type="button" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Dive in</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="flex justify-center mb-8">
-    <div class="flex items-center">
-      <div class="block rounded-lg shadow-lg bg-white w-full max-w-sm text-center">
-        <div class="mr-4">
-          <div class="p-4">
-            <h5 class="text-gray-900 text-xl font-medium mb-2">hur når jag er</h5>
-            <p class="text-gray-700 text-base mb-4">
-              du når oss via mail eller telefon
-            </p>
-            <button type="button" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Dive in</button>
-          </div>
-        </div>
-      </div>
-     </div>
-    </div>
-   </div>
-</body>
-
-</html>
+<script src="https://unpkg.com/flowbite@1.6.0/dist/flowbite.min.js%22%3E</script>

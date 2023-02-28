@@ -139,6 +139,10 @@
                     </button>
                     @endif
                     @if (Auth::user()->role == 0)
+                    <form method="GET" action="{{ route('edit.movie', $film->id) }}">
+                        @csrf
+                        <button class="w-1/10 inline-block w-1/10 mt-4 inline-block px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-400 hover:bg-yellow-300 absolute top-45 right-5 bottom-2 px-2 py-2 rounded-lg scale-200 lg:scale-90 sm:scale-60" type="submit">update</button>
+                    </form>
                     <form method="POST" action="{{ route('movie.delete', $film->id) }}">
                         @csrf
                         @method('DELETE')

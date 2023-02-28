@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CommentStoreRequest;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -17,6 +18,9 @@ use App\Models\Film;
 use App\Models\Comment;
 use App\Models\Watchlist;
 use League\CommonMark\Extension\Table\Table;
+use App\Models\Genre;
+
+
 
 class RegisteredUserController extends Controller
 {
@@ -67,6 +71,57 @@ class RegisteredUserController extends Controller
         $shows = Show::get();
         return view('show', ['shows' => $shows]);
     }
+
+    /**
+     * Show specific one.
+     */
+    public function showMovie($id)
+    {
+        $data = Film::find($id);
+        return view('updatemovie', ['data' => $data]);
+    }
+
+    public function showShow($id)
+    {
+        $data = Show::find($id);
+        return view('updateshow', ['data' => $data]);
+    }
+
+    public function showUser($id)
+    {
+        $data = User::find($id);
+        return view('updateuser', ['data' => $data]);
+    }
+    /**
+     * Update functionality.
+     */
+    public function updateMovie(Request $request)
+    {
+        $data = Film::find($request->id);
+        $data->title = $request->title;
+        $data->genre = $request->genre;
+        $data->director = $request->director;
+        $data->maincast = $request->maincast;
+        $data->imgurl = $request->imgurl;
+        $data->save();
+        return redirect()->route('movie');
+    }
+
+    public function updateShow(Request $request)
+    {
+        $data = Show::find($request->id);
+        $data->title = $request->title;
+        $data->genre = $request->genre;
+        $data->director = $request->director;
+        $data->maincast = $request->maincast;
+        $data->maincast = $request->seasons;
+        $data->maincast = $request->episodes;
+        $data->imgurl = $request->imgurl;
+        $data->save();
+        return redirect()->route('show');
+    }
+
+
     /**
      * Delete stuff.
      */
@@ -75,20 +130,25 @@ class RegisteredUserController extends Controller
     {
         $films = Film::find($id);
         $films->delete();
-        return redirect()->route('movie')->with('status', 'Movie deleted added successfully!');
+        return redirect()->route('movie')->with('status', 'Movie deleted successfully!');
     }
+
 
     public function deleteShows($id)
     {
         $shows = Show::find($id);
         $shows->delete();
-        return redirect()->route('show')->with('status', 'Show deletedadded successfully!');
+        return redirect()->route('show')->with('status', 'Show deleted successfully!');
     }
+
+
+
 
     public function deleteUser($id)
     {
         $user = User::find($id);
         $user->delete();
+        return redirect()->route('dashboard')->with('status', 'User deleted successfully!');
     }
 
     public function deleteComment($id)
@@ -105,9 +165,25 @@ class RegisteredUserController extends Controller
     //     return view('watchlist', ['shows' => $shows, 'films' => $films, 'watchlists' => $watchlists]);
     // }
 
+    public function displayGenre(Request $request)
+    {
+        $films = Film::all();
+        $shows = Show::all();
+        $genre = $request->get("id");
+        return view('kategori', ['films' => $films, 'shows' => $shows, 'genre' => $genre]);
+    }
+
     /**
-     * Delete stuff.
+     * update stuff.
      */
+    public function makeAdmin($id)
+    {
+        $user = User::find($id);
+        $user->role = 0;
+        $user->save();
+        return redirect()->route('dashboard')->with('status', 'User deleted successfully!');
+    }
+
     /**
      * Display the registration view.
      */
@@ -179,5 +255,31 @@ class RegisteredUserController extends Controller
         $listing = Watchlist::where('id', $id);
         $listing->delete();
         return to_route('watchlist')->with('status', 'Movie deleted successfully!');
+        // comment
+    }
+
+    public function getDeletePost($post_id)
+    {
+        $post = Comment::where('id', $post_id)->firstOrFail();
+        $post->delete();
+        return redirect()->route('dashboard')->with(['message' => 'Successfully deleted!!']);
+    }
+
+
+
+    public function add_comment(Request $request)
+    {
+        if (Auth::id()) {
+            $comment = new comment;
+            $comment->user_id = Auth::user()->id;
+            $comment->name = Auth::user()->name;
+            $comment->comment = $request->comment;
+            $comment->body = $request->body;
+            $comment->save();
+
+            return redirect()->back();
+        } else {
+            return redirect('login');
+        }
     }
 }

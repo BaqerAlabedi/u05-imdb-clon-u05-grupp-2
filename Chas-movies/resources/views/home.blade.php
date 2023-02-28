@@ -37,6 +37,15 @@
                     </svg>
                 </button>
             </a>
+
+            <a href="{{ url('/register') }}">
+                <button class="inline-flex items-center bg-yellow-400 text-gray-900 font-bold border-0 py-1 px-3 focus:outline-none hover:bg-yellow-300 rounded text-base ml-5 mt-4 md:mt-0">Sign up
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </a>
+
         </div>
         
     </header>
@@ -94,7 +103,7 @@
         <h2 class="text-4xl font-medium text-yellow-400 py-5">Featured Today</h2>
     </div>
     <section class="flex flex-wrap justify-center">
-        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col">
@@ -106,7 +115,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col">
@@ -118,7 +127,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col justify-center">
@@ -137,7 +146,7 @@
         <h2 class="text-4xl font-medium text-yellow-400 py-5">What to watch</h2>
     </div>
     <section class="flex flex-wrap justify-center">
-        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col">
@@ -149,7 +158,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col">
@@ -161,7 +170,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col justify-center">
@@ -197,7 +206,7 @@
     </div>
 
     <section class="flex flex-wrap justify-center">
-        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col">
@@ -209,7 +218,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col">
@@ -221,7 +230,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-full sm:w-1/2 md:w-1/6 p-4">
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
                 <img class="w-full h-48 object-cover object-center" src="https://via.placeholder.com/800x400" alt="Card Image">
                 <div class="p-6 flex flex-col justify-center">

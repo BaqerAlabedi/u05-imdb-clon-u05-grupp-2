@@ -17,4 +17,15 @@ class Film extends Model
     {
         return $this->belongsToMany(User::class, 'watchlists')->withPivot('user_id');
     }
+
+    public function Genre()
+    {
+        return $this->belongsTo(Genre::class);
+    }
+
+
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
+    }
 }
