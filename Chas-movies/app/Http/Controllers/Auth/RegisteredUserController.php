@@ -155,6 +155,7 @@ class RegisteredUserController extends Controller
     {
         $comment = Comment::find($id);
         $comment->delete();
+        return redirect()->back();
     }
 
     // public function createWatchlist()
@@ -219,13 +220,15 @@ class RegisteredUserController extends Controller
         return redirect(RouteServiceProvider::HOME);
     }
 
-    /////////////////////////////////////////////////////////////
 
     public function filmView($id)
     {
+        $comment = Comment::get();
+        $comment = comment::all();
         $films = Film::find($id);
         $shows = Show::find($id);
-        return view('film-view', ['films' => $films, 'shows' => $shows, 'id' => $id]);
+        $user_id = Auth::user()->id;
+        return view('film-view', ['user_id' => $user_id, 'films' => $films, 'shows' => $shows, 'id' => $id, 'comments' => $comment]);
     }
 
     public function readAllWatchlist($id)
