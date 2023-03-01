@@ -16,8 +16,10 @@ return new class extends Migration
         Schema::create('watchlists', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('film_id')->unsigned();
+            //$table->bigInteger('show_id')->unsigned(); //Jag spånar lite(viktoria)
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('film_id')->references('id')->on('films')->onDelete('cascade');
+            //$table->foreign('show_id')->references('id')->on('shows')->onDelete('cascade'); //Jag spånar lite(viktoria)
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

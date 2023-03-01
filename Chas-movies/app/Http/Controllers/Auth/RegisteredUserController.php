@@ -267,7 +267,7 @@ class RegisteredUserController extends Controller
         }
         $films = Film::whereHas('watchlist', function ($query) use ($user_id) {
             $query->where('user_id', $user_id);
-        })->with('watchlist')->get()->unique();
+        })->with('watchlist')->get()->unique(); //samma för shows???
         $shows = Show::get();
         return view('watchlist', ['id' => $id, 'films' => $films, 'shows' => $shows, 'users' => $users, "user_id" => $user_id]);
     }
@@ -275,6 +275,7 @@ class RegisteredUserController extends Controller
     public function storeWatchlist(Request $request)
     {
         $listing = new Watchlist;
+        //$listing->show_id = $request->showId; //Jag spånar lite (viktoria)
         $listing->film_id = $request->filmId;
         $listing->user_id = Auth::user()->id;
         $listing->save();
