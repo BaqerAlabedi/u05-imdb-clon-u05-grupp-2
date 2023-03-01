@@ -51,7 +51,7 @@ class DatabaseSeeder extends Seeder
        'genre' => 'Horror',
         'director' => 'nån',
         'maincast' => 'några',
-        'imgurl' => 'https://resizing.flixster.com/9ulMcbVWtxvAW4so_JAhh75_cQE=/206x305/v2/https://flxt.tmsimg.com/assets/p8174_p_v8_ai.jpg',
+        'imgurl' => 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7f/Smile_%282022_film%29.jpg/220px-Smile_%282022_film%29.jpg',
     ]);
 
     \App\Models\Film::factory()->create([
@@ -61,6 +61,16 @@ class DatabaseSeeder extends Seeder
         'maincast' => 'några',
         'imgurl' => 'https://resizing.flixster.com/9ulMcbVWtxvAW4so_JAhh75_cQE=/206x305/v2/https://flxt.tmsimg.com/assets/p8174_p_v8_ai.jpg',
     ]);
+
+
+    \App\Models\Film::factory()->create([
+        'title' => 'Devil wears Prada',
+       'genre' => 'Comedy',
+        'director' => 'nån',
+        'maincast' => 'några',
+        'imgurl' => 'https://m.media-amazon.com/images/M/MV5BZjQ3ZTIzOTItMGNjNC00MWRmLWJlMGEtMjJmMDM5ZDIzZGM3XkEyXkFqcGdeQXVyMTkzODUwNzk@._V1_.jpg',
+    ]);
+
 
 
 
@@ -92,6 +102,17 @@ class DatabaseSeeder extends Seeder
         'seasons' => 4, 
         'episodes' => 32,
         'imgurl' => 'https://flxt.tmsimg.com/assets/p8952681_b_v13_ab.jpg',
+    ]);
+
+
+    \App\Models\Show::factory()->create([
+        'title' => 'The Last Of Us',
+       'genre' => 'Horror',
+        'director' => 'nån',
+        'maincast' => 'Liam Neeson',
+        'seasons' => 1, 
+        'episodes' => 5,
+        'imgurl' => 'https://m.media-amazon.com/images/M/MV5BZGUzYTI3M2EtZmM0Yy00NGUyLWI4ODEtN2Q3ZGJlYzhhZjU3XkEyXkFqcGdeQXVyNTM0OTY1OQ@@._V1_.jpg',
     ]);
 
     }
