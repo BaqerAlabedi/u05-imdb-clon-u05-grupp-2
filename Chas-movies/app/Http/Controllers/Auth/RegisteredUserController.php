@@ -59,7 +59,10 @@ class RegisteredUserController extends Controller
     public function readAllMovies()
     {
         $films = Film::get();
-        $user_id = Auth::user()->id;
+        $user_id = null;
+        if (Auth::check()) {
+            $user_id = Auth::user()->id;
+        }
         return view('movie', ['films' => $films, "user_id" => $user_id]);
     }
 
@@ -69,7 +72,11 @@ class RegisteredUserController extends Controller
     public function readAllShows()
     {
         $shows = Show::get();
-        return view('show', ['shows' => $shows]);
+        $user_id = null;
+        if (Auth::check()) {
+            $user_id = Auth::user()->id;
+        }
+        return view('show', ['shows' => $shows, "user_id" => $user_id]);
     }
 
     /**
@@ -77,14 +84,22 @@ class RegisteredUserController extends Controller
      */
     public function showMovie($id)
     {
+        $user_id = null;
+        if (Auth::check()) {
+            $user_id = Auth::user()->id;
+        }
         $data = Film::find($id);
-        return view('updatemovie', ['data' => $data]);
+        return view('updatemovie', ['data' => $data, 'user_id' => $user_id]);
     }
 
     public function showShow($id)
     {
+        $user_id = null;
+        if (Auth::check()) {
+            $user_id = Auth::user()->id;
+        }
         $data = Show::find($id);
-        return view('updateshow', ['data' => $data]);
+        return view('updateshow', ['data' => $data, 'user_id' => $user_id]);
     }
 
     public function showUser($id)
@@ -97,6 +112,10 @@ class RegisteredUserController extends Controller
      */
     public function updateMovie(Request $request)
     {
+        $user_id = null;
+        if (Auth::check()) {
+            $user_id = Auth::user()->id;
+        }
         $data = Film::find($request->id);
         $data->title = $request->title;
         $data->genre = $request->genre;
@@ -104,7 +123,7 @@ class RegisteredUserController extends Controller
         $data->maincast = $request->maincast;
         $data->imgurl = $request->imgurl;
         $data->save();
-        return redirect()->route('movie');
+        return redirect()->route('movie', ['user_id' => $user_id]);
     }
 
     public function updateShow(Request $request)
@@ -168,10 +187,14 @@ class RegisteredUserController extends Controller
 
     public function displayGenre(Request $request)
     {
+        $user_id = null;
+        if (Auth::check()) {
+            $user_id = Auth::user()->id;
+        }
         $films = Film::all();
         $shows = Show::all();
         $genre = $request->get("id");
-        return view('kategori', ['films' => $films, 'shows' => $shows, 'genre' => $genre]);
+        return view('kategori', ['user_id' => $user_id, 'films' => $films, 'shows' => $shows, 'genre' => $genre]);
     }
 
     /**
@@ -227,7 +250,10 @@ class RegisteredUserController extends Controller
         $comment = comment::all();
         $films = Film::find($id);
         $shows = Show::find($id);
-        $user_id = Auth::user()->id;
+        $user_id = null;
+        if (Auth::check()) {
+            $user_id = Auth::user()->id;
+        }
         return view('film-view', ['user_id' => $user_id, 'films' => $films, 'shows' => $shows, 'id' => $id, 'comments' => $comment]);
     }
 
@@ -235,7 +261,10 @@ class RegisteredUserController extends Controller
     {
 
         $users = Watchlist::find($id);
-        $user_id = Auth::user()->id;
+        $user_id = null;
+        if (Auth::check()) {
+            $user_id = Auth::user()->id;
+        }
         $films = Film::whereHas('watchlist', function ($query) use ($user_id) {
             $query->where('user_id', $user_id);
         })->with('watchlist')->get()->unique();
@@ -284,5 +313,11 @@ class RegisteredUserController extends Controller
         } else {
             return redirect('login');
         }
+    }
+    public function home(Request $request)
+    {
+        $films = Film::all();
+        $shows = Show::all();
+        return view('home', ['films' => $films, 'shows' => $shows]);
     }
 }

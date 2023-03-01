@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\regUserController;
 use App\Models\User;
 use App\Models\Film;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Watchlist;
 use Illuminate\Support\Facades\Route;
 
@@ -42,7 +43,11 @@ Route::get('/', function () {
 
 
 Route::get('/helpcenter', function () {
-    return view('helpcenter');
+    $user_id = null;
+    if (Auth::check()) {
+        $user_id = Auth::user()->id;
+    }
+    return view('helpcenter', ["user_id" => $user_id]);
 });
 
 
@@ -56,7 +61,10 @@ Route::get('/film-view', function () {
 });
 
 Route::get('/user', function () {
-    return view('user');
+    if (Auth::check()) {
+        $user_id = Auth::user()->id;
+    }
+    return view('user', ['user_id' => $user_id]);
 });
 
 Route::get('/admin', function () {
@@ -109,7 +117,7 @@ Route::get('/editshow/{id}', [RegisteredUserController::class, 'showShow'])->mid
 Route::post('/editmovie', [RegisteredUserController::class, 'updateMovie'])->middleware(['auth', 'verified']);
 Route::post('/editshow', [RegisteredUserController::class, 'updateShow'])->middleware(['auth', 'verified']);
 Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
-Route::get('home', [AuthenticatedSessionController::class, 'updateHome'])->name('home');
+Route::get('/', [RegisteredUserController::class, 'home'])->name('home');
 
 Route::post('add-watchlist', [RegisteredUserController::class, 'storeWatchlist'])->name('add-watchlist');
 Route::delete('delete-watchlist/{id}', [RegisteredUserController::class, 'destroyWatchlist'])->name('delete-watchlist');
@@ -124,7 +132,4 @@ Route::delete('delete-watchlist/{id}', [RegisteredUserController::class, 'destro
 Route::get('watchlist{id}', [RegisteredUserController::class, 'readAllWatchlist'])->middleware(['auth', 'verified'])->name('watchlist');
 // Route::get('watchlist', [RegisteredUserController::class, 'readAllWatchlist'])->name('watchlist');
 
-Route::get('home',[AuthenticatedSessionController::class, 'updateHome'])->name('home');
-
 require __DIR__ . '/auth.php';
-
