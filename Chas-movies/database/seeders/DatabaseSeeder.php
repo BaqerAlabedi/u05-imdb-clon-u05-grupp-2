@@ -101,7 +101,7 @@ class DatabaseSeeder extends Seeder
         'maincast' => 'Liam Neeson',
         'seasons' => 4, 
         'episodes' => 32,
-        'imgurl' => 'https://flxt.tmsimg.com/assets/p8952681_b_v13_ab.jpg',
+        'imgurl' => 'https://m.media-amazon.com/images/I/91LcizItUqL._SL1500_.jpg',
     ]);
 
 
