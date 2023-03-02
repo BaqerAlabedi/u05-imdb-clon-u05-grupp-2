@@ -21,23 +21,27 @@
 
 <!-- Responsive navbar -->
 
-<nav class="lg:hidden p-3 border-gray-200 rounded bg-gray-50 dark:bg-gray-800 dark:border-gray-700 sticky w-full z-50 top-0" id="navbar">
+<nav class="lg:hidden p-3 border-gray-200 rounded bg-gray-900 dark:bg-gray-800 dark:border-gray-700 sticky w-full z-50 top-0" id="navbar">
     <div class="container flex flex-wrap items-center justify-between mx-auto">
         <a href="{{ url('/') }}" class="flex items-center">
             <img src="https://chasacademy.se/wp-content/uploads/2020/12/ca-emblem-white.svg" class="h-6 mr-3 sm:h-10" alt="Flowbite Logo" />
             <span class="font-bold text-gray-400">Chas Movies</span>
         </a>
-        <button data-collapse-toggle="navbar-hamburger" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-hamburger" aria-expanded="false">
+        <button data-collapse-toggle="navbar-hamburger" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 bg-gray-900 rounded-lg hover:bg-gray-700 focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-hamburger" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
             <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
             </svg>
         </button>
         <div class="hidden w-full" id="navbar-hamburger">
-            <ul class="flex flex-col mt-4 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+            <ul class="flex flex-col mt-4 rounded-lg bg-gray-900 dark:bg-gray-800 dark:border-gray-700">
+            @if (Auth()->check())
+            @if (Auth::user()->role == 0 OR Auth::user()->role == 1)
                 <li>
                     <H2 class="text-center text-gray-400 font-large">Welcome <br>{{ Auth::user()->name }}</H2>
                 </li>
+                @endif
+                @endif
                 <li>
                     <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="{{ url('/movie') }}">
                         <svg class="w-0 h-0 md:w-5 sm:w-5 lg:w-5 md:h-5 sm:h-5 lg:h-5 invisible md:visible lg:visible sm:visible" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
