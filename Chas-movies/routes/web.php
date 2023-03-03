@@ -108,7 +108,6 @@ Route::get('/show', [RegisteredUserController::class, 'readAllShows'])->name('sh
 Route::delete('movie/deletemovie/{id}', [RegisteredUserController::class, "deleteMovies"])->middleware(['auth', 'verified'])->name('movie.delete');
 Route::delete('dashboard/d/{id}', [RegisteredUserController::class, "deleteUser"])->middleware(['auth', 'verified'])->name('user.delete');
 Route::put('dashboard/admin/{id}', [RegisteredUserController::class, "makeAdmin"])->middleware(['auth', 'verified'])->name('user.admin');
-Route::get('dashboard/comments/{id}', [RegisteredUserController::class, "readAllComments"])->middleware(['auth', 'verified'])->name('user.comment');
 Route::delete('show/deleteshow/{id}', [RegisteredUserController::class, "deleteShows"])->middleware(['auth', 'verified'])->name('show.delete');
 Route::delete('comments/{id}', [RegisteredUserController::class, "deleteComment"])->name('comment.delete');
 Route::get('/kategori', [RegisteredUserController::class, "displayGenre"]);
