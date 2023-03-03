@@ -67,7 +67,14 @@
                     @endif
                     @endif
                 </div>
-                
+                <div class="pl-8 w-48 flex flex-wrap">
+                    <h3 class="font-bold text-xl">Genre:&nbsp;</h3>
+                            <p class="text-xl"> {{ $films->genre}}</p>
+                            <h3 class="font-bold text-xl">Director:&nbsp;</h3>
+                            <p class="text-xl">{{ $films->director}}</p>
+                            <h3 class="font-bold text-xl">Cast:&nbsp;</h3>
+                            <p class="text-xl">{{ $films->maincast}}</p>
+                        </div>
                 <div id="carouselExampleControls" class="flex pb-6 carousel slide relative" data-bs-ride="carousel">
                     <div class="flex carousel-inner relative w-full overflow-hidden">
                         <button type="button" class="relative flex pl-6 cursor-pointer group focus:outline-none items-center">
