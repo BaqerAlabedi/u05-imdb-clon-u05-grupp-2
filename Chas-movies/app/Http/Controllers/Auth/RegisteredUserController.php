@@ -317,14 +317,18 @@ class RegisteredUserController extends Controller
     }
 
 
-    public function readAllComments()
+    public function readAllComments($id)
     {
-
-        $user = User::whereHas('comment', function($query) use($user) {
-            $query->whereUserId($user->id);
-        })->get();
-        return redirect()->route('dashboard')->with(['message' => 'Comments by this user:']);
+        $comments = Comment::find($id);
+        if (Auth::check()) {
+            $user_id = Auth::user()->id;
+        }
+        $users = User::whereHas('comment', function ($query) use ($user_id) {
+            $query->where('user_id', $user_id);
+        }); 
+        return view('dashboard', ['id' => $id, 'users' => $users, 'comments' => $comments, 'user_id' => $user_id]);
     }
+
 
         
  

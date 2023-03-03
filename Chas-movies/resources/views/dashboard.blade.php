@@ -66,7 +66,7 @@
                 @method('PUT')
                 <button class="mr-3 bg-blue-700 hover:bg-blue-600 px-2 md:px-6 py-4 md:py-2 whitespace-nowrap text-xs md:text-lg text-gray-200" type="submit">Make Admin</button>
             </form>
-            <form method="POST" action="{{ route('user.comment', $user->comment) }}">
+            <form method="POST" action="{{ route('user.comment', $user->id) }}">
                 @csrf
                 @method('GET')
             <button class="mr-3 bg-blue-700 hover:bg-blue-600 px-2 md:px-6 py-4 md:py-2 whitespace-nowrap text-xs md:text-lg text-gray-200">See Reviews</button>
@@ -76,4 +76,5 @@
         @endforeach
         @endif
     </div>
+
 </x-app-layout>
