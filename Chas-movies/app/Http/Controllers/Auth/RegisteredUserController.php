@@ -317,11 +317,12 @@ class RegisteredUserController extends Controller
     }
 
 
-
     public function readAllComments()
     {
 
-        //trying to get readAllComments
+        $user = User::whereHas('comment', function($query) use($user) {
+            $query->whereUserId($user->id);
+        })->get();
     }
 
         
