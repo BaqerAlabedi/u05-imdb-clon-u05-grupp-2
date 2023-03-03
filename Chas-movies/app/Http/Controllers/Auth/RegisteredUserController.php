@@ -246,15 +246,19 @@ class RegisteredUserController extends Controller
 
     public function filmView($id)
     {
-        $comment = Comment::get();
-        $comment = comment::all();
+        
         $films = Film::find($id);
+        $comments = $films->comments;
         $shows = Show::find($id);
+        $comment = null;
+        if (Auth::check()) {
+            $comment = Auth::user()->id;
+        }
         $user_id = null;
         if (Auth::check()) {
             $user_id = Auth::user()->id;
         }
-        return view('film-view', ['user_id' => $user_id, 'films' => $films, 'shows' => $shows, 'id' => $id, 'comments' => $comment]);
+        return view('film-view', ['user_id' => $user_id, 'films' => $films, 'shows' => $shows, 'id' => $id, 'comments' => $comments]);
     }
 
     public function readAllWatchlist($id)
@@ -307,7 +311,6 @@ class RegisteredUserController extends Controller
             $comment->user_id = Auth::user()->id;
             $comment->name = Auth::user()->name;
             $comment->comment = $request->comment;
-            $comment->body = $request->body;
             $comment->save();
 
             return redirect()->back();

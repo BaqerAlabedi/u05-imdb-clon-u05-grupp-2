@@ -151,7 +151,7 @@
 
         <div class="bg-gray-900 rounded-2xl w-1/2 relative my-5">
             <div class="p-5">
-                <b class="my-3">{{$comment->name}}</b>
+            <b class="my-3">{{$comment->name}}</b>
                 <p class="my-3">{{$comment->comment}}</p>
                 @if (Auth()->check())
                 @if (Auth::user()->role == 0)

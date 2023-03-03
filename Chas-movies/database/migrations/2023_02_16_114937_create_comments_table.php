@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('comment')->nullable();
             $table->string('user_id')->nullable();
-            $table->text('body')->nullable();
+            $table->string('film_id')->nullable();
             $table->timestamps();
         });
     }
