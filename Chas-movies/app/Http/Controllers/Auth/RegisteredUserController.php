@@ -246,7 +246,7 @@ class RegisteredUserController extends Controller
 
     public function filmView($id)
     {
-        
+
         $films = Film::find($id);
         $comments = $films->comments;
         $shows = Show::find($id);
@@ -304,13 +304,14 @@ class RegisteredUserController extends Controller
 
 
 
-    public function add_comment(Request $request)
+    public function add_comment(Request $request, $id)
     {
         if (Auth::id()) {
             $comment = new comment;
             $comment->user_id = Auth::user()->id;
             $comment->name = Auth::user()->name;
             $comment->comment = $request->comment;
+            $comment->film_id = $id; // KOPPLAR COMMENT MED MOVIE
             $comment->save();
 
             return redirect()->back();
@@ -319,8 +320,8 @@ class RegisteredUserController extends Controller
         }
     }
 
-        
- 
+
+
 
     public function home(Request $request)
     {

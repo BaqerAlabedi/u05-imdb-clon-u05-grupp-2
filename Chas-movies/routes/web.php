@@ -93,7 +93,7 @@ Route::get('/watchlist', function () {
 
 
 
-route::post('/add_comment', [RegisteredUserController::class, 'add_comment']);
+Route::post('add-comment/{id}', [RegisteredUserController::class, 'add_comment'])->name('add-comment');
 
 route::get('/film-view', [RegisteredUserController::class, 'filmview']);
 

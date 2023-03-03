@@ -133,7 +133,7 @@
         <h1 style=" color:aliceblue;  font-size: 30px; text-align: center; padding-top: 20px; padding-bottom: 20px;">Comments</h1>
         @if (Auth()->check())
         @if (Auth::user()->role == 1 OR Auth::user()->role == 0)
-        <form action="{{url('add_comment')}}" method="POST">
+        <form action="{{ route('add-comment', ['id' => $films->id]) }}" method="POST">
             @csrf
             <textarea style="height: 150px; width: 600px; border-radius:20px; padding-bottom:30px; " placeholder="Comment something here" name="comment"></textarea>
             <br>
