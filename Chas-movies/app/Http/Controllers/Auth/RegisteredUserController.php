@@ -323,6 +323,7 @@ class RegisteredUserController extends Controller
         $user = User::whereHas('comment', function($query) use($user) {
             $query->whereUserId($user->id);
         })->get();
+        return redirect()->route('dashboard')->with(['message' => 'Comments by this user:']);
     }
 
         
