@@ -326,7 +326,7 @@ class RegisteredUserController extends Controller
         $users = User::whereHas('comment', function ($query) use ($user_id) {
             $query->where('user_id', $user_id);
         }); 
-        return view('dashboard', ['id' => $id, 'users' => $users, 'comments' => $comments, 'user_id' => $user_id]);
+        return view('dashboard', ['users' => $users, 'comments' => $comments, 'user_id' => $user_id]);
     }
 
 
