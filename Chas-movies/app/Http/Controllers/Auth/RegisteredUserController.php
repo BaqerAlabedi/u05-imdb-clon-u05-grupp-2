@@ -315,6 +315,18 @@ class RegisteredUserController extends Controller
             return redirect('login');
         }
     }
+
+
+
+    public function readAllComments()
+    {
+
+        //trying to get readAllComments
+    }
+
+        
+ 
+
     public function home(Request $request)
     {
         $films = Film::all();
