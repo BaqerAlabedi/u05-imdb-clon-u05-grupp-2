@@ -24,7 +24,7 @@
       <div class="block rounded-lg shadow-lg bg-white w-full max-w-sm text-center">
         <div class="mr-4">
           <div class="p-4">
-            <h5 class="text-gray-100 text-xl font-medium mb-2">Ta bort konto</h5>
+            <h5 class="text-gray-900 text-xl font-medium mb-2">Ta bort konto</h5>
             <p class="text-gray-700 text-base mb-4">
               Kontakta oss så hjälper vi dig
             </p>
@@ -39,7 +39,7 @@
       <div class="block rounded-lg shadow-lg bg-white w-full max-w-sm text-center">
         <div class="mr-4">
           <div class="p-4">
-            <h5 class="text-gray-900 text-xl font-medium mb-2">mitt konto är fryst</h5>
+            <h5 class="text-gray-900 text-xl font-medium mb-2">Mitt konto är fryst</h5>
             <p class="text-gray-700 text-base mb-4">
              Kontakta oss så hjälper vi dig
             </p>
