@@ -106,7 +106,7 @@
         @foreach ($films as $film)
         <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
-                <img class="w-full h-48 object-cover object-center" src="{{ $film->imgurl }}" alt="Card Image">
+                <img onerror="this.src='https://cloud.filmfed.com/defaults/movie-poster/m_movie_poster_default.png';" class="w-full h-48 object-cover object-center" src="{{ $film->imgurl }}" alt="Card Image">
                 <div class="p-6 flex flex-col">
                     <a class="" href="{{ route('film-view', $film->id) }}">
                     <h2 class="text-lg font-medium text-gray-200">{{ $film->title }}</h2>
@@ -129,7 +129,7 @@
         @foreach ($shows as $show)
         <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
-                <img class="w-full h-48 object-cover object-center" src="{{ $show->imgurl }}" alt="Card Image">
+                <img onerror="this.src='https://cloud.filmfed.com/defaults/movie-poster/m_movie_poster_default.png';" class="w-full h-48 object-cover object-center" src="{{ $show->imgurl }}" alt="Card Image">
                 <div class="p-6 flex flex-col">
                     <a class="" href="{{ route('film-view', $show->id) }}">
                     <h2 class="text-lg font-medium text-gray-200">{{ $show->title }}</h2>
@@ -169,7 +169,7 @@
         @foreach ($films as $film)
         <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
-                <img class="w-full h-48 object-cover object-center" src="{{ $film->imgurl }}" alt="Card Image">
+                <img onerror="this.src='https://cloud.filmfed.com/defaults/movie-poster/m_movie_poster_default.png';" class="w-full h-48 object-cover object-center" src="{{ $film->imgurl }}" alt="Card Image">
                 <div class="p-6 flex flex-col">
                     <a class="" href="{{ route('film-view', $film->id) }}">
                     <h2 class="text-lg font-medium text-gray-200">{{ $film->title }}</h2>

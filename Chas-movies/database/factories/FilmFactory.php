@@ -20,8 +20,8 @@ class FilmFactory extends Factory
             'title' => fake()->name(),
             'genre' => fake()->unique()->safeEmail(),
             'director' => fake()->name(),
-            'maincast' => fake()->name(), 
-            'imgurl' => fake()->name() ,
+            'maincast' => fake()->name(),
+            'imgurl' => fake()->name(),
         ];
     }
 }

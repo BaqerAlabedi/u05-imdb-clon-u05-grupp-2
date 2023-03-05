@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Chasmovies') }}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -68,9 +68,9 @@
                     </a>
                 </li>
                 <li>
-                    <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="{{ url('/trending') }}">
+                    <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="#">
                         <span class="w-0 h-0 md:w-5 sm:w-5 lg:w-5 md:h-5 sm:h-5 lg:h-5 invisible md:visible lg:visible sm:visible">🔥</span>
-                        <span class="ml-2 font-medium text-gray-400">Trending</span>
+                        <span class="ml-2 font-medium text-gray-700">Trending</span>
                     </a>
                 </li>
                 <li>
@@ -198,9 +198,9 @@
                     </svg>
                     <span class="ml-2 text-sm font-medium">Categories</span>
                 </a>
-                <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="{{ url('/trending') }}">
+                <a class="flex items-center w-full h-12 px-3 mt-2 rounded" href="" onclick="return false;">
                     <span class="w-0 h-0 md:w-5 sm:w-5 lg:w-5 md:h-5 sm:h-5 lg:h-5 invisible md:visible lg:visible sm:visible">🔥</span>
-                    <span class="ml-2 text-sm font-medium">Trending</span>
+                    <span class="ml-2 text-sm font-medium text-gray-600">Trending <br> <span class="text-xs">&#40;coming soon&#41;</span></span>
                 </a>
                 <a class="relative flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="{{ url('/helpcenter') }}">
                     <svg class="w-0 h-0 md:w-5 sm:w-5 lg:w-5 md:h-5 sm:h-5 lg:h-5 invisible md:visible lg:visible sm:visible stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -308,10 +308,28 @@
                 <form method="post" class="space-y-6" action="{{ route('add.movie') }}">
                     @csrf
                     <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Title" name="title" required="true">
-                    <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Genre" name="genre" required="true">
+                    <select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Genre" name="genre" required="true">
+                        <option class="bg-gray-800" value="Horror">Horror</option>
+                        <option class="bg-gray-800" value="Fantasy">Fantasy</option>
+                        <option class="bg-gray-800" value="Adventure">Adventure</option>
+                        <option class="bg-gray-800" value="Action">Action</option>
+                        <option class="bg-gray-800" value="Anime">Anime</option>
+                        <option class="bg-gray-800" value="Family">Family</option>
+                        <option class="bg-gray-800" value="History">History</option>
+                        <option class="bg-gray-800" value="Comedy">Comedy</option>
+                        <option class="bg-gray-800" value="Romantic">Romantic</option>
+                        <option class="bg-gray-800" value="Mystery">Mystery</option>
+                        <option class="bg-gray-800" value="Crime">Crime</option>
+                        <option class="bg-gray-800" value="Documentary">Documentary</option>
+                        <option class="bg-gray-800" value="Romantic">Romantic </option>
+                        <option class="bg-gray-800" value="Sci-fi">Sci-fi</option>
+                        <!-- Add more options for your categories -->
+                    </select>
                     <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="director" name="director" required="true">
                     <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Main cast" name="maincast" required="true">
+                    <input type="hidden" name="showormovie" value="0">
                     <input type="url" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Image (URL)" name="imgurl" required="true">
+                    <input type="trailer" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Trailer (YT URL) " name="trailer">
                     <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
                 </form>
             </div>
@@ -332,12 +350,30 @@
                 <form method="post" class="space-y-6" action="{{ route('add.show') }}">
                     @csrf
                     <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Title" name="title" required="true">
-                    <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Genre" name="genre" required="true">
+                    <select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Genre" name="genre" required="true">
+                        <option class="bg-gray-800" value="Horror">Horror</option>
+                        <option class="bg-gray-800" value="Fantasy">Fantasy</option>
+                        <option class="bg-gray-800" value="Adventure">Adventure</option>
+                        <option class="bg-gray-800" value="Action">Action</option>
+                        <option class="bg-gray-800" value="Anime">Anime</option>
+                        <option class="bg-gray-800" value="Family">Family</option>
+                        <option class="bg-gray-800" value="History">History</option>
+                        <option class="bg-gray-800" value="Comedy">Comedy</option>
+                        <option class="bg-gray-800" value="Romantic">Romantic</option>
+                        <option class="bg-gray-800" value="Mystery">Mystery</option>
+                        <option class="bg-gray-800" value="Crime">Crime</option>
+                        <option class="bg-gray-800" value="Documentary">Documentary</option>
+                        <option class="bg-gray-800" value="Romantic">Romantic </option>
+                        <option class="bg-gray-800" value="Sci-fi">Sci-fi</option>
+                        <!-- Add more options for your categories -->
+                    </select>
                     <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="director" name="director" required="true">
                     <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Main cast" name="maincast" required="true">
                     <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Seasons" name="seasons" required="true">
                     <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Episodes" name="episodes" required="true">
+                    <input type="hidden" name="showormovie" value="1">
                     <input type="url" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Image (URL)" name="imgurl" required="true">
+                    <input type="trailer" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Trailer (YT URL) " name="trailer">
                     <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
                 </form>
             </div>
