@@ -19,8 +19,13 @@ return new class extends Migration
             $table->string('genre');
             $table->string('director');
             $table->string('maincast');
+            $table->string('seasons')->nullable();
+            $table->string('episodes')->nullable();
             $table->integer('watchlist_id')->unsigned()->nullable();
             $table->string('imgurl');
+            $table->string('trailer');
+            $table->integer('showormovie')->unsigned()->nullable();
+
             $table->timestamps();
         });
     }
