@@ -33,6 +33,8 @@ class RegisteredUserController extends Controller
         $listing->director = $request->director;
         $listing->maincast = $request->maincast;
         $listing->imgurl = $request->imgurl;
+        $listing->showormovie = $request->showormovie;
+        $listing->trailer = $request->trailer;
         $listing->save();
         return redirect()->route('movie')->with('status', 'New post added successfully!');
     }
@@ -41,7 +43,7 @@ class RegisteredUserController extends Controller
 
     public function createShow(Request $request)
     {
-        $listing = new Show();
+        $listing = new Film();
         $listing->title = $request->title;
         $listing->genre = $request->genre;
         $listing->director = $request->director;
@@ -49,6 +51,8 @@ class RegisteredUserController extends Controller
         $listing->seasons = $request->seasons;
         $listing->episodes = $request->episodes;
         $listing->imgurl = $request->imgurl;
+        $listing->showormovie = $request->showormovie;
+        $listing->trailer = $request->trailer;
         $listing->save();
         return redirect()->route('show')->with('status', 'New post added successfully!');
     }
@@ -58,7 +62,9 @@ class RegisteredUserController extends Controller
      */
     public function readAllMovies()
     {
-        $films = Film::get();
+        $films = Film::where('showormovie', 0)
+            ->where('showormovie', '!=', 1)
+            ->get();
         $user_id = null;
         if (Auth::check()) {
             $user_id = Auth::user()->id;
@@ -71,7 +77,9 @@ class RegisteredUserController extends Controller
      */
     public function readAllShows()
     {
-        $shows = Show::get();
+        $shows = Film::where('showormovie', 1)
+            ->where('showormovie', '!=', 0)
+            ->get();
         $user_id = null;
         if (Auth::check()) {
             $user_id = Auth::user()->id;
@@ -98,7 +106,7 @@ class RegisteredUserController extends Controller
         if (Auth::check()) {
             $user_id = Auth::user()->id;
         }
-        $data = Show::find($id);
+        $data = Film::find($id);
         return view('updateshow', ['data' => $data, 'user_id' => $user_id]);
     }
 
@@ -122,20 +130,22 @@ class RegisteredUserController extends Controller
         $data->director = $request->director;
         $data->maincast = $request->maincast;
         $data->imgurl = $request->imgurl;
+        $data->trailer = $request->trailer;
         $data->save();
         return redirect()->route('movie', ['user_id' => $user_id]);
     }
 
     public function updateShow(Request $request)
     {
-        $data = Show::find($request->id);
+        $data = Film::find($request->id);
         $data->title = $request->title;
         $data->genre = $request->genre;
         $data->director = $request->director;
         $data->maincast = $request->maincast;
-        $data->maincast = $request->seasons;
-        $data->maincast = $request->episodes;
+        $data->seasons = $request->seasons;
+        $data->episodes = $request->episodes;
         $data->imgurl = $request->imgurl;
+        $data->trailer = $request->trailer;
         $data->save();
         return redirect()->route('show');
     }
@@ -155,7 +165,7 @@ class RegisteredUserController extends Controller
 
     public function deleteShows($id)
     {
-        $shows = Show::find($id);
+        $shows = Film::find($id);
         $shows->delete();
         return redirect()->route('show')->with('status', 'Show deleted successfully!');
     }
@@ -180,7 +190,7 @@ class RegisteredUserController extends Controller
     // public function createWatchlist()
     // {
     //     $films = Film::all();
-    //     $shows = Show::all();
+    //     $shows = Film::all();
     //     $watchlists = Watchlist::get();
     //     return view('watchlist', ['shows' => $shows, 'films' => $films, 'watchlists' => $watchlists]);
     // }
@@ -191,8 +201,12 @@ class RegisteredUserController extends Controller
         if (Auth::check()) {
             $user_id = Auth::user()->id;
         }
-        $films = Film::all();
-        $shows = Show::all();
+        $films = Film::where('showormovie', 0)
+            ->where('showormovie', '!=', 1)
+            ->get();
+        $shows = Film::where('showormovie', 1)
+            ->where('showormovie', '!=', 0)
+            ->get();
         $genre = $request->get("id");
         return view('kategori', ['user_id' => $user_id, 'films' => $films, 'shows' => $shows, 'genre' => $genre]);
     }
@@ -249,7 +263,6 @@ class RegisteredUserController extends Controller
 
         $films = Film::find($id);
         $comments = $films->comments;
-        $shows = Show::find($id);
         $comment = null;
         if (Auth::check()) {
             $comment = Auth::user()->id;
@@ -258,7 +271,7 @@ class RegisteredUserController extends Controller
         if (Auth::check()) {
             $user_id = Auth::user()->id;
         }
-        return view('film-view', ['user_id' => $user_id, 'films' => $films, 'shows' => $shows, 'id' => $id, 'comments' => $comments]);
+        return view('film-view', ['user_id' => $user_id, 'films' => $films, 'id' => $id, 'comments' => $comments]);
     }
 
     public function readAllWatchlist($id)
@@ -272,8 +285,7 @@ class RegisteredUserController extends Controller
         $films = Film::whereHas('watchlist', function ($query) use ($user_id) {
             $query->where('user_id', $user_id);
         })->with('watchlist')->get()->unique(); //samma för shows???
-        $shows = Show::get();
-        return view('watchlist', ['id' => $id, 'films' => $films, 'shows' => $shows, 'users' => $users, "user_id" => $user_id]);
+        return view('watchlist', ['id' => $id, 'films' => $films, 'users' => $users, "user_id" => $user_id]);
     }
 
     public function storeWatchlist(Request $request)
@@ -283,7 +295,9 @@ class RegisteredUserController extends Controller
         $listing->film_id = $request->filmId;
         $listing->user_id = Auth::user()->id;
         $listing->save();
-        return to_route('film-view', ['id' => $request->filmId])->with('status', 'New movie added successfully!');
+        $message = 'Media successfully added to your watchlist!';
+        $request->session()->flash('status', $message);
+        return redirect()->route('film-view', ['id' => $request->filmId]);
     }
 
     public function destroyWatchlist($id)
@@ -325,8 +339,14 @@ class RegisteredUserController extends Controller
 
     public function home(Request $request)
     {
-        $films = Film::all();
-        $shows = Show::all();
+        $films = Film::where('showormovie', 0)
+            ->where('showormovie', '!=', 1)
+            ->take(4)
+            ->get();
+        $shows = Film::where('showormovie', 1)
+            ->where('showormovie', '!=', 0)
+            ->take(4)
+            ->get();
         return view('home', ['films' => $films, 'shows' => $shows]);
     }
 }

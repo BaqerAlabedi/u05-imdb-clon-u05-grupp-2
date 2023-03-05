@@ -12,7 +12,7 @@
     @extends('sidenav')
     @section('content')
  <!-- Category Start -->
- <section class="flex flex-col md:ml-40 lg:ml-40 sm:ml-40 ml-28">
+ <section class="flex flex-col md:ml-0 lg:ml-40 sm:ml-0 ml-0">
     <section class="text-gray-400 bg-gray-900 body-font px-2 py-2 flex-col justify-center m-auto">
     <div class="flex justify-center">
       <h1 class="title-font sm:text3xl text-3xl mb-4 font-medium text-white">Viking wolf
@@ -31,7 +31,7 @@
 </section>
 </section>
   <!-- Category L -->
-<section class="flex flex-col flex-wrap md:ml-40 lg:ml-40 sm:ml-40 ml-28 ">
+<section class="flex flex-col flex-wrap md:ml-0 lg:ml-40 sm:ml-0 ml-0 ">
                 <!--  Category -->
                 <div class="justify-center m-auto scale-125 my-24">
                     <form id="category-form" method="GET" action="{{ url('/kategori') }}">
@@ -62,25 +62,32 @@
            
             <!-- List movies -->
             <div class="flex justify-center">
-                <h1 class="title-font sm:text3xl text-3xl mb-4 font-medium text-white md:ml-40 lg:ml-40 sm:ml-40 ml-28">Movies
+                <h1 class="title-font sm:text3xl text-3xl mb-4 font-medium text-white md:ml-0 lg:ml-40 sm:ml-0 ml-0">Movies
                 </h1>
             </div>
-        <article class="flex flex-col sm:flex-row md:flex-row lg:flex-row justify-center md:ml-40 lg:ml-40 sm:ml-40 ml-28 my-10">
+        <article class="m-auto items-center flex flex-col sm:flex-row md:flex-row lg:flex-row justify-center md:ml-0 lg:ml-40 sm:ml-0 ml-0 my-10">
                 <!-- Article -->
                 @foreach ($films as $film)
                 @if ($film->genre == $genre)
-                <div class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200 mx-2 max-w-xs justify-center relative">
-                    <a href="#">
-                        <img alt="Placeholder" class="block h-auto w-full" src="{{ $film->imgurl }}">
+                <div class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200 mx-2 max-w-xs relative">
+                    <a href="{{ route('film-view', $film->id) }}">
+                        <img onerror="this.src='https://cloud.filmfed.com/defaults/movie-poster/m_movie_poster_default.png';" alt="Placeholder" class="block h-96 w-full object-fit: cover" src="{{ $film->imgurl }}">
                     </a>
                     @if (Auth()->check())
                     @if (Auth::user()->role == 1 OR Auth::user()->role == 0)
-                    <button class="text-gray-900 bg-yellow-400 hover:bg-yellow-300 w-1/10 inline-block text-sm font-medium text-white-200 bg-gray-800 hover:bg-gray-700 absolute bottom-16 right-0 px-2 py-2 rounded-lg" type="button">
-                        Add to <svg class="md:w-5 sm:w-5 lg:w-5 md:h-5 sm:h-5 lg:h-5 inline" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-                            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
-                            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
-                        </svg>
-                    </button>
+                    <form method="post" action="{{ route('add-watchlist')}}">
+                        <input type="hidden" name="filmId" value="{{$film->id}}"/>
+                        <button class="text-gray-900 bg-yellow-400 hover:bg-yellow-300 w-1/10 inline-block text-sm font-medium text-white-200 bg-gray-800 hover:bg-gray-700 absolute bottom-16 right-0 px-2 py-2 rounded-lg">
+                            @csrf
+                            <span class="m-auto ml-1">
+                                Add to
+                            </span>
+                            <svg class="inline md:w-5 sm:w-5 lg:w-5 md:h-5 sm:h-5 lg:h-5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"></path>
+                                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"></path>
+                            </svg>
+                        </button>
+                        </form>
                     @endif
                     @if (Auth::user()->role == 0)
                     <form method="POST" action="{{ route('movie.delete', $film->id) }}">
@@ -92,7 +99,7 @@
                     @endif
                     <header class="flex items-center justify-between leading-tight p-2 md:p-4">
                         <h1 class="text-lg">
-                            <a class="no-underline hover:underline text-gray-200" href="#">
+                            <a class="no-underline hover:underline text-gray-200" href="{{ route('film-view', $film->id) }}">
                                 {{ $film->title }}
                             </a>
                         </h1>
@@ -103,31 +110,38 @@
         </article> 
         @if ($films->where('genre', $genre)->count() === 0)
         <div class="flex justify-center">
-            <h1 class=" bg-slate-800 p-16 text-center title-font sm:textlg text-lg mb-4 font-medium text-white md:ml-40 lg:ml-40 sm:ml-40 ml-28 mb-16">No movies in this genre
+            <h1 class=" bg-slate-800 p-16 text-center title-font sm:textlg text-lg mb-4 font-medium text-white md:ml-0 lg:ml-40 sm:ml-0 ml-0 mb-16">No movies in this genre
             </h1>
         </div>
         @endif
         <div class="flex justify-center">
-            <h1 class="title-font sm:text3xl text-3xl mb-4 font-medium text-white md:ml-40 lg:ml-40 sm:ml-40 ml-28">Shows
+            <h1 class="title-font sm:text3xl text-3xl mb-4 font-medium text-white md:ml-0 lg:ml-40 sm:ml-0 ml-0">Shows
             </h1>
         </div>
-        <article class="flex flex-col sm:flex-row md:flex-row lg:flex-row justify-center md:ml-40 lg:ml-40 sm:ml-40 ml-28 my-10">
+        <article class="m-auto items-center flex flex-col sm:flex-row md:flex-row lg:flex-row justify-center md:ml-0 lg:ml-40 sm:ml-0 ml-0 my-10">
             <!-- Article -->
             
             @foreach ($shows as $show)
             @if ($show->genre == $genre)
             <div class="overflow-hidden rounded-lg shadow-lg bg-gray-800 text-gray-200 mx-2 max-w-xs relative">
-                <a href="#">
-                    <img alt="Placeholder" class="block h-auto w-full" src="{{ $show->imgurl }}">
+                <a href="{{ route('film-view', $show->id) }}">
+                    <img onerror="this.src='https://cloud.filmfed.com/defaults/movie-poster/m_movie_poster_default.png';" alt="Placeholder" class="block h-96 w-full object-fit: cover" src="{{ $show->imgurl }}">
                 </a>
                 @if (Auth()->check())
                 @if (Auth::user()->role == 1 OR Auth::user()->role == 0)
-                <button class="text-gray-900 bg-yellow-400 hover:bg-yellow-300 w-1/10 inline-block text-sm font-medium text-white-200 bg-gray-800 hover:bg-gray-700 absolute bottom-16 right-0 px-2 py-2 rounded-lg" type="button">
-                    Add to <svg class="md:w-5 sm:w-5 lg:w-5 md:h-5 sm:h-5 lg:h-5 inline" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-                        <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
-                        <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
-                    </svg>
-                </button>
+                <form method="post" action="{{ route('add-watchlist')}}">
+                    <input type="hidden" name="filmId" value="{{$show->id}}"/>
+                    <button class="text-gray-900 bg-yellow-400 hover:bg-yellow-300 w-1/10 inline-block text-sm font-medium text-white-200 bg-gray-800 hover:bg-gray-700 absolute bottom-16 right-0 px-2 py-2 rounded-lg">
+                        @csrf
+                        <span class="m-auto ml-1">
+                            Add to
+                        </span>
+                        <svg class="inline md:w-5 sm:w-5 lg:w-5 md:h-5 sm:h-5 lg:h-5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"></path>
+                            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"></path>
+                        </svg>
+                    </button>
+                    </form>
                 @endif
                 @if (Auth::user()->role == 0)
                 <form method="POST" action="{{ route('movie.delete', $show->id) }}">
@@ -139,7 +153,7 @@
                 @endif
                 <header class="flex items-center justify-between leading-tight p-2 md:p-4">
                     <h1 class="text-lg">
-                        <a class="no-underline hover:underline text-gray-200" href="#">
+                        <a class="no-underline hover:underline text-gray-200" href="{{ route('film-view', $show->id) }}">
                             {{ $show->title }}
                         </a>
                     </h1>
@@ -150,7 +164,7 @@
     </article>
     @if ($shows->where('genre', $genre)->count() === 0)
         <div class="flex justify-center">
-            <h1 class=" bg-slate-800 p-16 text-center title-font sm:textlg text-lg mb-4 font-medium text-white md:ml-40 lg:ml-40 sm:ml-40 ml-28">No shows in this genre
+            <h1 class=" bg-slate-800 p-16 text-center title-font sm:textlg text-lg mb-4 font-medium text-white md:ml-0 lg:ml-40 sm:ml-0 ml-0">No shows in this genre
             </h1>
         </div>
         @endif
@@ -159,7 +173,7 @@
 
 
                   <!-- Footer -->   
-<footer class= " md:ml-40 lg:ml-40 sm:ml-40 ml-28">
+<footer class= " md:ml-0 lg:ml-40 sm:ml-0 ml-0">
 <div class=" flex justify-center my-24 "> 
     
 <!-- Previous Button -->
