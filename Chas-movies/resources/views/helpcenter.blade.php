@@ -13,7 +13,7 @@
   @section('content')
 <!--New chas helpcenter-->
 <div class="flex justify-center">
-  <h1 class="block rounded-lg shadow-lg max-w-sm text-center text-white text-2xl">Chas Helpcenter</h1>
+  <h1 class="mt-24 mb-8 block rounded-lg shadow-lg max-w-sm text-center text-white text-2xl">Chas Helpcenter</h1>
 </div>
 
 <!-- New Cards start here -->
@@ -26,7 +26,9 @@
           <div class="p-4">
             <h5 class="text-gray-900 text-xl font-medium mb-2">Ta bort konto</h5>
             <p class="text-gray-700 text-base mb-4">
-              Kontakta oss så hjälper vi dig
+              Kontakta oss så hjälper vi dig<br>
+              Tel: 08-111 11 11<br>
+              Mail: Chas@chas.se
             </p>
             <button type="button" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Dive in</button>
           </div>
@@ -41,7 +43,9 @@
           <div class="p-4">
             <h5 class="text-gray-900 text-xl font-medium mb-2">Mitt konto är fryst</h5>
             <p class="text-gray-700 text-base mb-4">
-             Kontakta oss så hjälper vi dig
+             Kontakta oss så hjälper vi dig!<br>
+             Tel: 08-111 11 11<br>
+              Mail: Chas@chas.se
             </p>
             <button type="button" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Dive in</button>
           </div>
@@ -54,9 +58,11 @@
       <div class="block rounded-lg shadow-lg bg-white w-full max-w-sm text-center">
         <div class="mr-4">
           <div class="p-4">
-            <h5 class="text-gray-900 text-xl font-medium mb-2">hur når jag er</h5>
+            <h5 class="text-gray-900 text-xl font-medium mb-2">Hur når jag er?</h5>
             <p class="text-gray-700 text-base mb-4">
-              du når oss via mail eller telefon
+              Du når oss via mail eller telefon:<br>
+              Tel: 08-111 11 11<br>
+              Mail: Chas@chas.se
             </p>
             <button type="button" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Dive in</button>
           </div>
