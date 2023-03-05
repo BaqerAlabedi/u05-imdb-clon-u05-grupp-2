@@ -347,6 +347,6 @@ class RegisteredUserController extends Controller
             ->where('showormovie', '!=', 0)
             ->take(4)
             ->get();
-        return view('home', ['films' => $films, 'shows' => $shows]);
+        return view('index', ['films' => $films, 'shows' => $shows]);
     }
 }
