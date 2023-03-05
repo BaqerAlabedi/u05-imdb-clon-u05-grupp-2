@@ -38,7 +38,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/', function () {
     $users = User::all();
-    return view('home', ["users" => $users]);
+    return view('index', ["users" => $users]);
 });
 
 
