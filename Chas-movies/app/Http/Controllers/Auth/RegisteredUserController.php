@@ -187,13 +187,6 @@ class RegisteredUserController extends Controller
         return redirect()->back();
     }
 
-    // public function createWatchlist()
-    // {
-    //     $films = Film::all();
-    //     $shows = Film::all();
-    //     $watchlists = Watchlist::get();
-    //     return view('watchlist', ['shows' => $shows, 'films' => $films, 'watchlists' => $watchlists]);
-    // }
 
     public function displayGenre(Request $request)
     {
@@ -284,14 +277,13 @@ class RegisteredUserController extends Controller
         }
         $films = Film::whereHas('watchlist', function ($query) use ($user_id) {
             $query->where('user_id', $user_id);
-        })->with('watchlist')->get()->unique(); //samma för shows???
+        })->with('watchlist')->get()->unique(); 
         return view('watchlist', ['id' => $id, 'films' => $films, 'users' => $users, "user_id" => $user_id]);
     }
 
     public function storeWatchlist(Request $request)
     {
         $listing = new Watchlist;
-        //$listing->show_id = $request->showId; //Jag spånar lite (viktoria)
         $listing->film_id = $request->filmId;
         $listing->user_id = Auth::user()->id;
         $listing->save();
@@ -301,12 +293,12 @@ class RegisteredUserController extends Controller
     }
 
     public function destroyWatchlist($id)
-    { //  Fixa route till watchlist/{id}?
+    { 
 
         $listing = Watchlist::where('id', $id);
         $listing->delete();
         return to_route('watchlist')->with('status', 'Movie deleted successfully!');
-        // comment
+        
     }
 
     public function getDeletePost($post_id)

@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-//Följande funktion borde ligga i RegisteredUserController.php under en readAll()-funktion kanske?
+
 Route::get('/dashboard', function () {
     $users = User::all();
     return view('dashboard', ["users" => $users]);
@@ -92,7 +92,6 @@ Route::get('/watchlist', function () {
 
 
 
-
 Route::post('add-comment/{id}', [RegisteredUserController::class, 'add_comment'])->name('add-comment');
 
 route::get('/film-view', [RegisteredUserController::class, 'filmview']);
@@ -122,14 +121,8 @@ Route::get('/', [RegisteredUserController::class, 'home'])->name('home');
 Route::post('add-watchlist', [RegisteredUserController::class, 'storeWatchlist'])->name('add-watchlist');
 Route::delete('delete-watchlist/{id}', [RegisteredUserController::class, 'destroyWatchlist'])->name('delete-watchlist');
 
-///////////////////////////////////////////////////////////////////////
-
-// Route::get('/watchlist', function () {
-//     $users = User::all();
-//     return view('watchlist', ["users" => $users])->name('watchlist');
-// });;
 
 Route::get('watchlist{id}', [RegisteredUserController::class, 'readAllWatchlist'])->middleware(['auth', 'verified'])->name('watchlist');
-// Route::get('watchlist', [RegisteredUserController::class, 'readAllWatchlist'])->name('watchlist');
+
 
 require __DIR__ . '/auth.php';
