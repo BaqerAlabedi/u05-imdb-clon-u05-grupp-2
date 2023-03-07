@@ -83,7 +83,7 @@ Route::get('/movie', function () {
 Route::get('/show', function () {
     $users = User::all();
     return view('show', ["users" => $users])->name('show');
-}); 
+});
 
 Route::get('/watchlist', function () {
     $users = User::all();
