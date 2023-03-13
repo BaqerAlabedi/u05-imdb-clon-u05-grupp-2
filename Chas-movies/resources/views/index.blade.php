@@ -24,7 +24,7 @@
                     </svg>
                     <span class="ml-2 text-l font-medium">Discover</span>
                 </a>
-                <a class="flex items-center h-12 rounded hover:bg-gray-700 mr-5 text-gray-200 hover:text-gray-300" href="{{ url('/trending') }}">
+                <a class="flex items-center h-12 rounded hover:bg-gray-700 mr-5 text-gray-200 hover:text-gray-300" href="#">
                     <span class="text-xl w-5 h-5 mb-3 mr-1 stroke-current">🔥</span>
                     <span class="ml-1 text-l font-medium">Trending</span>
                 </a>
